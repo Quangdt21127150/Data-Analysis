@@ -1,0 +1,106 @@
+feature,coef_std,odds_ratio_per_SD_or_level
+num__Curricular units 1st sem (approved),-1.4980,0.2236
+cat__Mother's occupation_infrequent_sklearn,-0.8629,0.4219
+cat__Course_9853,0.8509,2.3418
+cat__Mother's qualification_4,-0.7911,0.4533
+cat__Course_9130,0.7542,2.1259
+cat__Mother's qualification_34,0.7447,2.1058
+num__Curricular units 1st sem (grade),-0.6687,0.5124
+cat__Course_9238,-0.6670,0.5133
+num__s1_approved_ratio,-0.6424,0.5260
+num__Curricular units 1st sem (credited),0.6412,1.8988
+cat__Father's occupation_infrequent_sklearn,-0.6400,0.5273
+num__s1_no_approved,-0.6371,0.5288
+cat__Course_9147,-0.5782,0.5609
+cat__Father's occupation_90,0.5588,1.7486
+cat__Mother's occupation_8,0.5438,1.7226
+cat__Previous qualification_12,-0.5227,0.5929
+cat__Mother's qualification_2,-0.5203,0.5943
+cat__Application mode_7,0.5125,1.6695
+cat__Application mode_15,-0.5013,0.6057
+cat__Mother's occupation_0,0.4906,1.6333
+cat__Application mode_16,-0.4568,0.6333
+cat__Application mode_39,0.4207,1.5230
+cat__Mother's qualification_12,0.4164,1.5165
+cat__Course_9773,0.3980,1.4888
+num__s1_zero_enrolled,-0.3834,0.6815
+cat__Course_9119,-0.3717,0.6896
+cat__Application mode_18,0.3706,1.4486
+cat__Father's occupation_6,-0.3656,0.6938
+cat__Course_9085,-0.3643,0.6947
+cat__Course_8014,-0.3602,0.6975
+cat__Application mode_43,-0.3431,0.7095
+num__Age at enrollment,0.3351,1.3981
+cat__Mother's qualification_infrequent_sklearn,0.3294,1.3902
+cat__Father's occupation_4,0.3267,1.3864
+cat__Course_9500,-0.3058,0.7365
+cat__Course_9254,0.2964,1.3450
+cat__Father's qualification_19,-0.2928,0.7462
+cat__Father's qualification_38,-0.2900,0.7483
+num__Scholarship holder,-0.2861,0.7512
+num__s1_eval_ratio,-0.2842,0.7527
+cat__Mother's occupation_6,-0.2831,0.7535
+cat__Application mode_44,-0.2815,0.7547
+cat__Marital status_4,-0.2795,0.7561
+cat__Course_9991,0.2746,1.3160
+cat__Course_infrequent_sklearn,0.2662,1.3050
+cat__Father's qualification_2,0.2623,1.3000
+cat__Previous qualification_infrequent_sklearn,0.2442,1.2766
+cat__Father's occupation_9,0.2399,1.2711
+cat__Marital status_1,0.2393,1.2703
+cat__Father's qualification_37,-0.2363,0.7895
+cat__Father's qualification_4,0.2297,1.2582
+cat__Father's occupation_5,-0.2292,0.7951
+cat__Previous qualification_1,-0.2271,0.7968
+cat__Application mode_42,0.2239,1.2510
+cat__Father's occupation_2,-0.2220,0.8009
+num__Curricular units 1st sem (evaluations),0.2155,1.2404
+cat__Father's qualification_34,0.2126,1.2369
+num__Daytime/evening attendance,0.2062,1.2289
+cat__Course_171,-0.1989,0.8196
+cat__Application mode_53,-0.1976,0.8207
+cat__Application mode_17,0.1953,1.2157
+cat__Father's occupation_0,-0.1952,0.8226
+cat__Mother's occupation_2,-0.1787,0.8364
+cat__Previous qualification_3,0.1764,1.1929
+cat__Course_9003,-0.1713,0.8425
+cat__Mother's occupation_1,0.1628,1.1768
+cat__Previous qualification_19,0.1613,1.1750
+cat__Application mode_1,-0.1561,0.8555
+cat__Mother's occupation_3,-0.1549,0.8565
+num__Curricular units 1st sem (without evaluations),-0.1474,0.8630
+cat__Mother's occupation_90,0.1375,1.1474
+cat__Mother's occupation_5,0.1356,1.1452
+num__Curricular units 1st sem (enrolled),0.1308,1.1397
+cat__Course_9070,-0.1304,0.8777
+cat__Father's qualification_1,-0.1286,0.8794
+cat__Application mode_51,0.1249,1.1331
+cat__Father's occupation_7,0.1205,1.1281
+cat__Mother's qualification_38,-0.1201,0.8868
+cat__Mother's qualification_19,-0.1174,0.8892
+cat__Course_9556,0.1134,1.1201
+cat__Mother's occupation_9,-0.1088,0.8969
+cat__Application mode_infrequent_sklearn,-0.1071,0.8984
+cat__Previous qualification_39,0.1061,1.1120
+cat__Father's occupation_8,0.1045,1.1101
+num__Admission grade,-0.0903,0.9136
+cat__Father's occupation_3,0.0897,1.0938
+cat__Previous qualification_40,-0.0879,0.9159
+cat__Marital status_2,-0.0833,0.9201
+num__Application order,0.0828,1.0864
+cat__Marital status_infrequent_sklearn,-0.0720,0.9306
+num__Previous qualification (grade),0.0622,1.0642
+cat__Mother's qualification_37,-0.0570,0.9446
+cat__Mother's qualification_1,-0.0528,0.9486
+cat__Mother's occupation_7,-0.0512,0.9501
+cat__Previous qualification_42,-0.0458,0.9552
+num__Educational special needs,0.0314,1.0319
+cat__Mother's qualification_3,-0.0274,0.9730
+cat__Father's qualification_12,0.0271,1.0275
+cat__Mother's occupation_4,-0.0262,0.9741
+num__Displaced,0.0208,1.0210
+cat__Father's qualification_3,0.0125,1.0126
+cat__Father's occupation_10,0.0116,1.0116
+cat__Father's qualification_infrequent_sklearn,0.0079,1.0080
+cat__Father's occupation_1,0.0050,1.0050
+cat__Course_9670,-0.0015,0.9985

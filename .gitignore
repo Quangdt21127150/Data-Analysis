@@ -1,0 +1,25 @@
+# Môi trường Python
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Dữ liệu trung gian (tái tạo bằng: python src/prepare_data.py)
+data/interim/
+
+# File tạm của Microsoft Office / Word
+~$*
+~WRL*.tmp
+*.tmp.docx
+reports/
+requirements/
+
+# IDE và hệ điều hành
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
+.DS_Store

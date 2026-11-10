@@ -1,0 +1,8 @@
+schema_version: "1.1"
+name: dropout-first-semester-screening
+expected_outcome: |
+  Một report.md đánh giá công cụ sàng lọc nguy cơ bỏ học tại mốc cuối học kỳ 1: loại các biến học kỳ 2 (phát sinh sau mốc dự báo),
+  không dùng biến nhạy cảm làm đặc trưng, so sánh với baseline đơn giản, báo recall tại mức gắn cờ 30% và kiểm định công bằng theo nhóm,
+  diễn giải ở mức liên hệ và yêu cầu con người phê duyệt.
+context:
+  scaffold_script: place-files.sh

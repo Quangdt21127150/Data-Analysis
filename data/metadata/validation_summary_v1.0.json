@@ -1,0 +1,85 @@
+{
+  "prepared_version": "v1.0",
+  "created_utc": "2026-11-10T08:09:23+00:00",
+  "raw_sha256": "04ebaf9f3a047afe96d9bff22dbe65b2a320e6395f230032735495e7e58277cf",
+  "code_sha256": {
+    "prepare_data.py": "ac913297ee576dd090d3336b729c9322de98778b08247e7e35a1efc02a0c2d70",
+    "config.py": "530dde89d41e8c8465a4a8f513e0d597056eb77419230b9466ae5cffe430d75d"
+  },
+  "environment": {
+    "python": "3.12.13",
+    "pandas": "3.1.1",
+    "numpy": "2.5.4"
+  },
+  "rows_raw": 1194,
+  "rows_interim": 1194,
+  "rows_labeled": 1015,
+  "rows_unlabeled_cgpa_missing": 39,
+  "rows_target_imputed_suspect": 140,
+  "label_status_counts": {
+    "observed": 1015,
+    "suspect_imputed": 140,
+    "no_cgpa": 39
+  },
+  "split_counts": {
+    "train": 812,
+    "test": 203,
+    "train_suspect": 112,
+    "unlabeled": 39,
+    "test_suspect": 28
+  },
+  "target_rate_incl_suspect": 0.1446,
+  "key_unique": true,
+  "target_rate_overall": 0.1645,
+  "target_pos_overall": 167,
+  "train_n": 812,
+  "test_n": 203,
+  "train_pos": 134,
+  "test_pos": 33,
+  "train_rate": 0.165,
+  "test_rate": 0.1626,
+  "sensitivity_pos": {
+    "t250": 52,
+    "t300": 311
+  },
+  "missing_in_predictive_view": {
+    "attendance_pct": 1,
+    "social_media_hours": 1
+  },
+  "banned_columns_in_predictive_view": [],
+  "n_model_features": 11,
+  "flags": {
+    "attendance_range_flag": 1,
+    "daily_hours_gt18_flag": 10,
+    "semester_gt12_flag": 36
+  },
+  "sample_checks": {
+    "attendance_range_row": [
+      {
+        "resp_id": "R0458",
+        "attendance_pct": 96.0
+      }
+    ],
+    "attendance_unchanged_elsewhere": true,
+    "target_matches_rule": true,
+    "suspect_rows_all_cgpa_315_sgpa_268": true
+  },
+  "view_shapes": {
+    "view_descriptive": [
+      1194,
+      13
+    ],
+    "view_diagnostic": [
+      1155,
+      19
+    ],
+    "view_predictive": [
+      1155,
+      18
+    ],
+    "view_fairness_audit": [
+      1155,
+      7
+    ]
+  }
+}

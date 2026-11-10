@@ -1,0 +1,40 @@
+{
+  "file": "Students_Performance_data_set.xlsx",
+  "size_bytes": 187253,
+  "sha256": "04ebaf9f3a047afe96d9bff22dbe65b2a320e6395f230032735495e7e58277cf",
+  "sha256_matches_expected": true,
+  "sheets": [
+    "Students_Performance_data_set"
+  ],
+  "rows": 1194,
+  "columns": 31,
+  "dtype_counts": {
+    "str": 18,
+    "int64": 10,
+    "float64": 2,
+    "object": 1
+  },
+  "full_duplicate_rows": 0,
+  "missing_cells_total": 1,
+  "missing_by_column": {
+    "What are the skills do you have ?": 1
+  },
+  "cgpa_zero": 39,
+  "sgpa_zero": 39,
+  "cgpa_and_sgpa_zero": 37,
+  "cgpa_positive_n": 1155,
+  "label_feasibility": {
+    "<2.5": {
+      "n_pos": 52,
+      "rate": 0.045
+    },
+    "<2.75": {
+      "n_pos": 167,
+      "rate": 0.1446
+    },
+    "<3.0": {
+      "n_pos": 311,
+      "rate": 0.2693
+    }
+  }
+}

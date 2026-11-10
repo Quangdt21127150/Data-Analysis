@@ -1,0 +1,84 @@
+{
+  "project": "sape_students_performance",
+  "data_path": "D:\\Python\\data-analysis\\.claude\\skill-dev\\testing\\datasets\\sape_students_performance.xlsx",
+  "sheet": null,
+  "out_dir": "D:\\Python\\data-analysis\\.claude\\skill-dev\\testing\\results\\sape\\profile\\output",
+  "id_column": null,
+  "target": {
+    "column": "What is your current CGPA?",
+    "type": "threshold_below",
+    "threshold": 2.77,
+    "zero_is_missing": true,
+    "sensitivity_thresholds": []
+  },
+  "features": {
+    "numeric": [
+      "University Admission year",
+      "H.S.C passing year",
+      "Current Semester",
+      "How many hour do you study daily?",
+      "How many times do you seat for study in a day?",
+      "How many hour do you spent daily in social media?",
+      "Average attendance on class",
+      "How many hour do you spent daily on your skill development?",
+      "How many Credit did you have completed?"
+    ],
+    "categorical": [
+      "Do you use University transportation?",
+      "What is your preferable learning mode?",
+      "Do you use smart phone?",
+      "Do you have personal Computer?",
+      "Status of your English language proficiency",
+      "Are you engaged with any co-curriculum activities?"
+    ]
+  },
+  "exclude": {
+    "leakage": [
+      "Do you have meritorious scholarship ?",
+      "Did you ever fall in probation?",
+      "Did you ever got suspension?",
+      "Do you attend in teacher consultancy for any kind of academical problems?",
+      "What was your previous SGPA?"
+    ],
+    "sensitive": [
+      "Gender",
+      "Age",
+      "What is your relationship status?",
+      "With whom you are living with?",
+      "Do you have any health issues?",
+      "Do you have any physical disabilities?",
+      "What is your monthly family income?"
+    ],
+    "other": [
+      "Program",
+      "What are the skills do you have ?",
+      "What is you interested area?"
+    ]
+  },
+  "fairness_audit": [
+    "Gender",
+    "Age"
+  ],
+  "range_to_mid": [
+    "Average attendance on class"
+  ],
+  "missing_codes": {},
+  "valid_ranges": {},
+  "suspect_label_rules": [
+    {
+      "What is your current CGPA?": 3.15,
+      "What was your previous SGPA?": 2.68
+    }
+  ],
+  "capacity": 0.3,
+  "alt_capacity": 0.15,
+  "seed": 2026,
+  "test_size": 0.2,
+  "success": {
+    "auc": 0.7,
+    "recall": 0.6,
+    "max_recall_gap": 0.1,
+    "reduction": 0.3333
+  },
+  "_note": "Gợi ý tự động: PHẢI rà soát vai trò từng biến theo domain (thời điểm phát sinh, rò rỉ, nhạy cảm) và chốt ngưỡng nhãn bằng căn cứ nghiệp vụ trước khi chạy prepare."
+}

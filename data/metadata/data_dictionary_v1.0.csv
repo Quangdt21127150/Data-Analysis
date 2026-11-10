@@ -1,0 +1,31 @@
+﻿variable,source_field,transformation,dtype,role,sensitivity,purpose_aq
+resp_id,(không có),R0001..R1194 theo thứ tự dòng,string,key,Thấp,Tất cả
+split,needs_support,"Stratified 80/20, seed 2026",string,split,Thấp,AQ4-AQ7
+cgpa,What is your current CGPA?,0 -> NaN,float,target source,Trung bình,AQ1
+cgpa_missing_flag,What is your current CGPA?,1 nếu CGPA gốc = 0,int,flag,Thấp,AQ1
+needs_support,What is your current CGPA?,1 nếu cgpa < 2.75; NaN nếu thiếu,int,target,Trung bình,"AQ1, AQ4-AQ7"
+target_imputed_suspect,CGPA + previous SGPA,"1 nếu cặp (3.15, 2.68) - nghi điền khuyết",int,flag,Thấp,"AQ1, QA"
+label_status,CGPA + cờ,observed / no_cgpa / suspect_imputed,string,flag,Thấp,AQ1
+needs_support_incl_suspect,What is your current CGPA?,như needs_support nhưng giữ 140 dòng nghi điền khuyết,int,target (độ nhạy),Trung bình,AQ4
+needs_support_t250,What is your current CGPA?,1 nếu cgpa < 2.50,int,target (độ nhạy),Trung bình,"AQ1, AQ4"
+needs_support_t300,What is your current CGPA?,1 nếu cgpa < 3.00,int,target (độ nhạy),Trung bình,"AQ1, AQ4"
+study_hours,How many hour do you study daily?,giữ nguyên (giờ/ngày),int,feature - thói quen,Thấp,"AQ2, AQ4"
+study_sessions,How many times do you seat for study in a day?,giữ nguyên (lần/ngày),int,feature - thói quen,Thấp,"AQ2, AQ4"
+attendance_pct,Average attendance on class,'94-98' -> 96; 0 -> NaN; ép float,float,feature - thói quen,Thấp,"AQ2, AQ4"
+social_media_hours,How many hour do you spent daily in social media?,> 16 -> NaN,float,feature - thói quen,Thấp,"AQ2, AQ4"
+skill_dev_hours,How many hour do you spent daily on your skill development?,giữ nguyên,int,feature - thói quen,Thấp,"AQ2, AQ4"
+learning_mode,What is your preferable learning mode?,"Online=1, Offline=0",int,feature - điều kiện,Thấp,"AQ3, AQ4"
+personal_computer,Do you have personal Computer?,"Yes=1, No=0",int,feature - điều kiện,Thấp,"AQ3, AQ4"
+uni_transport,Do you use University transportation?,"Yes=1, No=0",int,feature - điều kiện,Thấp,"AQ3, AQ4"
+english_ord,Status of your English language proficiency,"Basic=1, Intermediate=2, Advance(d)=3",int,feature - điều kiện,Thấp,"AQ3, AQ4"
+co_curricular,Are you engaged with any co-curriculum activities?,"Yes=1, No=0",int,feature - điều kiện,Thấp,"AQ3, AQ4"
+current_semester,Current Semester,giữ nguyên; cờ > 12,int,feature - điều kiện,Thấp,"AQ3, AQ4"
+credits_completed,How many Credit did you have completed?,giữ nguyên,int,chẩn đoán (đa cộng tuyến với học kỳ),Thấp,AQ3
+smartphone,Do you use smart phone?,"Yes=1, No=0",int,chẩn đoán (gần hằng số: 16 'No'),Thấp,AQ3
+teacher_consultancy,Do you attend in teacher consultancy ...?,"Yes=1, No=0",int,"chẩn đoán (quan hệ ngược chiều), cấm trong mô hình",Trung bình,AQ3
+gender,Gender,giữ nguyên,string,kiểm định công bằng,Cao,AQ6
+living_with,With whom you are living with?,Family / Bachelor,string,kiểm định công bằng,Cao,AQ6
+admission_year,University Admission year,giữ nguyên,int,mô tả,Thấp,AQ1
+attendance_range_flag,Average attendance on class,1 nếu giá trị gốc dạng khoảng,int,flag,Thấp,QA
+daily_hours_gt18_flag,3 biến giờ/ngày,1 nếu tổng > 18,int,flag,Thấp,QA
+semester_gt12_flag,Current Semester,1 nếu > 12,int,flag,Thấp,QA

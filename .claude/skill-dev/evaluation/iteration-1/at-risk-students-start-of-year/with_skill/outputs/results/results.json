@@ -1,0 +1,1231 @@
+{
+  "config": {
+    "project": "Start-of-year screening: risk of failing Portuguese (G3 < 10)",
+    "target": {
+      "column": "G3",
+      "type": "threshold_below",
+      "threshold": 10,
+      "zero_is_missing": false,
+      "sensitivity_thresholds": [
+        8,
+        12
+      ]
+    },
+    "capacity": 0.3,
+    "alt_capacity": 0.15,
+    "seed": 2026,
+    "cv_folds": 5,
+    "cv_repeats": 10,
+    "success": {
+      "auc": 0.7,
+      "recall": 0.6,
+      "max_recall_gap": 0.1,
+      "reduction": 0.3333
+    }
+  },
+  "data": {
+    "train_n": 519,
+    "train_pos": 80,
+    "test_n": 130,
+    "test_pos": 20,
+    "features": [
+      "traveltime",
+      "studytime",
+      "failures",
+      "famrel",
+      "freetime",
+      "goout",
+      "school",
+      "reason",
+      "famsup",
+      "paid",
+      "activities",
+      "nursery",
+      "higher",
+      "internet"
+    ]
+  },
+  "versions": {
+    "python": "3.12.13",
+    "numpy": "2.5.4",
+    "pandas": "3.1.1",
+    "sklearn": "1.9.1"
+  },
+  "diagnostics": [
+    {
+      "var": "failures",
+      "type": "numeric",
+      "test": "Mann-Whitney U",
+      "median_pos": 0.0,
+      "median_neg": 0.0,
+      "effect": 0.378,
+      "effect_name": "rank-biserial r (dương: nhóm dương cao hơn)",
+      "p": 3.312737969443893e-17,
+      "p_holm": 4.63783315722145e-16,
+      "significant": true
+    },
+    {
+      "var": "school",
+      "type": "categorical",
+      "test": "Chi-square",
+      "effect": 0.294,
+      "effect_name": "Cramér's V",
+      "p": 2.0055789098209014e-11,
+      "rates_by_level": {
+        "GP": 0.077,
+        "MS": 0.3
+      },
+      "n_by_level": {
+        "GP": 339,
+        "MS": 180
+      },
+      "p_holm": 2.6072525827671717e-10,
+      "significant": true
+    },
+    {
+      "var": "higher",
+      "type": "categorical",
+      "test": "Chi-square",
+      "effect": 0.286,
+      "effect_name": "Cramér's V",
+      "p": 6.78673567815549e-11,
+      "rates_by_level": {
+        "no": 0.455,
+        "yes": 0.119
+      },
+      "n_by_level": {
+        "no": 55,
+        "yes": 464
+      },
+      "p_holm": 8.144082813786588e-10,
+      "significant": true
+    },
+    {
+      "var": "studytime",
+      "type": "numeric",
+      "test": "Mann-Whitney U",
+      "median_pos": 1.5,
+      "median_neg": 2.0,
+      "effect": -0.249,
+      "effect_name": "rank-biserial r (dương: nhóm dương cao hơn)",
+      "p": 0.0001295670630034254,
+      "p_holm": 0.0014252376930376793,
+      "significant": true
+    },
+    {
+      "var": "reason",
+      "type": "categorical",
+      "test": "Chi-square",
+      "effect": 0.176,
+      "effect_name": "Cramér's V",
+      "p": 0.0010916252493106816,
+      "rates_by_level": {
+        "course": 0.203,
+        "home": 0.102,
+        "other": 0.241,
+        "reputation": 0.07
+      },
+      "n_by_level": {
+        "course": 232,
+        "home": 118,
+        "other": 54,
+        "reputation": 115
+      },
+      "p_holm": 0.010916252493106817,
+      "significant": true
+    },
+    {
+      "var": "internet",
+      "type": "categorical",
+      "test": "Chi-square",
+      "effect": 0.097,
+      "effect_name": "Cramér's V",
+      "p": 0.026810128438772885,
+      "rates_by_level": {
+        "no": 0.218,
+        "yes": 0.135
+      },
+      "n_by_level": {
+        "no": 119,
+        "yes": 400
+      },
+      "p_holm": 0.24129115594895598,
+      "significant": false
+    },
+    {
+      "var": "paid",
+      "type": "categorical",
+      "test": "Fisher exact",
+      "effect": 0.1,
+      "effect_name": "Cramér's V",
+      "p": 0.034018026586883285,
+      "rates_by_level": {
+        "no": 0.145,
+        "yes": 0.3
+      },
+      "n_by_level": {
+        "no": 489,
+        "yes": 30
+      },
+      "p_holm": 0.2721442126950663,
+      "significant": false
+    },
+    {
+      "var": "activities",
+      "type": "categorical",
+      "test": "Chi-square",
+      "effect": 0.081,
+      "effect_name": "Cramér's V",
+      "p": 0.06410841678542004,
+      "rates_by_level": {
+        "no": 0.183,
+        "yes": 0.125
+      },
+      "n_by_level": {
+        "no": 262,
+        "yes": 257
+      },
+      "p_holm": 0.4487589174979403,
+      "significant": false
+    },
+    {
+      "var": "freetime",
+      "type": "numeric",
+      "test": "Mann-Whitney U",
+      "median_pos": 3.0,
+      "median_neg": 3.0,
+      "effect": 0.1,
+      "effect_name": "rank-biserial r (dương: nhóm dương cao hơn)",
+      "p": 0.13798849356687357,
+      "p_holm": 0.8182972276400493,
+      "significant": false
+    },
+    {
+      "var": "goout",
+      "type": "numeric",
+      "test": "Mann-Whitney U",
+      "median_pos": 3.0,
+      "median_neg": 3.0,
+      "effect": 0.102,
+      "effect_name": "rank-biserial r (dương: nhóm dương cao hơn)",
+      "p": 0.13638287127334156,
+      "p_holm": 0.8182972276400493,
+      "significant": false
+    },
+    {
+      "var": "traveltime",
+      "type": "numeric",
+      "test": "Mann-Whitney U",
+      "median_pos": 1.0,
+      "median_neg": 1.0,
+      "effect": 0.075,
+      "effect_name": "rank-biserial r (dương: nhóm dương cao hơn)",
+      "p": 0.2277657969294551,
+      "p_holm": 0.9110631877178204,
+      "significant": false
+    },
+    {
+      "var": "famrel",
+      "type": "numeric",
+      "test": "Mann-Whitney U",
+      "median_pos": 4.0,
+      "median_neg": 4.0,
+      "effect": -0.056,
+      "effect_name": "rank-biserial r (dương: nhóm dương cao hơn)",
+      "p": 0.3947877753797062,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "var": "famsup",
+      "type": "categorical",
+      "test": "Chi-square",
+      "effect": 0.035,
+      "effect_name": "Cramér's V",
+      "p": 0.42825355576769075,
+      "rates_by_level": {
+        "no": 0.17,
+        "yes": 0.144
+      },
+      "n_by_level": {
+        "no": 200,
+        "yes": 319
+      },
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "var": "nursery",
+      "type": "categorical",
+      "test": "Chi-square",
+      "effect": 0.017,
+      "effect_name": "Cramér's V",
+      "p": 0.6966179985017924,
+      "rates_by_level": {
+        "no": 0.141,
+        "yes": 0.157
+      },
+      "n_by_level": {
+        "no": 99,
+        "yes": 420
+      },
+      "p_holm": 1.0,
+      "significant": false
+    }
+  ],
+  "adjusted_logit": {
+    "pseudo_r2": 0.2575,
+    "llr_p": 5.3008122362432466e-17,
+    "note": "biến số: OR mỗi 1 độ lệch chuẩn; biến phân loại: so với mức phổ biến nhất",
+    "terms": [
+      {
+        "term": "failures",
+        "or": 1.785,
+        "ci_low": 1.423,
+        "ci_high": 2.239,
+        "p": 5.386864763371048e-07
+      },
+      {
+        "term": "school_MS",
+        "or": 4.739,
+        "ci_low": 2.541,
+        "ci_high": 8.841,
+        "p": 1.0011522094838688e-06
+      },
+      {
+        "term": "higher_no",
+        "or": 2.764,
+        "ci_low": 1.346,
+        "ci_high": 5.676,
+        "p": 0.005608574377424431
+      },
+      {
+        "term": "paid_yes",
+        "or": 3.096,
+        "ci_low": 1.177,
+        "ci_high": 8.147,
+        "p": 0.022056979634727237
+      },
+      {
+        "term": "studytime",
+        "or": 0.714,
+        "ci_low": 0.513,
+        "ci_high": 0.993,
+        "p": 0.04534849219166805
+      },
+      {
+        "term": "activities_yes",
+        "or": 0.676,
+        "ci_low": 0.372,
+        "ci_high": 1.229,
+        "p": 0.19941467671556679
+      },
+      {
+        "term": "traveltime",
+        "or": 0.824,
+        "ci_low": 0.608,
+        "ci_high": 1.119,
+        "p": 0.2148191909503615
+      },
+      {
+        "term": "famrel",
+        "or": 0.852,
+        "ci_low": 0.655,
+        "ci_high": 1.108,
+        "p": 0.2318994700214988
+      },
+      {
+        "term": "reason_home",
+        "or": 0.644,
+        "ci_low": 0.292,
+        "ci_high": 1.424,
+        "p": 0.2773914288629793
+      },
+      {
+        "term": "reason_reputation",
+        "or": 0.636,
+        "ci_low": 0.261,
+        "ci_high": 1.55,
+        "p": 0.31952456040984534
+      },
+      {
+        "term": "famsup_no",
+        "or": 1.234,
+        "ci_low": 0.693,
+        "ci_high": 2.196,
+        "p": 0.4754622594106287
+      },
+      {
+        "term": "reason_other",
+        "or": 1.336,
+        "ci_low": 0.585,
+        "ci_high": 3.051,
+        "p": 0.4911338964362275
+      },
+      {
+        "term": "freetime",
+        "or": 1.104,
+        "ci_low": 0.829,
+        "ci_high": 1.471,
+        "p": 0.4980395254870451
+      },
+      {
+        "term": "nursery_no",
+        "or": 0.789,
+        "ci_low": 0.382,
+        "ci_high": 1.633,
+        "p": 0.5237673007866139
+      },
+      {
+        "term": "goout",
+        "or": 1.086,
+        "ci_low": 0.81,
+        "ci_high": 1.456,
+        "p": 0.5825935182305124
+      },
+      {
+        "term": "internet_no",
+        "or": 0.919,
+        "ci_low": 0.482,
+        "ci_high": 1.752,
+        "p": 0.7971309080851616
+      }
+    ]
+  },
+  "single_feature_cv_auc": {
+    "failures": 0.6643,
+    "school": 0.6547,
+    "studytime": 0.6073,
+    "reason": 0.5963,
+    "higher": 0.5913,
+    "freetime": 0.5428,
+    "goout": 0.5341,
+    "traveltime": 0.5208,
+    "internet": 0.5184,
+    "activities": 0.5162,
+    "paid": 0.5066,
+    "famrel": 0.4983,
+    "famsup": 0.4885,
+    "nursery": 0.4483
+  },
+  "baseline_single_feature": "failures",
+  "primary_rule": {
+    "rule": "LR trừ khi RF hơn ≥ 0.02 AUC CV và recall@capacity không kém (đặt trước)",
+    "primary": "LR"
+  },
+  "reduction": {
+    "full_auc_cv": 0.7988,
+    "rule_95_selected": {
+      "n": 2,
+      "removed": "studytime",
+      "auc": 0.7659,
+      "features": [
+        "failures",
+        "school"
+      ]
+    },
+    "best_on_path": {
+      "n": 7,
+      "removed": "famsup",
+      "auc": 0.8164,
+      "features": [
+        "traveltime",
+        "studytime",
+        "failures",
+        "freetime",
+        "school",
+        "paid",
+        "higher"
+      ]
+    },
+    "path": [
+      {
+        "n": 14,
+        "removed": null,
+        "auc": 0.7988,
+        "features": [
+          "traveltime",
+          "studytime",
+          "failures",
+          "famrel",
+          "freetime",
+          "goout",
+          "school",
+          "reason",
+          "famsup",
+          "paid",
+          "activities",
+          "nursery",
+          "higher",
+          "internet"
+        ]
+      },
+      {
+        "n": 13,
+        "removed": "goout",
+        "auc": 0.7906,
+        "features": [
+          "traveltime",
+          "studytime",
+          "failures",
+          "famrel",
+          "freetime",
+          "school",
+          "reason",
+          "famsup",
+          "paid",
+          "activities",
+          "nursery",
+          "higher",
+          "internet"
+        ]
+      },
+      {
+        "n": 12,
+        "removed": "activities",
+        "auc": 0.7966,
+        "features": [
+          "traveltime",
+          "studytime",
+          "failures",
+          "famrel",
+          "freetime",
+          "school",
+          "reason",
+          "famsup",
+          "paid",
+          "nursery",
+          "higher",
+          "internet"
+        ]
+      },
+      {
+        "n": 11,
+        "removed": "famrel",
+        "auc": 0.8001,
+        "features": [
+          "traveltime",
+          "studytime",
+          "failures",
+          "freetime",
+          "school",
+          "reason",
+          "famsup",
+          "paid",
+          "nursery",
+          "higher",
+          "internet"
+        ]
+      },
+      {
+        "n": 10,
+        "removed": "internet",
+        "auc": 0.8047,
+        "features": [
+          "traveltime",
+          "studytime",
+          "failures",
+          "freetime",
+          "school",
+          "reason",
+          "famsup",
+          "paid",
+          "nursery",
+          "higher"
+        ]
+      },
+      {
+        "n": 9,
+        "removed": "nursery",
+        "auc": 0.8099,
+        "features": [
+          "traveltime",
+          "studytime",
+          "failures",
+          "freetime",
+          "school",
+          "reason",
+          "famsup",
+          "paid",
+          "higher"
+        ]
+      },
+      {
+        "n": 8,
+        "removed": "reason",
+        "auc": 0.8137,
+        "features": [
+          "traveltime",
+          "studytime",
+          "failures",
+          "freetime",
+          "school",
+          "famsup",
+          "paid",
+          "higher"
+        ]
+      },
+      {
+        "n": 7,
+        "removed": "famsup",
+        "auc": 0.8164,
+        "features": [
+          "traveltime",
+          "studytime",
+          "failures",
+          "freetime",
+          "school",
+          "paid",
+          "higher"
+        ]
+      },
+      {
+        "n": 6,
+        "removed": "traveltime",
+        "auc": 0.8146,
+        "features": [
+          "studytime",
+          "failures",
+          "freetime",
+          "school",
+          "paid",
+          "higher"
+        ]
+      },
+      {
+        "n": 5,
+        "removed": "freetime",
+        "auc": 0.8161,
+        "features": [
+          "studytime",
+          "failures",
+          "school",
+          "paid",
+          "higher"
+        ]
+      },
+      {
+        "n": 4,
+        "removed": "paid",
+        "auc": 0.8138,
+        "features": [
+          "studytime",
+          "failures",
+          "school",
+          "higher"
+        ]
+      },
+      {
+        "n": 3,
+        "removed": "higher",
+        "auc": 0.7994,
+        "features": [
+          "studytime",
+          "failures",
+          "school"
+        ]
+      },
+      {
+        "n": 2,
+        "removed": "studytime",
+        "auc": 0.7659,
+        "features": [
+          "failures",
+          "school"
+        ]
+      },
+      {
+        "n": 1,
+        "removed": "school",
+        "auc": 0.6628,
+        "features": [
+          "failures"
+        ]
+      }
+    ],
+    "reduction_rule_95": 0.8571,
+    "reduction_best": 0.5
+  },
+  "cv_train": {
+    "B0_prior": {
+      "auc": {
+        "mean": 0.4991,
+        "sd": 0.0
+      },
+      "pr_auc": {
+        "mean": 0.1539,
+        "sd": 0.0
+      },
+      "recall@cap": {
+        "mean": 0.1775,
+        "sd": 0.0154
+      },
+      "precision@cap": {
+        "mean": 0.091,
+        "sd": 0.0079
+      },
+      "recall@alt": {
+        "mean": 0.0437,
+        "sd": 0.0121
+      },
+      "precision@alt": {
+        "mean": 0.0449,
+        "sd": 0.0125
+      }
+    },
+    "B1_best_single": {
+      "auc": {
+        "mean": 0.6652,
+        "sd": 0.0075
+      },
+      "pr_auc": {
+        "mean": 0.3271,
+        "sd": 0.0073
+      },
+      "recall@cap": {
+        "mean": 0.525,
+        "sd": 0.0132
+      },
+      "precision@cap": {
+        "mean": 0.2692,
+        "sd": 0.0068
+      },
+      "recall@alt": {
+        "mean": 0.4413,
+        "sd": 0.0132
+      },
+      "precision@alt": {
+        "mean": 0.4526,
+        "sd": 0.0136
+      }
+    },
+    "LR": {
+      "auc": {
+        "mean": 0.7988,
+        "sd": 0.0117
+      },
+      "pr_auc": {
+        "mean": 0.4357,
+        "sd": 0.0209
+      },
+      "recall@cap": {
+        "mean": 0.6925,
+        "sd": 0.0197
+      },
+      "precision@cap": {
+        "mean": 0.3551,
+        "sd": 0.0101
+      },
+      "recall@alt": {
+        "mean": 0.4538,
+        "sd": 0.0243
+      },
+      "precision@alt": {
+        "mean": 0.4654,
+        "sd": 0.025
+      }
+    },
+    "RF": {
+      "auc": {
+        "mean": 0.8163,
+        "sd": 0.0084
+      },
+      "pr_auc": {
+        "mean": 0.4417,
+        "sd": 0.0198
+      },
+      "recall@cap": {
+        "mean": 0.6937,
+        "sd": 0.0252
+      },
+      "precision@cap": {
+        "mean": 0.3558,
+        "sd": 0.0129
+      },
+      "recall@alt": {
+        "mean": 0.4838,
+        "sd": 0.0243
+      },
+      "precision@alt": {
+        "mean": 0.4962,
+        "sd": 0.025
+      }
+    }
+  },
+  "test_holdout": {
+    "LR": {
+      "auc": 0.8332,
+      "auc_ci95": [
+        0.7399,
+        0.9137
+      ],
+      "pr_auc": 0.5744,
+      "at_cap": {
+        "flag_rate": 0.2462,
+        "recall": 0.6,
+        "precision": 0.375,
+        "tp": 12,
+        "fp": 20,
+        "fn": 8,
+        "tn": 90
+      },
+      "at_alt": {
+        "flag_rate": 0.1385,
+        "recall": 0.45,
+        "precision": 0.5,
+        "tp": 9,
+        "fp": 9,
+        "fn": 11,
+        "tn": 101
+      },
+      "recall_at_cap_ci95": [
+        0.5,
+        0.9
+      ]
+    },
+    "RF": {
+      "auc": 0.86,
+      "auc_ci95": [
+        0.7643,
+        0.9399
+      ],
+      "pr_auc": 0.649,
+      "at_cap": {
+        "flag_rate": 0.2538,
+        "recall": 0.65,
+        "precision": 0.3939,
+        "tp": 13,
+        "fp": 20,
+        "fn": 7,
+        "tn": 90
+      },
+      "at_alt": {
+        "flag_rate": 0.1077,
+        "recall": 0.5,
+        "precision": 0.7143,
+        "tp": 10,
+        "fp": 4,
+        "fn": 10,
+        "tn": 106
+      }
+    },
+    "B1_best_single": {
+      "auc": 0.75,
+      "auc_ci95": [
+        0.629,
+        0.8643
+      ],
+      "pr_auc": 0.4781,
+      "at_cap": {
+        "flag_rate": 0.1308,
+        "recall": 0.55,
+        "precision": 0.6471,
+        "tp": 11,
+        "fp": 6,
+        "fn": 9,
+        "tn": 104
+      },
+      "at_alt": {
+        "flag_rate": 0.1308,
+        "recall": 0.55,
+        "precision": 0.6471,
+        "tp": 11,
+        "fp": 6,
+        "fn": 9,
+        "tn": 104
+      }
+    },
+    "LR_reduced_best": {
+      "auc": 0.8641,
+      "auc_ci95": [
+        0.7807,
+        0.9355
+      ],
+      "pr_auc": 0.6061,
+      "at_cap": {
+        "flag_rate": 0.2846,
+        "recall": 0.75,
+        "precision": 0.4054,
+        "tp": 15,
+        "fp": 22,
+        "fn": 5,
+        "tn": 88
+      },
+      "at_alt": {
+        "flag_rate": 0.1077,
+        "recall": 0.4,
+        "precision": 0.5714,
+        "tp": 8,
+        "fp": 6,
+        "fn": 12,
+        "tn": 104
+      }
+    }
+  },
+  "calibration_oof": {
+    "brier": 0.1776,
+    "brier_constant": 0.1304,
+    "mean_pred": 0.3773,
+    "base_rate": 0.1541
+  },
+  "permutation_importance": [
+    {
+      "var": "school",
+      "auc_drop": 0.103
+    },
+    {
+      "var": "failures",
+      "auc_drop": 0.0742
+    },
+    {
+      "var": "higher",
+      "auc_drop": 0.0243
+    },
+    {
+      "var": "studytime",
+      "auc_drop": 0.0137
+    },
+    {
+      "var": "paid",
+      "auc_drop": 0.0075
+    },
+    {
+      "var": "reason",
+      "auc_drop": 0.0059
+    },
+    {
+      "var": "traveltime",
+      "auc_drop": 0.0056
+    },
+    {
+      "var": "activities",
+      "auc_drop": 0.0033
+    },
+    {
+      "var": "freetime",
+      "auc_drop": 0.0031
+    },
+    {
+      "var": "famsup",
+      "auc_drop": 0.0028
+    },
+    {
+      "var": "famrel",
+      "auc_drop": 0.001
+    },
+    {
+      "var": "nursery",
+      "auc_drop": 0.0008
+    },
+    {
+      "var": "internet",
+      "auc_drop": 0.0008
+    },
+    {
+      "var": "goout",
+      "auc_drop": -0.0004
+    }
+  ],
+  "threshold_tradeoff": [
+    {
+      "flag_rate": 0.05,
+      "oof_recall": 0.175,
+      "oof_precision": 0.5385,
+      "lift": 3.5,
+      "test_flag_rate": 0.0385,
+      "test_recall": 0.25,
+      "test_precision": 1.0
+    },
+    {
+      "flag_rate": 0.1,
+      "oof_recall": 0.325,
+      "oof_precision": 0.5,
+      "lift": 3.25,
+      "test_flag_rate": 0.0846,
+      "test_recall": 0.35,
+      "test_precision": 0.6364
+    },
+    {
+      "flag_rate": 0.15,
+      "oof_recall": 0.425,
+      "oof_precision": 0.4359,
+      "lift": 2.83,
+      "test_flag_rate": 0.1385,
+      "test_recall": 0.45,
+      "test_precision": 0.5
+    },
+    {
+      "flag_rate": 0.2,
+      "oof_recall": 0.525,
+      "oof_precision": 0.4038,
+      "lift": 2.62,
+      "test_flag_rate": 0.1769,
+      "test_recall": 0.5,
+      "test_precision": 0.4348
+    },
+    {
+      "flag_rate": 0.25,
+      "oof_recall": 0.625,
+      "oof_precision": 0.3846,
+      "lift": 2.5,
+      "test_flag_rate": 0.2,
+      "test_recall": 0.5,
+      "test_precision": 0.3846
+    },
+    {
+      "flag_rate": 0.3,
+      "oof_recall": 0.6875,
+      "oof_precision": 0.3526,
+      "lift": 2.29,
+      "test_flag_rate": 0.2462,
+      "test_recall": 0.6,
+      "test_precision": 0.375
+    },
+    {
+      "flag_rate": 0.35,
+      "oof_recall": 0.7375,
+      "oof_precision": 0.3242,
+      "lift": 2.11,
+      "test_flag_rate": 0.3077,
+      "test_recall": 0.7,
+      "test_precision": 0.35
+    },
+    {
+      "flag_rate": 0.4,
+      "oof_recall": 0.7875,
+      "oof_precision": 0.3029,
+      "lift": 1.97,
+      "test_flag_rate": 0.3846,
+      "test_recall": 0.75,
+      "test_precision": 0.3
+    },
+    {
+      "flag_rate": 0.5,
+      "oof_recall": 0.8625,
+      "oof_precision": 0.2654,
+      "lift": 1.73,
+      "test_flag_rate": 0.4846,
+      "test_recall": 0.95,
+      "test_precision": 0.3016
+    }
+  ],
+  "flag_rate_needed_for_target_recall": 0.25,
+  "fairness_at_capacity": {
+    "sex": {
+      "train_oof": {
+        "F": {
+          "n": 305,
+          "pos": 44,
+          "flag_rate": 0.302,
+          "recall": 0.727,
+          "precision": 0.348
+        },
+        "M": {
+          "n": 214,
+          "pos": 36,
+          "flag_rate": 0.299,
+          "recall": 0.639,
+          "precision": 0.359
+        },
+        "_max_recall_gap": 0.088,
+        "_gap_ci95": [
+          0.008,
+          0.307
+        ]
+      },
+      "test": {
+        "F": {
+          "n": 78,
+          "pos": 6,
+          "flag_rate": 0.231,
+          "recall": 0.667,
+          "precision": 0.222
+        },
+        "M": {
+          "n": 52,
+          "pos": 14,
+          "flag_rate": 0.269,
+          "recall": 0.571,
+          "precision": 0.571
+        },
+        "_max_recall_gap": 0.096,
+        "_gap_ci95": [
+          0.005,
+          0.578
+        ]
+      }
+    },
+    "address": {
+      "train_oof": {
+        "U": {
+          "n": 362,
+          "pos": 44,
+          "flag_rate": 0.229,
+          "recall": 0.659,
+          "precision": 0.349
+        },
+        "R": {
+          "n": 157,
+          "pos": 36,
+          "flag_rate": 0.465,
+          "recall": 0.722,
+          "precision": 0.356
+        },
+        "_max_recall_gap": 0.063,
+        "_gap_ci95": [
+          0.004,
+          0.292
+        ]
+      },
+      "test": {
+        "U": {
+          "n": 90,
+          "pos": 12,
+          "flag_rate": 0.189,
+          "recall": 0.667,
+          "precision": 0.471
+        },
+        "R": {
+          "n": 40,
+          "pos": 8,
+          "flag_rate": 0.375,
+          "recall": 0.5,
+          "precision": 0.267
+        },
+        "_max_recall_gap": 0.167,
+        "_gap_ci95": [
+          0.0,
+          0.604
+        ]
+      }
+    },
+    "age": {
+      "train_oof": {
+        "<= 17": {
+          "n": 371,
+          "pos": 51,
+          "flag_rate": 0.256,
+          "recall": 0.608,
+          "precision": 0.326
+        },
+        "> 17": {
+          "n": 148,
+          "pos": 29,
+          "flag_rate": 0.412,
+          "recall": 0.828,
+          "precision": 0.393
+        },
+        "_max_recall_gap": 0.22,
+        "_gap_ci95": [
+          0.049,
+          0.417
+        ]
+      },
+      "test": {
+        "<= 17": {
+          "n": 97,
+          "pos": 11,
+          "flag_rate": 0.186,
+          "recall": 0.273,
+          "precision": 0.167
+        },
+        "> 17": {
+          "n": 33,
+          "pos": 9,
+          "flag_rate": 0.424,
+          "recall": 1.0,
+          "precision": 0.643
+        },
+        "_max_recall_gap": 0.727,
+        "_gap_ci95": [
+          0.414,
+          1.0
+        ]
+      }
+    }
+  },
+  "error_profile_test": {
+    "TP": {
+      "n": 12,
+      "failures": 1.0,
+      "studytime": 1.0
+    },
+    "FN": {
+      "n": 8,
+      "failures": 0.0,
+      "studytime": 2.0
+    },
+    "FP": {
+      "n": 20,
+      "failures": 0.0,
+      "studytime": 1.0
+    },
+    "TN": {
+      "n": 90,
+      "failures": 0.0,
+      "studytime": 2.0
+    }
+  },
+  "sensitivity": {
+    "threshold_8": {
+      "pos": 20,
+      "auc": {
+        "mean": 0.7699,
+        "sd": 0.0194
+      },
+      "recall@cap": {
+        "mean": 0.78,
+        "sd": 0.0274
+      }
+    },
+    "threshold_12": {
+      "pos": 242,
+      "auc": {
+        "mean": 0.7885,
+        "sd": 0.0054
+      },
+      "recall@cap": {
+        "mean": 0.5372,
+        "sd": 0.0029
+      }
+    }
+  },
+  "success_check": {
+    "auc": {
+      "target": 0.7,
+      "cv": 0.7988,
+      "test": 0.8332,
+      "met": true
+    },
+    "recall_at_capacity": {
+      "target": 0.6,
+      "capacity": 0.3,
+      "cv": 0.6925,
+      "test": 0.6,
+      "met": true
+    },
+    "beats_baseline": {
+      "primary_cv_auc": 0.7988,
+      "baseline_cv_auc": 0.6652,
+      "met": true
+    },
+    "reduction": {
+      "target": 0.3333,
+      "rule_95": 0.8571,
+      "met": true
+    },
+    "fairness_recall_gap": {
+      "target": 0.1,
+      "train_oof_gaps": [
+        0.088,
+        0.063,
+        0.22
+      ],
+      "met": false
+    },
+    "banned_features": {
+      "count": 0,
+      "met": true
+    }
+  }
+}

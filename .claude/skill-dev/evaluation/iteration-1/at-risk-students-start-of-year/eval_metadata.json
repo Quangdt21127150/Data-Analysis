@@ -1,0 +1,12 @@
+{
+  "eval_name": "at-risk-students-start-of-year",
+  "prompt": "i'm a teacher coordinator at a secondary school. we want to flag students who might fail Portuguese (final grade G3 below 10 out of 20) at the START of the school year so tutors can reach out early - tutors can only take ~30% of students. attached is last years data (student-por.csv, semicolon separated, codebook in student.txt). can you check whether this is doable, which factors matter, and give me a short report.md with the results and caveats?\n\nInput files: student-por.csv, student.txt",
+  "assertions": [
+    "The model does not use G1 or G2 as features (they are period grades recorded after the start of the year)",
+    "Sensitive attributes (at least sex, age, address or family/parent variables) are not used as model features",
+    "report.md compares the model against a simple baseline (e.g. a single-feature rule or prior-only model)",
+    "report.md states the recall (share of failing students caught) when flagging about 30% of students",
+    "A fairness check reports a metric (recall or flag rate) separately for at least one demographic group",
+    "report.md frames findings as associations (not causal) and recommends human review of any outreach"
+  ]
+}

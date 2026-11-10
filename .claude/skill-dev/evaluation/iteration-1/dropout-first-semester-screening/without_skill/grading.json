@@ -1,0 +1,40 @@
+{
+  "expectations": [
+    {
+      "text": "The screening model does not use any 'Curricular units 2nd sem' column as a feature (they are recorded after the end-of-first-semester decision point)",
+      "passed": true,
+      "evidence": "notes.md: 6 'Curricular units 2nd sem' columns excluded as temporal leakage (used only in reference model E)"
+    },
+    {
+      "text": "Sensitive attributes (at least Gender, Age at enrollment, Nacionality, Debtor or Tuition fees up to date) are not used as model features",
+      "passed": false,
+      "evidence": "notes.md keeps Age, Marital status, parents' occupation/qualification, Scholarship holder, Displaced and special needs as model features; only Gender/Nationality/International excluded"
+    },
+    {
+      "text": "report.md compares the model against a simple baseline (e.g. a single-feature rule or prior-only model)",
+      "passed": true,
+      "evidence": "report table compares with 'chỉ dữ liệu tuyển sinh' and simple rule 'tỷ lệ môn đạt HK1' (67%)"
+    },
+    {
+      "text": "report.md states the recall (share of dropouts caught) when flagging about 30% of students",
+      "passed": true,
+      "evidence": "report: catches about 69% of dropouts when meeting top 30% per cohort"
+    },
+    {
+      "text": "A fairness check reports a metric (recall or flag rate) separately for at least one demographic group",
+      "passed": true,
+      "evidence": "fairness table by gender, age band, scholarship, displaced, evening study (recall, precision, flag rate)"
+    },
+    {
+      "text": "report.md frames findings as associations/screening (not causal) and requires human (advisor) review before contacting students",
+      "passed": true,
+      "evidence": "report: 'Mô hình chỉ dự báo, không giải thích nguyên nhân'; recommends not labelling students and showing advisors rank only (human use) - returned as message text because the subagent could not write report.md"
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 1,
+    "total": 6,
+    "pass_rate": 0.8333
+  }
+}

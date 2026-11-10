@@ -1,0 +1,32 @@
+﻿#,column (tên cột thực tế),dtype_initial,n_unique,functional_group_m2
+1,University Admission year,int,11,Bối cảnh học vụ
+2,Gender,chuỗi,2,"Nhạy cảm, chỉ kiểm định công bằng"
+3,Age,int,10,Nhân khẩu học
+4,H.S.C passing year,int,12,Bối cảnh học vụ
+5,Program,chuỗi,1,Hằng số (chỉ có BCSE)
+6,Current Semester,int,22,Bối cảnh học vụ
+7,Do you have meritorious scholarship ?,chuỗi,2,Rò rỉ (hệ quả của CGPA)
+8,Do you use University transportation?,chuỗi,2,Điều kiện học tập
+9,How many hour do you study daily?,int,12,Thói quen học tập
+10,How many times do you seat for study in a day?,int,8,Thói quen học tập
+11,What is your preferable learning mode?,chuỗi,2,Điều kiện học tập
+12,Do you use smart phone?,chuỗi,2,Điều kiện học tập
+13,Do you have personal Computer?,chuỗi,2,Điều kiện học tập
+14,How many hour do you spent daily in social media?,int,16,Thói quen học tập
+15,Status of your English language proficiency,chuỗi,3,Điều kiện học tập
+16,Average attendance on class,object,66,Thói quen học tập (cần ép kiểu)
+17,Did you ever fall in probation?,chuỗi,2,Rò rỉ (hệ quả của CGPA)
+18,Did you ever got suspension?,chuỗi,2,Rò rỉ (hệ quả của CGPA)
+19,Do you attend in teacher consultancy for any kind of academical problems?,chuỗi,2,"Quan hệ ngược chiều, chỉ dùng chẩn đoán"
+20,What are the skills do you have ?,chuỗi,55,"Trường tự do, nhiễu cao"
+21,How many hour do you spent daily on your skill development?,int,12,Thói quen học tập
+22,What is you interested area?,chuỗi,25,"Trường tự do, nhiễu cao"
+23,What is your relationship status?,chuỗi,5,"Nhạy cảm, loại khỏi mô hình"
+24,Are you engaged with any co-curriculum activities?,chuỗi,2,Điều kiện học tập
+25,With whom you are living with?,chuỗi,2,"Nhạy cảm, kiểm định công bằng"
+26,Do you have any health issues?,chuỗi,4,"Nhạy cảm, loại hoàn toàn"
+27,What was your previous SGPA?,float,249,Rò rỉ cấu trúc
+28,Do you have any physical disabilities?,chuỗi,2,"Nhạy cảm, loại hoàn toàn"
+29,What is your current CGPA?,float,188,Biến mục tiêu (gốc)
+30,How many Credit did you have completed?,int,130,Bối cảnh học vụ
+31,What is your monthly family income?,int,137,"Nhạy cảm, loại hoàn toàn"

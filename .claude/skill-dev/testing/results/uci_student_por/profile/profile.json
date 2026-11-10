@@ -1,0 +1,653 @@
+{
+  "file": "D:\\Python\\data-analysis\\.claude\\skill-dev\\testing\\datasets\\uci_student_por.csv",
+  "sha256": "a7594a11d7771c0efe1a740824e0e833da9c4cad07c39a9766a874575563fb3f",
+  "rows": 649,
+  "columns": 33,
+  "full_duplicate_rows": 0,
+  "missing_cells": 0,
+  "columns_detail": [
+    {
+      "column": "school",
+      "dtype": "str",
+      "n_unique": 2,
+      "missing": 0,
+      "examples": [
+        "GP",
+        "MS"
+      ],
+      "single_feature_auc_screen": 0.674,
+      "flags": []
+    },
+    {
+      "column": "sex",
+      "dtype": "str",
+      "n_unique": 2,
+      "missing": 0,
+      "examples": [
+        "F",
+        "M"
+      ],
+      "single_feature_auc_screen": 0.55,
+      "flags": [
+        "thuộc tính nhạy cảm (sex)"
+      ]
+    },
+    {
+      "column": "age",
+      "dtype": "int64",
+      "n_unique": 8,
+      "missing": 0,
+      "examples": [
+        "18",
+        "17",
+        "15",
+        "16",
+        "19"
+      ],
+      "min": 15.0,
+      "max": 22.0,
+      "median": 17.0,
+      "skew": 0.42,
+      "zeros": 0,
+      "single_feature_auc_screen": 0.553,
+      "flags": [
+        "thuộc tính nhạy cảm (age)"
+      ]
+    },
+    {
+      "column": "address",
+      "dtype": "str",
+      "n_unique": 2,
+      "missing": 0,
+      "examples": [
+        "U",
+        "R"
+      ],
+      "single_feature_auc_screen": 0.561,
+      "flags": [
+        "thuộc tính nhạy cảm (address)"
+      ]
+    },
+    {
+      "column": "famsize",
+      "dtype": "str",
+      "n_unique": 2,
+      "missing": 0,
+      "examples": [
+        "GT3",
+        "LE3"
+      ],
+      "single_feature_auc_screen": 0.524,
+      "flags": [
+        "thuộc tính nhạy cảm (famsize)"
+      ]
+    },
+    {
+      "column": "Pstatus",
+      "dtype": "str",
+      "n_unique": 2,
+      "missing": 0,
+      "examples": [
+        "A",
+        "T"
+      ],
+      "single_feature_auc_screen": 0.503,
+      "flags": [
+        "thuộc tính nhạy cảm (pstatus)"
+      ]
+    },
+    {
+      "column": "Medu",
+      "dtype": "int64",
+      "n_unique": 5,
+      "missing": 0,
+      "examples": [
+        "4",
+        "1",
+        "3",
+        "2",
+        "0"
+      ],
+      "min": 0.0,
+      "max": 4.0,
+      "median": 2.0,
+      "skew": -0.03,
+      "zeros": 6,
+      "single_feature_auc_screen": 0.621,
+      "flags": [
+        "thuộc tính nhạy cảm (medu)"
+      ]
+    },
+    {
+      "column": "Fedu",
+      "dtype": "int64",
+      "n_unique": 5,
+      "missing": 0,
+      "examples": [
+        "4",
+        "1",
+        "2",
+        "3",
+        "0"
+      ],
+      "min": 0.0,
+      "max": 4.0,
+      "median": 2.0,
+      "skew": 0.22,
+      "zeros": 7,
+      "single_feature_auc_screen": 0.609,
+      "flags": [
+        "thuộc tính nhạy cảm (fedu)"
+      ]
+    },
+    {
+      "column": "Mjob",
+      "dtype": "str",
+      "n_unique": 5,
+      "missing": 0,
+      "examples": [
+        "at_home",
+        "health",
+        "other",
+        "services",
+        "teacher"
+      ],
+      "single_feature_auc_screen": 0.588,
+      "flags": [
+        "thuộc tính nhạy cảm (mjob)"
+      ]
+    },
+    {
+      "column": "Fjob",
+      "dtype": "str",
+      "n_unique": 5,
+      "missing": 0,
+      "examples": [
+        "teacher",
+        "other",
+        "services",
+        "health",
+        "at_home"
+      ],
+      "single_feature_auc_screen": 0.545,
+      "flags": [
+        "thuộc tính nhạy cảm (fjob)"
+      ]
+    },
+    {
+      "column": "reason",
+      "dtype": "str",
+      "n_unique": 4,
+      "missing": 0,
+      "examples": [
+        "course",
+        "other",
+        "home",
+        "reputation"
+      ],
+      "single_feature_auc_screen": 0.624,
+      "flags": []
+    },
+    {
+      "column": "guardian",
+      "dtype": "str",
+      "n_unique": 3,
+      "missing": 0,
+      "examples": [
+        "mother",
+        "father",
+        "other"
+      ],
+      "single_feature_auc_screen": 0.559,
+      "flags": [
+        "thuộc tính nhạy cảm (guardian)"
+      ]
+    },
+    {
+      "column": "traveltime",
+      "dtype": "int64",
+      "n_unique": 4,
+      "missing": 0,
+      "examples": [
+        "2",
+        "1",
+        "3",
+        "4"
+      ],
+      "min": 1.0,
+      "max": 4.0,
+      "median": 1.0,
+      "skew": 1.25,
+      "zeros": 0,
+      "single_feature_auc_screen": 0.526,
+      "flags": []
+    },
+    {
+      "column": "studytime",
+      "dtype": "int64",
+      "n_unique": 4,
+      "missing": 0,
+      "examples": [
+        "2",
+        "3",
+        "1",
+        "4"
+      ],
+      "min": 1.0,
+      "max": 4.0,
+      "median": 2.0,
+      "skew": 0.7,
+      "zeros": 0,
+      "single_feature_auc_screen": 0.619,
+      "flags": []
+    },
+    {
+      "column": "failures",
+      "dtype": "int64",
+      "n_unique": 4,
+      "missing": 0,
+      "examples": [
+        "0",
+        "3",
+        "1",
+        "2"
+      ],
+      "min": 0.0,
+      "max": 3.0,
+      "median": 0.0,
+      "skew": 3.09,
+      "zeros": 549,
+      "single_feature_auc_screen": 0.692,
+      "flags": [
+        "dồn đống: giá trị 0 chiếm 549/649 (gấp 7.8 lần giá trị kế tiếp) - kiểm tra điền khuyết"
+      ]
+    },
+    {
+      "column": "schoolsup",
+      "dtype": "str",
+      "n_unique": 2,
+      "missing": 0,
+      "examples": [
+        "yes",
+        "no"
+      ],
+      "single_feature_auc_screen": 0.513,
+      "flags": []
+    },
+    {
+      "column": "famsup",
+      "dtype": "str",
+      "n_unique": 2,
+      "missing": 0,
+      "examples": [
+        "no",
+        "yes"
+      ],
+      "single_feature_auc_screen": 0.501,
+      "flags": []
+    },
+    {
+      "column": "paid",
+      "dtype": "str",
+      "n_unique": 2,
+      "missing": 0,
+      "examples": [
+        "no",
+        "yes"
+      ],
+      "single_feature_auc_screen": 0.52,
+      "flags": []
+    },
+    {
+      "column": "activities",
+      "dtype": "str",
+      "n_unique": 2,
+      "missing": 0,
+      "examples": [
+        "no",
+        "yes"
+      ],
+      "single_feature_auc_screen": 0.542,
+      "flags": []
+    },
+    {
+      "column": "nursery",
+      "dtype": "str",
+      "n_unique": 2,
+      "missing": 0,
+      "examples": [
+        "yes",
+        "no"
+      ],
+      "single_feature_auc_screen": 0.501,
+      "flags": []
+    },
+    {
+      "column": "higher",
+      "dtype": "str",
+      "n_unique": 2,
+      "missing": 0,
+      "examples": [
+        "yes",
+        "no"
+      ],
+      "single_feature_auc_screen": 0.632,
+      "flags": []
+    },
+    {
+      "column": "internet",
+      "dtype": "str",
+      "n_unique": 2,
+      "missing": 0,
+      "examples": [
+        "no",
+        "yes"
+      ],
+      "single_feature_auc_screen": 0.539,
+      "flags": []
+    },
+    {
+      "column": "romantic",
+      "dtype": "str",
+      "n_unique": 2,
+      "missing": 0,
+      "examples": [
+        "no",
+        "yes"
+      ],
+      "single_feature_auc_screen": 0.542,
+      "flags": [
+        "thuộc tính nhạy cảm (romantic)"
+      ]
+    },
+    {
+      "column": "famrel",
+      "dtype": "int64",
+      "n_unique": 5,
+      "missing": 0,
+      "examples": [
+        "4",
+        "5",
+        "3",
+        "1",
+        "2"
+      ],
+      "min": 1.0,
+      "max": 5.0,
+      "median": 4.0,
+      "skew": -1.11,
+      "zeros": 0,
+      "single_feature_auc_screen": 0.502,
+      "flags": []
+    },
+    {
+      "column": "freetime",
+      "dtype": "int64",
+      "n_unique": 5,
+      "missing": 0,
+      "examples": [
+        "3",
+        "2",
+        "4",
+        "1",
+        "5"
+      ],
+      "min": 1.0,
+      "max": 5.0,
+      "median": 3.0,
+      "skew": -0.18,
+      "zeros": 0,
+      "single_feature_auc_screen": 0.57,
+      "flags": []
+    },
+    {
+      "column": "goout",
+      "dtype": "int64",
+      "n_unique": 5,
+      "missing": 0,
+      "examples": [
+        "4",
+        "3",
+        "2",
+        "1",
+        "5"
+      ],
+      "min": 1.0,
+      "max": 5.0,
+      "median": 3.0,
+      "skew": -0.01,
+      "zeros": 0,
+      "single_feature_auc_screen": 0.568,
+      "flags": []
+    },
+    {
+      "column": "Dalc",
+      "dtype": "int64",
+      "n_unique": 5,
+      "missing": 0,
+      "examples": [
+        "1",
+        "2",
+        "5",
+        "3",
+        "4"
+      ],
+      "min": 1.0,
+      "max": 5.0,
+      "median": 1.0,
+      "skew": 2.14,
+      "zeros": 0,
+      "single_feature_auc_screen": 0.569,
+      "flags": [
+        "dồn đống: giá trị 1 chiếm 451/649 (gấp 3.7 lần giá trị kế tiếp) - kiểm tra điền khuyết",
+        "thuộc tính nhạy cảm (dalc)"
+      ]
+    },
+    {
+      "column": "Walc",
+      "dtype": "int64",
+      "n_unique": 5,
+      "missing": 0,
+      "examples": [
+        "1",
+        "3",
+        "2",
+        "4",
+        "5"
+      ],
+      "min": 1.0,
+      "max": 5.0,
+      "median": 2.0,
+      "skew": 0.64,
+      "zeros": 0,
+      "single_feature_auc_screen": 0.585,
+      "flags": [
+        "thuộc tính nhạy cảm (walc)"
+      ]
+    },
+    {
+      "column": "health",
+      "dtype": "int64",
+      "n_unique": 5,
+      "missing": 0,
+      "examples": [
+        "3",
+        "5",
+        "1",
+        "2",
+        "4"
+      ],
+      "min": 1.0,
+      "max": 5.0,
+      "median": 4.0,
+      "skew": -0.5,
+      "zeros": 0,
+      "single_feature_auc_screen": 0.509,
+      "flags": [
+        "thuộc tính nhạy cảm (health)"
+      ]
+    },
+    {
+      "column": "absences",
+      "dtype": "int64",
+      "n_unique": 24,
+      "missing": 0,
+      "examples": [
+        "4",
+        "2",
+        "6",
+        "0",
+        "10"
+      ],
+      "min": 0.0,
+      "max": 32.0,
+      "median": 2.0,
+      "skew": 2.02,
+      "zeros": 244,
+      "single_feature_auc_screen": 0.616,
+      "flags": []
+    },
+    {
+      "column": "G1",
+      "dtype": "int64",
+      "n_unique": 17,
+      "missing": 0,
+      "examples": [
+        "0",
+        "9",
+        "12",
+        "14",
+        "11"
+      ],
+      "min": 0.0,
+      "max": 19.0,
+      "median": 11.0,
+      "skew": -0.0,
+      "zeros": 1,
+      "single_feature_auc_screen": 0.945,
+      "flags": [
+        "1 giá trị 0 ở cột điểm/chuyên cần - có thể là khuyết được mã hóa 0",
+        "liên hệ rất mạnh với nhãn (AUC đơn biến 0.94) - nghi rò rỉ"
+      ]
+    },
+    {
+      "column": "G2",
+      "dtype": "int64",
+      "n_unique": 16,
+      "missing": 0,
+      "examples": [
+        "11",
+        "13",
+        "14",
+        "12",
+        "16"
+      ],
+      "min": 0.0,
+      "max": 19.0,
+      "median": 11.0,
+      "skew": -0.36,
+      "zeros": 7,
+      "single_feature_auc_screen": 0.955,
+      "flags": [
+        "7 giá trị 0 ở cột điểm/chuyên cần - có thể là khuyết được mã hóa 0",
+        "liên hệ rất mạnh với nhãn (AUC đơn biến 0.96) - nghi rò rỉ"
+      ]
+    },
+    {
+      "column": "G3",
+      "dtype": "int64",
+      "n_unique": 17,
+      "missing": 0,
+      "examples": [
+        "11",
+        "12",
+        "14",
+        "13",
+        "17"
+      ],
+      "min": 0.0,
+      "max": 19.0,
+      "median": 12.0,
+      "skew": -0.91,
+      "zeros": 15,
+      "role": "target",
+      "flags": [
+        "15 giá trị 0 ở cột điểm/chuyên cần - có thể là khuyết được mã hóa 0"
+      ]
+    }
+  ],
+  "target": {
+    "type": "numeric",
+    "describe": {
+      "count": 649.0,
+      "mean": 11.906,
+      "std": 3.231,
+      "min": 0.0,
+      "25%": 10.0,
+      "50%": 12.0,
+      "75%": 14.0,
+      "max": 19.0
+    },
+    "zeros": 15,
+    "quantiles_of_positive": {
+      "q5": 8.0,
+      "q10": 9.0,
+      "q15": 10.0,
+      "q20": 10.0,
+      "q25": 10.0
+    }
+  },
+  "suggested_roles": {
+    "features": {
+      "numeric": [
+        "traveltime",
+        "studytime",
+        "failures",
+        "famrel",
+        "freetime",
+        "goout",
+        "absences"
+      ],
+      "categorical": [
+        "school",
+        "reason",
+        "schoolsup",
+        "famsup",
+        "paid",
+        "activities",
+        "nursery",
+        "higher",
+        "internet"
+      ]
+    },
+    "exclude": {
+      "leakage_candidates": [
+        "G1",
+        "G2"
+      ],
+      "sensitive": [
+        "sex",
+        "age",
+        "address",
+        "famsize",
+        "Pstatus",
+        "Medu",
+        "Fedu",
+        "Mjob",
+        "Fjob",
+        "guardian",
+        "romantic",
+        "Dalc",
+        "Walc",
+        "health"
+      ],
+      "constant_or_id": [],
+      "free_text": []
+    },
+    "fixes": {
+      "range_to_mid": [],
+      "missing_codes": {}
+    },
+    "suspect_label_rules": []
+  }
+}

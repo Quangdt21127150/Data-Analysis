@@ -1,0 +1,32 @@
+{
+  "created_utc": "2026-11-10T04:23:52+00:00",
+  "raw_sha256": "04ebaf9f3a047afe96d9bff22dbe65b2a320e6395f230032735495e7e58277cf",
+  "rows_raw": 1194,
+  "rows_labeled": 1015,
+  "positives": 167,
+  "base_rate": 0.1645,
+  "train": {
+    "n": 812,
+    "pos": 134
+  },
+  "test": {
+    "n": 203,
+    "pos": 33
+  },
+  "label_status": {
+    "observed": 1015,
+    "suspect": 140,
+    "no_target": 39
+  },
+  "n_features": 11,
+  "banned_in_features": [],
+  "missing_in_features": {
+    "Average attendance on class": 1,
+    "How many hour do you spent daily in social media?": 1
+  },
+  "key_unique": true,
+  "sensitivity_targets": {
+    "2.5": "_y_t2.5",
+    "3.0": "_y_t3.0"
+  }
+}

@@ -1,0 +1,333 @@
+{
+  "passed": 28,
+  "total": 28,
+  "checks": [
+    {
+      "case": "sape",
+      "check": "Không có biến bị cấm trong tập đặc trưng",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "case": "sape",
+      "check": "Khóa duy nhất, split phân tầng (chênh tỷ lệ dương train/test < 2 điểm %)",
+      "passed": true,
+      "detail": "train 134/812, test 33/203"
+    },
+    {
+      "case": "sape",
+      "check": "Đủ các phần kết quả",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "case": "sape",
+      "check": "Baseline B1 được chọn chỉ trên train và có mặt trong CV + test",
+      "passed": true,
+      "detail": "Average attendance on class"
+    },
+    {
+      "case": "sape",
+      "check": "Báo cáo và hình được sinh",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "case": "sape",
+      "check": "Mọi biến được profile gắn cờ rò rỉ đều nằm ngoài tập đặc trưng hoặc được giữ có chủ đích",
+      "passed": true,
+      "detail": "profile gợi ý: ['Do you have meritorious scholarship ?', 'Did you ever fall in probation?', 'Did you ever got suspension?', 'Do you attend in teacher consultancy for any kind of academical problems?', 'What was your previous SGPA?']"
+    },
+    {
+      "case": "sape",
+      "check": "Tái lập Milestone 4: AUC CV của LR trong khoảng ±0.01 so với 0.619",
+      "passed": true,
+      "detail": "0.6198"
+    },
+    {
+      "case": "sape",
+      "check": "Profile tự phát hiện luật nhãn nghi điền khuyết (CGPA 3.15 / SGPA 2.68)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "case": "sape",
+      "check": "Profile gợi ý đúng 5 biến rò rỉ như nhóm xác định thủ công ở M2/M3",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "case": "sape",
+      "check": "Phát hiện cột số lẫn chuỗi '94-98'",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "case": "sape",
+      "check": "Loại 39 CGPA = 0 và 140 nhãn nghi vấn",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "case": "uci_student_por",
+      "check": "Không có biến bị cấm trong tập đặc trưng",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "case": "uci_student_por",
+      "check": "Khóa duy nhất, split phân tầng (chênh tỷ lệ dương train/test < 2 điểm %)",
+      "passed": true,
+      "detail": "train 80/519, test 20/130"
+    },
+    {
+      "case": "uci_student_por",
+      "check": "Đủ các phần kết quả",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "case": "uci_student_por",
+      "check": "Baseline B1 được chọn chỉ trên train và có mặt trong CV + test",
+      "passed": true,
+      "detail": "failures"
+    },
+    {
+      "case": "uci_student_por",
+      "check": "Báo cáo và hình được sinh",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "case": "uci_student_por",
+      "check": "Mọi biến được profile gắn cờ rò rỉ đều nằm ngoài tập đặc trưng hoặc được giữ có chủ đích",
+      "passed": true,
+      "detail": "profile gợi ý: ['G1', 'G2']"
+    },
+    {
+      "case": "uci_student_por",
+      "check": "Profile gắn cờ G1, G2 là biến rò rỉ",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "case": "uci_student_por",
+      "check": "Loại biến tích lũy trong chính năm học (absences, schoolsup) - sửa sau vòng đánh giá iteration-1",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "case": "uci_dropout",
+      "check": "Không có biến bị cấm trong tập đặc trưng",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "case": "uci_dropout",
+      "check": "Khóa duy nhất, split phân tầng (chênh tỷ lệ dương train/test < 2 điểm %)",
+      "passed": true,
+      "detail": "train 1137/3539, test 284/885"
+    },
+    {
+      "case": "uci_dropout",
+      "check": "Đủ các phần kết quả",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "case": "uci_dropout",
+      "check": "Baseline B1 được chọn chỉ trên train và có mặt trong CV + test",
+      "passed": true,
+      "detail": "Curricular units 1st sem (approved)"
+    },
+    {
+      "case": "uci_dropout",
+      "check": "Báo cáo và hình được sinh",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "case": "uci_dropout",
+      "check": "Mọi biến được profile gắn cờ rò rỉ đều nằm ngoài tập đặc trưng hoặc được giữ có chủ đích",
+      "passed": true,
+      "detail": "profile gợi ý: ['Previous qualification (grade)', 'Admission grade', 'Scholarship holder', 'Curricular units 1st sem (credited)', 'Curricular units 1st sem (evaluations)', 'Curricular units 1st sem (approved)', 'Curricular units 1st sem (grade)', 'Curricular units 1st sem (without evaluations)', 'Curricular units 2nd sem (credited)', 'Curricular units 2nd sem (enrolled)', 'Curricular units 2nd sem (evaluations)', 'Curricular units 2nd sem (approved)', 'Curricular units 2nd sem (grade)', 'Curricular units 2nd sem (without evaluations)']"
+    },
+    {
+      "case": "uci_dropout",
+      "check": "Profile gợi ý đúng lớp dương 'Dropout' (hồi quy lỗi chọn lớp hiếm nhất 'Enrolled')",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "case": "uci_dropout",
+      "check": "Tên cột chứa ký tự tab được chuẩn hóa",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "case": "uci_dropout",
+      "check": "Kiểm định công bằng phát hiện chênh lệch recall > 10 điểm % (theo tuổi)",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "summary": {
+    "sape": {
+      "rows": 1194,
+      "labeled": 1015,
+      "positives": 167,
+      "base_rate": 0.1645,
+      "n_features": 11,
+      "baseline": "Average attendance on class",
+      "primary": "LR",
+      "cv_auc_primary": {
+        "mean": 0.6198,
+        "sd": 0.0093
+      },
+      "cv_auc_baseline": {
+        "mean": 0.615,
+        "sd": 0.0047
+      },
+      "test_auc_primary": 0.6141,
+      "test_auc_ci95": [
+        0.502,
+        0.7239
+      ],
+      "test_recall_at_capacity": 0.4848,
+      "test_precision_at_capacity": 0.25,
+      "reduction_best": [
+        "Average attendance on class",
+        "Do you use University transportation?",
+        "Status of your English language proficiency",
+        "Are you engaged with any co-curriculum activities?"
+      ],
+      "success": {
+        "auc": false,
+        "recall_at_capacity": false,
+        "beats_baseline": false,
+        "reduction": true,
+        "fairness_recall_gap": true,
+        "banned_features": true
+      },
+      "fairness_gaps": {
+        "Gender": {
+          "train_oof": 0.027,
+          "test": 0.165
+        },
+        "With whom you are living with?": {
+          "train_oof": 0.018,
+          "test": 0.122
+        }
+      },
+      "seconds_profile": 2.9,
+      "seconds_run": 76.2
+    },
+    "uci_student_por": {
+      "rows": 649,
+      "labeled": 649,
+      "positives": 100,
+      "base_rate": 0.1541,
+      "n_features": 14,
+      "baseline": "failures",
+      "primary": "LR",
+      "cv_auc_primary": {
+        "mean": 0.7988,
+        "sd": 0.0117
+      },
+      "cv_auc_baseline": {
+        "mean": 0.6652,
+        "sd": 0.0075
+      },
+      "test_auc_primary": 0.8332,
+      "test_auc_ci95": [
+        0.7399,
+        0.9137
+      ],
+      "test_recall_at_capacity": 0.6,
+      "test_precision_at_capacity": 0.375,
+      "reduction_best": [
+        "traveltime",
+        "studytime",
+        "failures",
+        "freetime",
+        "school",
+        "paid",
+        "higher"
+      ],
+      "success": {
+        "auc": true,
+        "recall_at_capacity": true,
+        "beats_baseline": true,
+        "reduction": true,
+        "fairness_recall_gap": true,
+        "banned_features": true
+      },
+      "fairness_gaps": {
+        "sex": {
+          "train_oof": 0.088,
+          "test": 0.096
+        },
+        "address": {
+          "train_oof": 0.063,
+          "test": 0.167
+        }
+      },
+      "seconds_profile": 2.5,
+      "seconds_run": 85.7
+    },
+    "uci_dropout": {
+      "rows": 4424,
+      "labeled": 4424,
+      "positives": 1421,
+      "base_rate": 0.3212,
+      "n_features": 16,
+      "baseline": "Curricular units 1st sem (approved)",
+      "primary": "LR",
+      "cv_auc_primary": {
+        "mean": 0.8733,
+        "sd": 0.0011
+      },
+      "cv_auc_baseline": {
+        "mean": 0.8098,
+        "sd": 0.0011
+      },
+      "test_auc_primary": 0.876,
+      "test_auc_ci95": [
+        0.8488,
+        0.8986
+      ],
+      "test_recall_at_capacity": 0.6761,
+      "test_precision_at_capacity": 0.7529,
+      "reduction_best": [
+        "Application order",
+        "Curricular units 1st sem (credited)",
+        "Curricular units 1st sem (enrolled)",
+        "Curricular units 1st sem (approved)",
+        "Unemployment rate",
+        "GDP",
+        "Application mode",
+        "Course"
+      ],
+      "success": {
+        "auc": true,
+        "recall_at_capacity": true,
+        "beats_baseline": true,
+        "reduction": true,
+        "fairness_recall_gap": false,
+        "banned_features": true
+      },
+      "fairness_gaps": {
+        "Gender": {
+          "train_oof": 0.102,
+          "test": 0.119
+        },
+        "Age at enrollment": {
+          "train_oof": 0.219,
+          "test": 0.237
+        }
+      },
+      "seconds_profile": 3.0,
+      "seconds_run": 110.3
+    }
+  }
+}

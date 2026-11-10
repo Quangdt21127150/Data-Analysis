@@ -1,0 +1,9 @@
+score,group,level,n,dropout_rate,flag_rate,recall,precision
+LR,age_grp,<=20,2035,0.212,0.185,0.548,0.628
+LR,age_grp,>20,1504,0.469,0.456,0.771,0.793
+LR,Gender,0,2298,0.247,0.23,0.631,0.677
+LR,Gender,1,1241,0.459,0.429,0.74,0.792
+B1_approved,age_grp,<=20,2035,0.212,0.221,0.582,0.559
+B1_approved,age_grp,>20,1504,0.469,0.408,0.694,0.799
+B1_approved,Gender,0,2298,0.247,0.23,0.601,0.645
+B1_approved,Gender,1,1241,0.459,0.429,0.702,0.75

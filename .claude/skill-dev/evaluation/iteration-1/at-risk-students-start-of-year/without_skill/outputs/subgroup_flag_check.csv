@@ -1,0 +1,7 @@
+group,level,n,fail_rate,flagged_share,recall,precision
+sex,F,383,0.131,0.261,0.68,0.34
+sex,M,266,0.188,0.357,0.74,0.389
+school,GP,423,0.076,0.121,0.469,0.294
+school,MS,226,0.301,0.637,0.824,0.389
+address,R,197,0.223,0.518,0.773,0.333
+address,U,452,0.124,0.206,0.661,0.398

@@ -1,0 +1,22 @@
+cap,model,recall,precision
+0.1000,"Mo hinh chinh (B, logit)",0.2970,0.9635
+0.1000,Quy tac ty le mon dat,0.2407,0.7808
+0.1000,Chi du lieu tuyen sinh,0.2273,0.7374
+0.1500,"Mo hinh chinh (B, logit)",0.4229,0.9134
+0.1500,Quy tac ty le mon dat,0.3695,0.7979
+0.1500,Chi du lieu tuyen sinh,0.3125,0.6748
+0.2000,"Mo hinh chinh (B, logit)",0.5320,0.8581
+0.2000,Quy tac ty le mon dat,0.4835,0.7798
+0.2000,Chi du lieu tuyen sinh,0.3871,0.6243
+0.2500,"Mo hinh chinh (B, logit)",0.6242,0.8049
+0.2500,Quy tac ty le mon dat,0.5799,0.7477
+0.2500,Chi du lieu tuyen sinh,0.4588,0.5917
+0.3000,"Mo hinh chinh (B, logit)",0.6925,0.7438
+0.3000,Quy tac ty le mon dat,0.6678,0.7173
+0.3000,Chi du lieu tuyen sinh,0.5306,0.5699
+0.3500,"Mo hinh chinh (B, logit)",0.7502,0.6918
+0.3500,Quy tac ty le mon dat,0.7255,0.6690
+0.3500,Chi du lieu tuyen sinh,0.6010,0.5542
+0.4000,"Mo hinh chinh (B, logit)",0.7966,0.6410
+0.4000,Quy tac ty le mon dat,0.7762,0.6246
+0.4000,Chi du lieu tuyen sinh,0.6608,0.5317

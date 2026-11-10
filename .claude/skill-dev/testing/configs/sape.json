@@ -1,0 +1,28 @@
+{
+  "project": "SAPE - sàng lọc sinh viên CGPA < 2.75 (tái lập Milestone 3-4 của N02)",
+  "data_path": "../datasets/sape_students_performance.xlsx",
+  "out_dir": "../results/sape/output",
+  "target": {"column": "What is your current CGPA?", "type": "threshold_below", "threshold": 2.75, "zero_is_missing": true,
+             "sensitivity_thresholds": [2.5, 3.0]},
+  "features": {
+    "numeric": ["How many hour do you study daily?", "How many times do you seat for study in a day?", "Average attendance on class",
+                "How many hour do you spent daily in social media?", "How many hour do you spent daily on your skill development?", "Current Semester"],
+    "categorical": ["What is your preferable learning mode?", "Do you have personal Computer?", "Do you use University transportation?",
+                    "Status of your English language proficiency", "Are you engaged with any co-curriculum activities?"]
+  },
+  "exclude": {
+    "leakage": ["What was your previous SGPA?", "Did you ever fall in probation?", "Did you ever got suspension?",
+                "Do you have meritorious scholarship ?", "Do you attend in teacher consultancy for any kind of academical problems?"],
+    "sensitive": ["Gender", "Age", "What is your relationship status?", "With whom you are living with?", "Do you have any health issues?",
+                  "Do you have any physical disabilities?", "What is your monthly family income?"],
+    "other": ["Program", "What are the skills do you have ?", "What is you interested area?", "Do you use smart phone?",
+              "How many Credit did you have completed?", "University Admission year", "H.S.C passing year"]
+  },
+  "fairness_audit": ["Gender", "With whom you are living with?"],
+  "range_to_mid": ["Average attendance on class"],
+  "missing_codes": {"Average attendance on class": [0]},
+  "valid_ranges": {"How many hour do you spent daily in social media?": [0, 16]},
+  "suspect_label_rules": [{"What is your current CGPA?": 3.15, "What was your previous SGPA?": 2.68}],
+  "capacity": 0.30, "alt_capacity": 0.15, "seed": 2026, "test_size": 0.2, "cv_folds": 5, "cv_repeats": 10,
+  "success": {"auc": 0.70, "recall": 0.60, "max_recall_gap": 0.10, "reduction": 0.3333}
+}

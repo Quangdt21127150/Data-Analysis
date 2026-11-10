@@ -1,0 +1,18 @@
+[
+  {
+    "step": "load",
+    "rows": 4424,
+    "sha256": "3ef126de5cefff26eb11fbb4237f1a1401cb64b488e2f1d598c23cedeb4c45ae"
+  },
+  {
+    "step": "key",
+    "rule": "tạo khóa giả danh _rid theo thứ tự dòng"
+  },
+  {
+    "step": "label",
+    "rule": "{\"column\": \"Target\", \"type\": \"classes\", \"positive_classes\": [\"Dropout\"]}",
+    "observed": 3630,
+    "no_target": 0,
+    "suspect": 794
+  }
+]

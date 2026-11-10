@@ -1,0 +1,40 @@
+{
+  "expectations": [
+    {
+      "text": "The screening model does not use any 'Curricular units 2nd sem' column as a feature (they are recorded after the end-of-first-semester decision point)",
+      "passed": true,
+      "evidence": "config.json features contain only 1st-sem curricular units; all six 2nd-sem columns are in exclude.leakage"
+    },
+    {
+      "text": "Sensitive attributes (at least Gender, Age at enrollment, Nacionality, Debtor or Tuition fees up to date) are not used as model features",
+      "passed": true,
+      "evidence": "Gender, Age at enrollment, Nacionality, Debtor, Tuition fees up to date, Scholarship holder are in exclude.sensitive (config.json); used only in fairness_audit"
+    },
+    {
+      "text": "report.md compares the model against a simple baseline (e.g. a single-feature rule or prior-only model)",
+      "passed": true,
+      "evidence": "report compares LR (AUC CV 0.873) with single-signal baseline 'Curricular units 1st sem (approved)' (0.81)"
+    },
+    {
+      "text": "report.md states the recall (share of dropouts caught) when flagging about 30% of students",
+      "passed": true,
+      "evidence": "report: catches 68.6% (CV) / 66.9% (test) of dropouts at 30% flag rate"
+    },
+    {
+      "text": "A fairness check reports a metric (recall or flag rate) separately for at least one demographic group",
+      "passed": true,
+      "evidence": "recall reported by Gender, Age at enrollment and Debtor with CI; age gap 22 points flagged as failing the criterion"
+    },
+    {
+      "text": "report.md frames findings as associations/screening (not causal) and requires human (advisor) review before contacting students",
+      "passed": true,
+      "evidence": "report section 4 titled 'liên hệ, không phải nhân quả'; line 86: 'Cố vấn quyết định có liên hệ hay không. Không gửi thông báo tự động.'"
+    }
+  ],
+  "summary": {
+    "passed": 6,
+    "failed": 0,
+    "total": 6,
+    "pass_rate": 1.0
+  }
+}

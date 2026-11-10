@@ -1,0 +1,1439 @@
+{
+  "config": {
+    "project": "Sàng lọc nguy cơ bỏ học sau kết quả học kỳ 1 năm nhất",
+    "target": {
+      "column": "Target",
+      "type": "classes",
+      "positive_classes": [
+        "Dropout"
+      ]
+    },
+    "capacity": 0.3,
+    "alt_capacity": 0.15,
+    "seed": 2026,
+    "cv_folds": 5,
+    "cv_repeats": 5,
+    "success": {
+      "auc": 0.7,
+      "recall": 0.6,
+      "max_recall_gap": 0.1,
+      "reduction": 0.3333
+    }
+  },
+  "data": {
+    "train_n": 3539,
+    "train_pos": 1137,
+    "test_n": 885,
+    "test_pos": 284,
+    "features": [
+      "Application order",
+      "Previous qualification (grade)",
+      "Admission grade",
+      "Curricular units 1st sem (credited)",
+      "Curricular units 1st sem (enrolled)",
+      "Curricular units 1st sem (evaluations)",
+      "Curricular units 1st sem (approved)",
+      "Curricular units 1st sem (grade)",
+      "Curricular units 1st sem (without evaluations)",
+      "Application mode",
+      "Course",
+      "Daytime/evening attendance",
+      "Previous qualification"
+    ]
+  },
+  "versions": {
+    "python": "3.12.13",
+    "numpy": "2.5.4",
+    "pandas": "3.1.1",
+    "sklearn": "1.9.1"
+  },
+  "diagnostics": [
+    {
+      "var": "Curricular units 1st sem (approved)",
+      "type": "numeric",
+      "test": "Mann-Whitney U",
+      "median_pos": 2.0,
+      "median_neg": 6.0,
+      "effect": -0.624,
+      "effect_name": "rank-biserial r (dương: nhóm dương cao hơn)",
+      "p": 9.139474433241745e-204,
+      "p_holm": 1.188131676321427e-202,
+      "significant": true
+    },
+    {
+      "var": "Curricular units 1st sem (grade)",
+      "type": "numeric",
+      "test": "Mann-Whitney U",
+      "median_pos": 11.0,
+      "median_neg": 12.730952380952381,
+      "effect": -0.541,
+      "effect_name": "rank-biserial r (dương: nhóm dương cao hơn)",
+      "p": 4.929533878691218e-150,
+      "p_holm": 5.915440654429461e-149,
+      "significant": true
+    },
+    {
+      "var": "Application mode",
+      "type": "categorical",
+      "test": "Chi-square",
+      "effect": 0.296,
+      "effect_name": "Cramér's V",
+      "p": 1.6640054296096194e-56,
+      "rates_by_level": {
+        "1": 0.205,
+        "10": 0.222,
+        "15": 0.111,
+        "16": 0.111,
+        "17": 0.295,
+        "18": 0.34,
+        "2": 1.0,
+        "26": 1.0,
+        "27": 1.0,
+        "39": 0.544,
+        "42": 0.452,
+        "43": 0.369,
+        "44": 0.305,
+        "5": 0.083,
+        "51": 0.32,
+        "53": 0.167,
+        "7": 0.626
+      },
+      "n_by_level": {
+        "1": 1357,
+        "10": 9,
+        "15": 27,
+        "16": 27,
+        "17": 718,
+        "18": 94,
+        "2": 2,
+        "26": 1,
+        "27": 1,
+        "39": 621,
+        "42": 62,
+        "43": 255,
+        "44": 164,
+        "5": 12,
+        "51": 50,
+        "53": 24,
+        "7": 115
+      },
+      "p_holm": 1.830405972570581e-55,
+      "significant": true
+    },
+    {
+      "var": "Course",
+      "type": "categorical",
+      "test": "Chi-square",
+      "effect": 0.265,
+      "effect_name": "Cramér's V",
+      "p": 8.194919677244894e-44,
+      "rates_by_level": {
+        "171": 0.385,
+        "33": 0.7,
+        "8014": 0.32,
+        "9003": 0.463,
+        "9070": 0.216,
+        "9085": 0.27,
+        "9119": 0.508,
+        "9130": 0.548,
+        "9147": 0.369,
+        "9238": 0.185,
+        "9254": 0.384,
+        "9500": 0.147,
+        "9556": 0.403,
+        "9670": 0.327,
+        "9773": 0.327,
+        "9853": 0.461,
+        "9991": 0.498
+      },
+      "n_by_level": {
+        "171": 156,
+        "33": 10,
+        "8014": 169,
+        "9003": 162,
+        "9070": 190,
+        "9085": 270,
+        "9119": 130,
+        "9130": 115,
+        "9147": 314,
+        "9238": 286,
+        "9254": 198,
+        "9500": 621,
+        "9556": 72,
+        "9670": 208,
+        "9773": 275,
+        "9853": 152,
+        "9991": 211
+      },
+      "p_holm": 8.194919677244894e-43,
+      "significant": true
+    },
+    {
+      "var": "Previous qualification",
+      "type": "categorical",
+      "test": "Chi-square",
+      "effect": 0.215,
+      "effect_name": "Cramér's V",
+      "p": 6.666846920257367e-27,
+      "rates_by_level": {
+        "1": 0.289,
+        "10": 0.667,
+        "12": 0.595,
+        "15": 0.5,
+        "19": 0.622,
+        "2": 0.737,
+        "3": 0.619,
+        "38": 0.5,
+        "39": 0.321,
+        "4": 0.333,
+        "40": 0.4,
+        "42": 0.2,
+        "43": 0.4,
+        "5": 1.0,
+        "6": 0.417,
+        "9": 1.0
+      },
+      "n_by_level": {
+        "1": 2983,
+        "10": 3,
+        "12": 37,
+        "15": 2,
+        "19": 135,
+        "2": 19,
+        "3": 97,
+        "38": 6,
+        "39": 165,
+        "4": 6,
+        "40": 35,
+        "42": 25,
+        "43": 5,
+        "5": 1,
+        "6": 12,
+        "9": 8
+      },
+      "p_holm": 6.000162228231631e-26,
+      "significant": true
+    },
+    {
+      "var": "Curricular units 1st sem (enrolled)",
+      "type": "numeric",
+      "test": "Mann-Whitney U",
+      "median_pos": 6.0,
+      "median_neg": 6.0,
+      "effect": -0.196,
+      "effect_name": "rank-biserial r (dương: nhóm dương cao hơn)",
+      "p": 2.6924591104975873e-23,
+      "p_holm": 2.15396728839807e-22,
+      "significant": true
+    },
+    {
+      "var": "Application order",
+      "type": "numeric",
+      "test": "Mann-Whitney U",
+      "median_pos": 1.0,
+      "median_neg": 1.0,
+      "effect": -0.095,
+      "effect_name": "rank-biserial r (dương: nhóm dương cao hơn)",
+      "p": 3.550549485392567e-08,
+      "p_holm": 2.485384639774797e-07,
+      "significant": false
+    },
+    {
+      "var": "Admission grade",
+      "type": "numeric",
+      "test": "Mann-Whitney U",
+      "median_pos": 123.8,
+      "median_neg": 126.5,
+      "effect": -0.108,
+      "effect_name": "rank-biserial r (dương: nhóm dương cao hơn)",
+      "p": 1.8199775120246968e-07,
+      "p_holm": 1.091986507214818e-06,
+      "significant": true
+    },
+    {
+      "var": "Previous qualification (grade)",
+      "type": "numeric",
+      "test": "Mann-Whitney U",
+      "median_pos": 133.1,
+      "median_neg": 133.1,
+      "effect": -0.101,
+      "effect_name": "rank-biserial r (dương: nhóm dương cao hơn)",
+      "p": 1.152019113798145e-06,
+      "p_holm": 5.7600955689907255e-06,
+      "significant": true
+    },
+    {
+      "var": "Daytime/evening attendance",
+      "type": "categorical",
+      "test": "Chi-square",
+      "effect": 0.072,
+      "effect_name": "Cramér's V",
+      "p": 1.7686043739966737e-05,
+      "rates_by_level": {
+        "0": 0.418,
+        "1": 0.31
+      },
+      "n_by_level": {
+        "0": 380,
+        "1": 3159
+      },
+      "p_holm": 7.074417495986695e-05,
+      "significant": false
+    },
+    {
+      "var": "Curricular units 1st sem (without evaluations)",
+      "type": "numeric",
+      "test": "Mann-Whitney U",
+      "median_pos": 0.0,
+      "median_neg": 0.0,
+      "effect": 0.029,
+      "effect_name": "rank-biserial r (dương: nhóm dương cao hơn)",
+      "p": 0.0015049961450629876,
+      "p_holm": 0.004514988435188963,
+      "significant": false
+    },
+    {
+      "var": "Curricular units 1st sem (evaluations)",
+      "type": "numeric",
+      "test": "Mann-Whitney U",
+      "median_pos": 8.0,
+      "median_neg": 8.0,
+      "effect": -0.055,
+      "effect_name": "rank-biserial r (dương: nhóm dương cao hơn)",
+      "p": 0.007688528079690628,
+      "p_holm": 0.015377056159381257,
+      "significant": false
+    },
+    {
+      "var": "Curricular units 1st sem (credited)",
+      "type": "numeric",
+      "test": "Mann-Whitney U",
+      "median_pos": 0.0,
+      "median_neg": 0.0,
+      "effect": 0.001,
+      "effect_name": "rank-biserial r (dương: nhóm dương cao hơn)",
+      "p": 0.9416649470262229,
+      "p_holm": 0.9416649470262229,
+      "significant": false
+    }
+  ],
+  "adjusted_logit": {
+    "pseudo_r2": 0.3865,
+    "llr_p": 0.0,
+    "note": "biến số: OR mỗi 1 độ lệch chuẩn; biến phân loại: so với mức phổ biến nhất",
+    "terms": [
+      {
+        "term": "Curricular units 1st sem (approved)",
+        "or": 0.08,
+        "ci_low": 0.062,
+        "ci_high": 0.105,
+        "p": 2.6252450822420202e-76
+      },
+      {
+        "term": "Curricular units 1st sem (credited)",
+        "or": 2.52,
+        "ci_low": 1.949,
+        "ci_high": 3.26,
+        "p": 1.9153640380979417e-12
+      },
+      {
+        "term": "Course_9853",
+        "or": 4.496,
+        "ci_low": 2.681,
+        "ci_high": 7.54,
+        "p": 1.2097657083942664e-08
+      },
+      {
+        "term": "Curricular units 1st sem (enrolled)",
+        "or": 2.322,
+        "ci_low": 1.677,
+        "ci_high": 3.216,
+        "p": 3.9489971927339837e-07
+      },
+      {
+        "term": "Application mode_39",
+        "or": 2.282,
+        "ci_low": 1.622,
+        "ci_high": 3.212,
+        "p": 2.187898358146395e-06
+      },
+      {
+        "term": "Curricular units 1st sem (without evaluations)",
+        "or": 0.787,
+        "ci_low": 0.71,
+        "ci_high": 0.873,
+        "p": 6.070997508766531e-06
+      },
+      {
+        "term": "Course_9773",
+        "or": 2.941,
+        "ci_low": 1.836,
+        "ci_high": 4.712,
+        "p": 7.219466233200547e-06
+      },
+      {
+        "term": "Course_9130",
+        "or": 4.075,
+        "ci_low": 2.177,
+        "ci_high": 7.627,
+        "p": 1.1208974988053006e-05
+      },
+      {
+        "term": "Course_9254",
+        "or": 2.393,
+        "ci_low": 1.422,
+        "ci_high": 4.028,
+        "p": 0.00101452458213543
+      },
+      {
+        "term": "Previous qualification_2",
+        "or": 6.984,
+        "ci_low": 1.961,
+        "ci_high": 24.875,
+        "p": 0.002707313353761922
+      },
+      {
+        "term": "Application mode_15",
+        "or": 0.178,
+        "ci_low": 0.041,
+        "ci_high": 0.775,
+        "p": 0.021507134692167213
+      },
+      {
+        "term": "Application mode_7",
+        "or": 3.038,
+        "ci_low": 1.129,
+        "ci_high": 8.177,
+        "p": 0.027805199667341924
+      },
+      {
+        "term": "Application mode_17",
+        "or": 1.321,
+        "ci_low": 1.01,
+        "ci_high": 1.728,
+        "p": 0.04230421229940476
+      },
+      {
+        "term": "Course_9556",
+        "or": 2.084,
+        "ci_low": 0.951,
+        "ci_high": 4.566,
+        "p": 0.06648425928111455
+      },
+      {
+        "term": "Previous qualification_19",
+        "or": 1.607,
+        "ci_low": 0.94,
+        "ci_high": 2.745,
+        "p": 0.08287570274638519
+      },
+      {
+        "term": "Course_9003",
+        "or": 1.704,
+        "ci_low": 0.923,
+        "ci_high": 3.147,
+        "p": 0.08859364060065422
+      },
+      {
+        "term": "Course_9670",
+        "or": 1.54,
+        "ci_low": 0.908,
+        "ci_high": 2.611,
+        "p": 0.10914283462382934
+      },
+      {
+        "term": "Course_171",
+        "or": 0.506,
+        "ci_low": 0.196,
+        "ci_high": 1.305,
+        "p": 0.15865715191292618
+      },
+      {
+        "term": "Course_33",
+        "or": 5.127,
+        "ci_low": 0.477,
+        "ci_high": 55.093,
+        "p": 0.17730654699070414
+      },
+      {
+        "term": "Admission grade",
+        "or": 0.922,
+        "ci_low": 0.815,
+        "ci_high": 1.044,
+        "p": 0.1993811185951997
+      },
+      {
+        "term": "Application mode_5",
+        "or": 0.241,
+        "ci_low": 0.027,
+        "ci_high": 2.139,
+        "p": 0.20129820794961095
+      },
+      {
+        "term": "Application mode_18",
+        "or": 1.484,
+        "ci_low": 0.805,
+        "ci_high": 2.736,
+        "p": 0.2054670780118063
+      },
+      {
+        "term": "Application order",
+        "or": 1.068,
+        "ci_low": 0.955,
+        "ci_high": 1.193,
+        "p": 0.24784903528235303
+      },
+      {
+        "term": "Course_9238",
+        "or": 0.732,
+        "ci_low": 0.421,
+        "ci_high": 1.273,
+        "p": 0.2690463794760867
+      },
+      {
+        "term": "Application mode_42",
+        "or": 1.49,
+        "ci_low": 0.717,
+        "ci_high": 3.095,
+        "p": 0.28540516301890717
+      },
+      {
+        "term": "Curricular units 1st sem (grade)",
+        "or": 0.894,
+        "ci_low": 0.727,
+        "ci_high": 1.099,
+        "p": 0.28805933763783365
+      },
+      {
+        "term": "Application mode_44",
+        "or": 0.514,
+        "ci_low": 0.147,
+        "ci_high": 1.79,
+        "p": 0.29561390594445514
+      },
+      {
+        "term": "Previous qualification_39",
+        "or": 1.879,
+        "ci_low": 0.564,
+        "ci_high": 6.263,
+        "p": 0.30428598076254754
+      },
+      {
+        "term": "Application mode_16",
+        "or": 0.521,
+        "ci_low": 0.138,
+        "ci_high": 1.973,
+        "p": 0.33700504608166537
+      },
+      {
+        "term": "Course_9070",
+        "or": 1.299,
+        "ci_low": 0.725,
+        "ci_high": 2.328,
+        "p": 0.37863999393549574
+      },
+      {
+        "term": "Curricular units 1st sem (evaluations)",
+        "or": 0.933,
+        "ci_low": 0.793,
+        "ci_high": 1.098,
+        "p": 0.4064047607396931
+      },
+      {
+        "term": "Previous qualification_3",
+        "or": 1.475,
+        "ci_low": 0.569,
+        "ci_high": 3.828,
+        "p": 0.42401381127394244
+      },
+      {
+        "term": "Previous qualification (grade)",
+        "or": 1.048,
+        "ci_low": 0.932,
+        "ci_high": 1.18,
+        "p": 0.4328736132363573
+      },
+      {
+        "term": "Previous qualification_6",
+        "or": 1.971,
+        "ci_low": 0.314,
+        "ci_high": 12.362,
+        "p": 0.46900895669797393
+      },
+      {
+        "term": "Application mode_51",
+        "or": 1.319,
+        "ci_low": 0.585,
+        "ci_high": 2.971,
+        "p": 0.5042961927981184
+      },
+      {
+        "term": "Course_9085",
+        "or": 1.153,
+        "ci_low": 0.671,
+        "ci_high": 1.979,
+        "p": 0.606286235322993
+      },
+      {
+        "term": "Application mode_43",
+        "or": 0.905,
+        "ci_low": 0.594,
+        "ci_high": 1.381,
+        "p": 0.6442420459209788
+      },
+      {
+        "term": "Previous qualification_42",
+        "or": 0.642,
+        "ci_low": 0.042,
+        "ci_high": 9.703,
+        "p": 0.7490366922042107
+      },
+      {
+        "term": "Previous qualification_12",
+        "or": 0.923,
+        "ci_low": 0.341,
+        "ci_high": 2.497,
+        "p": 0.8745360084985123
+      },
+      {
+        "term": "Application mode_53",
+        "or": 1.11,
+        "ci_low": 0.071,
+        "ci_high": 17.483,
+        "p": 0.9407343219546458
+      },
+      {
+        "term": "Course_8014",
+        "or": 0.795,
+        "ci_low": NaN,
+        "ci_high": NaN,
+        "p": NaN
+      },
+      {
+        "term": "Course_9147",
+        "or": 1.012,
+        "ci_low": 0.605,
+        "ci_high": 1.693,
+        "p": 0.9644322277824593
+      },
+      {
+        "term": "Course_9119",
+        "or": 0.998,
+        "ci_low": 0.531,
+        "ci_high": 1.877,
+        "p": 0.9962422905613894
+      },
+      {
+        "term": "Course_9991",
+        "or": 1.167,
+        "ci_low": NaN,
+        "ci_high": NaN,
+        "p": NaN
+      },
+      {
+        "term": "Daytime/evening attendance_0",
+        "or": 0.927,
+        "ci_low": NaN,
+        "ci_high": NaN,
+        "p": NaN
+      },
+      {
+        "term": "Previous qualification_40",
+        "or": 0.909,
+        "ci_low": 0.278,
+        "ci_high": 2.976,
+        "p": 0.8751585814077536
+      }
+    ]
+  },
+  "single_feature_cv_auc": {
+    "Curricular units 1st sem (approved)": 0.809,
+    "Curricular units 1st sem (grade)": 0.7688,
+    "Application mode": 0.6557,
+    "Course": 0.6483,
+    "Curricular units 1st sem (enrolled)": 0.5978,
+    "Previous qualification": 0.5614,
+    "Admission grade": 0.5535,
+    "Previous qualification (grade)": 0.551,
+    "Application order": 0.5401,
+    "Curricular units 1st sem (evaluations)": 0.5276,
+    "Daytime/evening attendance": 0.5142,
+    "Curricular units 1st sem (without evaluations)": 0.5107,
+    "Curricular units 1st sem (credited)": 0.4954
+  },
+  "baseline_single_feature": "Curricular units 1st sem (approved)",
+  "primary_rule": {
+    "rule": "LR trừ khi RF hơn ≥ 0.02 AUC CV và recall@capacity không kém (đặt trước)",
+    "primary": "LR"
+  },
+  "reduction": {
+    "full_auc_cv": 0.8725,
+    "rule_95_selected": {
+      "n": 2,
+      "removed": "Course",
+      "auc": 0.8422,
+      "features": [
+        "Curricular units 1st sem (credited)",
+        "Curricular units 1st sem (approved)"
+      ]
+    },
+    "best_on_path": {
+      "n": 6,
+      "removed": "Application order",
+      "auc": 0.8731,
+      "features": [
+        "Curricular units 1st sem (credited)",
+        "Curricular units 1st sem (enrolled)",
+        "Curricular units 1st sem (approved)",
+        "Curricular units 1st sem (without evaluations)",
+        "Application mode",
+        "Course"
+      ]
+    },
+    "path": [
+      {
+        "n": 13,
+        "removed": null,
+        "auc": 0.8725,
+        "features": [
+          "Application order",
+          "Previous qualification (grade)",
+          "Admission grade",
+          "Curricular units 1st sem (credited)",
+          "Curricular units 1st sem (enrolled)",
+          "Curricular units 1st sem (evaluations)",
+          "Curricular units 1st sem (approved)",
+          "Curricular units 1st sem (grade)",
+          "Curricular units 1st sem (without evaluations)",
+          "Application mode",
+          "Course",
+          "Daytime/evening attendance",
+          "Previous qualification"
+        ]
+      },
+      {
+        "n": 12,
+        "removed": "Previous qualification (grade)",
+        "auc": 0.8725,
+        "features": [
+          "Application order",
+          "Admission grade",
+          "Curricular units 1st sem (credited)",
+          "Curricular units 1st sem (enrolled)",
+          "Curricular units 1st sem (evaluations)",
+          "Curricular units 1st sem (approved)",
+          "Curricular units 1st sem (grade)",
+          "Curricular units 1st sem (without evaluations)",
+          "Application mode",
+          "Course",
+          "Daytime/evening attendance",
+          "Previous qualification"
+        ]
+      },
+      {
+        "n": 11,
+        "removed": "Previous qualification",
+        "auc": 0.8726,
+        "features": [
+          "Application order",
+          "Admission grade",
+          "Curricular units 1st sem (credited)",
+          "Curricular units 1st sem (enrolled)",
+          "Curricular units 1st sem (evaluations)",
+          "Curricular units 1st sem (approved)",
+          "Curricular units 1st sem (grade)",
+          "Curricular units 1st sem (without evaluations)",
+          "Application mode",
+          "Course",
+          "Daytime/evening attendance"
+        ]
+      },
+      {
+        "n": 10,
+        "removed": "Curricular units 1st sem (evaluations)",
+        "auc": 0.8729,
+        "features": [
+          "Application order",
+          "Admission grade",
+          "Curricular units 1st sem (credited)",
+          "Curricular units 1st sem (enrolled)",
+          "Curricular units 1st sem (approved)",
+          "Curricular units 1st sem (grade)",
+          "Curricular units 1st sem (without evaluations)",
+          "Application mode",
+          "Course",
+          "Daytime/evening attendance"
+        ]
+      },
+      {
+        "n": 9,
+        "removed": "Admission grade",
+        "auc": 0.8729,
+        "features": [
+          "Application order",
+          "Curricular units 1st sem (credited)",
+          "Curricular units 1st sem (enrolled)",
+          "Curricular units 1st sem (approved)",
+          "Curricular units 1st sem (grade)",
+          "Curricular units 1st sem (without evaluations)",
+          "Application mode",
+          "Course",
+          "Daytime/evening attendance"
+        ]
+      },
+      {
+        "n": 8,
+        "removed": "Curricular units 1st sem (grade)",
+        "auc": 0.873,
+        "features": [
+          "Application order",
+          "Curricular units 1st sem (credited)",
+          "Curricular units 1st sem (enrolled)",
+          "Curricular units 1st sem (approved)",
+          "Curricular units 1st sem (without evaluations)",
+          "Application mode",
+          "Course",
+          "Daytime/evening attendance"
+        ]
+      },
+      {
+        "n": 7,
+        "removed": "Daytime/evening attendance",
+        "auc": 0.8729,
+        "features": [
+          "Application order",
+          "Curricular units 1st sem (credited)",
+          "Curricular units 1st sem (enrolled)",
+          "Curricular units 1st sem (approved)",
+          "Curricular units 1st sem (without evaluations)",
+          "Application mode",
+          "Course"
+        ]
+      },
+      {
+        "n": 6,
+        "removed": "Application order",
+        "auc": 0.8731,
+        "features": [
+          "Curricular units 1st sem (credited)",
+          "Curricular units 1st sem (enrolled)",
+          "Curricular units 1st sem (approved)",
+          "Curricular units 1st sem (without evaluations)",
+          "Application mode",
+          "Course"
+        ]
+      },
+      {
+        "n": 5,
+        "removed": "Curricular units 1st sem (without evaluations)",
+        "auc": 0.873,
+        "features": [
+          "Curricular units 1st sem (credited)",
+          "Curricular units 1st sem (enrolled)",
+          "Curricular units 1st sem (approved)",
+          "Application mode",
+          "Course"
+        ]
+      },
+      {
+        "n": 4,
+        "removed": "Curricular units 1st sem (enrolled)",
+        "auc": 0.8707,
+        "features": [
+          "Curricular units 1st sem (credited)",
+          "Curricular units 1st sem (approved)",
+          "Application mode",
+          "Course"
+        ]
+      },
+      {
+        "n": 3,
+        "removed": "Application mode",
+        "auc": 0.8661,
+        "features": [
+          "Curricular units 1st sem (credited)",
+          "Curricular units 1st sem (approved)",
+          "Course"
+        ]
+      },
+      {
+        "n": 2,
+        "removed": "Course",
+        "auc": 0.8422,
+        "features": [
+          "Curricular units 1st sem (credited)",
+          "Curricular units 1st sem (approved)"
+        ]
+      },
+      {
+        "n": 1,
+        "removed": "Curricular units 1st sem (credited)",
+        "auc": 0.8097,
+        "features": [
+          "Curricular units 1st sem (approved)"
+        ]
+      }
+    ],
+    "reduction_rule_95": 0.8462,
+    "reduction_best": 0.5385
+  },
+  "cv_train": {
+    "B0_prior": {
+      "auc": {
+        "mean": 0.4992,
+        "sd": 0.0
+      },
+      "pr_auc": {
+        "mean": 0.3209,
+        "sd": 0.0
+      },
+      "recall@cap": {
+        "mean": 0.2892,
+        "sd": 0.0069
+      },
+      "precision@cap": {
+        "mean": 0.3096,
+        "sd": 0.0074
+      },
+      "recall@alt": {
+        "mean": 0.1337,
+        "sd": 0.005
+      },
+      "precision@alt": {
+        "mean": 0.2863,
+        "sd": 0.0107
+      }
+    },
+    "B1_best_single": {
+      "auc": {
+        "mean": 0.8098,
+        "sd": 0.0011
+      },
+      "pr_auc": {
+        "mean": 0.6801,
+        "sd": 0.0051
+      },
+      "recall@cap": {
+        "mean": 0.6529,
+        "sd": 0.0035
+      },
+      "precision@cap": {
+        "mean": 0.6991,
+        "sd": 0.0037
+      },
+      "recall@alt": {
+        "mean": 0.3722,
+        "sd": 0.0016
+      },
+      "precision@alt": {
+        "mean": 0.797,
+        "sd": 0.0034
+      }
+    },
+    "LR": {
+      "auc": {
+        "mean": 0.8725,
+        "sd": 0.0012
+      },
+      "pr_auc": {
+        "mean": 0.8022,
+        "sd": 0.002
+      },
+      "recall@cap": {
+        "mean": 0.6858,
+        "sd": 0.0023
+      },
+      "precision@cap": {
+        "mean": 0.7343,
+        "sd": 0.0024
+      },
+      "recall@alt": {
+        "mean": 0.4246,
+        "sd": 0.0024
+      },
+      "precision@alt": {
+        "mean": 0.9092,
+        "sd": 0.0052
+      }
+    },
+    "RF": {
+      "auc": {
+        "mean": 0.8584,
+        "sd": 0.0018
+      },
+      "pr_auc": {
+        "mean": 0.7853,
+        "sd": 0.002
+      },
+      "recall@cap": {
+        "mean": 0.669,
+        "sd": 0.003
+      },
+      "precision@cap": {
+        "mean": 0.7162,
+        "sd": 0.0032
+      },
+      "recall@alt": {
+        "mean": 0.4208,
+        "sd": 0.002
+      },
+      "precision@alt": {
+        "mean": 0.9009,
+        "sd": 0.0043
+      }
+    }
+  },
+  "test_holdout": {
+    "LR": {
+      "auc": 0.8774,
+      "auc_ci95": [
+        0.8505,
+        0.9004
+      ],
+      "pr_auc": 0.8061,
+      "at_cap": {
+        "flag_rate": 0.2938,
+        "recall": 0.669,
+        "precision": 0.7308,
+        "tp": 190,
+        "fp": 70,
+        "fn": 94,
+        "tn": 531
+      },
+      "at_alt": {
+        "flag_rate": 0.1571,
+        "recall": 0.4366,
+        "precision": 0.8921,
+        "tp": 124,
+        "fp": 15,
+        "fn": 160,
+        "tn": 586
+      },
+      "recall_at_cap_ci95": [
+        0.6358,
+        0.7236
+      ]
+    },
+    "RF": {
+      "auc": 0.8827,
+      "auc_ci95": [
+        0.8568,
+        0.9052
+      ],
+      "pr_auc": 0.8179,
+      "at_cap": {
+        "flag_rate": 0.3017,
+        "recall": 0.7077,
+        "precision": 0.7528,
+        "tp": 201,
+        "fp": 66,
+        "fn": 83,
+        "tn": 535
+      },
+      "at_alt": {
+        "flag_rate": 0.1537,
+        "recall": 0.4225,
+        "precision": 0.8824,
+        "tp": 120,
+        "fp": 16,
+        "fn": 164,
+        "tn": 585
+      }
+    },
+    "B1_best_single": {
+      "auc": 0.8441,
+      "auc_ci95": [
+        0.8143,
+        0.8693
+      ],
+      "pr_auc": 0.679,
+      "at_cap": {
+        "flag_rate": 0.2949,
+        "recall": 0.662,
+        "precision": 0.7203,
+        "tp": 188,
+        "fp": 73,
+        "fn": 96,
+        "tn": 528
+      },
+      "at_alt": {
+        "flag_rate": 0.1751,
+        "recall": 0.419,
+        "precision": 0.7677,
+        "tp": 119,
+        "fp": 36,
+        "fn": 165,
+        "tn": 565
+      }
+    },
+    "LR_reduced_best": {
+      "auc": 0.8766,
+      "auc_ci95": [
+        0.8499,
+        0.8997
+      ],
+      "pr_auc": 0.8016,
+      "at_cap": {
+        "flag_rate": 0.2746,
+        "recall": 0.6373,
+        "precision": 0.7449,
+        "tp": 181,
+        "fp": 62,
+        "fn": 103,
+        "tn": 539
+      },
+      "at_alt": {
+        "flag_rate": 0.1503,
+        "recall": 0.4225,
+        "precision": 0.9023,
+        "tp": 120,
+        "fp": 13,
+        "fn": 164,
+        "tn": 588
+      }
+    }
+  },
+  "calibration_oof": {
+    "brier": 0.1365,
+    "brier_constant": 0.2181,
+    "mean_pred": 0.4191,
+    "base_rate": 0.3213
+  },
+  "permutation_importance": [
+    {
+      "var": "Curricular units 1st sem (approved)",
+      "auc_drop": 0.3448
+    },
+    {
+      "var": "Curricular units 1st sem (credited)",
+      "auc_drop": 0.0443
+    },
+    {
+      "var": "Curricular units 1st sem (enrolled)",
+      "auc_drop": 0.0399
+    },
+    {
+      "var": "Course",
+      "auc_drop": 0.0269
+    },
+    {
+      "var": "Application mode",
+      "auc_drop": 0.0133
+    },
+    {
+      "var": "Daytime/evening attendance",
+      "auc_drop": 0.0022
+    },
+    {
+      "var": "Curricular units 1st sem (without evaluations)",
+      "auc_drop": 0.0021
+    },
+    {
+      "var": "Previous qualification",
+      "auc_drop": 0.0021
+    },
+    {
+      "var": "Curricular units 1st sem (grade)",
+      "auc_drop": 0.0014
+    },
+    {
+      "var": "Application order",
+      "auc_drop": 0.0005
+    },
+    {
+      "var": "Admission grade",
+      "auc_drop": 0.0003
+    },
+    {
+      "var": "Previous qualification (grade)",
+      "auc_drop": 0.0002
+    },
+    {
+      "var": "Curricular units 1st sem (evaluations)",
+      "auc_drop": 0.0
+    }
+  ],
+  "threshold_tradeoff": [
+    {
+      "flag_rate": 0.05,
+      "oof_recall": 0.1495,
+      "oof_precision": 0.9605,
+      "lift": 2.99,
+      "test_flag_rate": 0.0475,
+      "test_recall": 0.1444,
+      "test_precision": 0.9762
+    },
+    {
+      "flag_rate": 0.1,
+      "oof_recall": 0.2929,
+      "oof_precision": 0.9407,
+      "lift": 2.93,
+      "test_flag_rate": 0.1006,
+      "test_recall": 0.2958,
+      "test_precision": 0.9438
+    },
+    {
+      "flag_rate": 0.15,
+      "oof_recall": 0.4274,
+      "oof_precision": 0.9153,
+      "lift": 2.85,
+      "test_flag_rate": 0.1571,
+      "test_recall": 0.4366,
+      "test_precision": 0.8921
+    },
+    {
+      "flag_rate": 0.2,
+      "oof_recall": 0.5383,
+      "oof_precision": 0.8644,
+      "lift": 2.69,
+      "test_flag_rate": 0.1955,
+      "test_recall": 0.5176,
+      "test_precision": 0.8497
+    },
+    {
+      "flag_rate": 0.25,
+      "oof_recall": 0.6288,
+      "oof_precision": 0.8079,
+      "lift": 2.52,
+      "test_flag_rate": 0.2407,
+      "test_recall": 0.5951,
+      "test_precision": 0.7934
+    },
+    {
+      "flag_rate": 0.3,
+      "oof_recall": 0.6843,
+      "oof_precision": 0.7326,
+      "lift": 2.28,
+      "test_flag_rate": 0.2938,
+      "test_recall": 0.669,
+      "test_precision": 0.7308
+    },
+    {
+      "flag_rate": 0.35,
+      "oof_recall": 0.7458,
+      "oof_precision": 0.6844,
+      "lift": 2.13,
+      "test_flag_rate": 0.3503,
+      "test_recall": 0.743,
+      "test_precision": 0.6806
+    },
+    {
+      "flag_rate": 0.4,
+      "oof_recall": 0.7977,
+      "oof_precision": 0.6405,
+      "lift": 1.99,
+      "test_flag_rate": 0.4023,
+      "test_recall": 0.8169,
+      "test_precision": 0.6517
+    },
+    {
+      "flag_rate": 0.5,
+      "oof_recall": 0.8769,
+      "oof_precision": 0.5633,
+      "lift": 1.75,
+      "test_flag_rate": 0.5017,
+      "test_recall": 0.8979,
+      "test_precision": 0.5743
+    }
+  ],
+  "flag_rate_needed_for_target_recall": 0.24,
+  "fairness_at_capacity": {
+    "Gender": {
+      "train_oof": {
+        "0": {
+          "n": 2298,
+          "pos": 567,
+          "flag_rate": 0.23,
+          "recall": 0.628,
+          "precision": 0.674
+        },
+        "1": {
+          "n": 1241,
+          "pos": 570,
+          "flag_rate": 0.43,
+          "recall": 0.74,
+          "precision": 0.79
+        },
+        "_max_recall_gap": 0.112,
+        "_gap_ci95": [
+          0.06,
+          0.163
+        ]
+      },
+      "test": {
+        "0": {
+          "n": 570,
+          "pos": 153,
+          "flag_rate": 0.23,
+          "recall": 0.627,
+          "precision": 0.733
+        },
+        "1": {
+          "n": 315,
+          "pos": 131,
+          "flag_rate": 0.41,
+          "recall": 0.718,
+          "precision": 0.729
+        },
+        "_max_recall_gap": 0.091,
+        "_gap_ci95": [
+          0.006,
+          0.2
+        ]
+      }
+    },
+    "Age at enrollment": {
+      "train_oof": {
+        "<= 20": {
+          "n": 2035,
+          "pos": 431,
+          "flag_rate": 0.186,
+          "recall": 0.548,
+          "precision": 0.624
+        },
+        "> 20": {
+          "n": 1504,
+          "pos": 706,
+          "flag_rate": 0.455,
+          "recall": 0.768,
+          "precision": 0.792
+        },
+        "_max_recall_gap": 0.22,
+        "_gap_ci95": [
+          0.17,
+          0.277
+        ]
+      },
+      "test": {
+        "<= 20": {
+          "n": 516,
+          "pos": 111,
+          "flag_rate": 0.196,
+          "recall": 0.514,
+          "precision": 0.564
+        },
+        "> 20": {
+          "n": 369,
+          "pos": 173,
+          "flag_rate": 0.431,
+          "recall": 0.769,
+          "precision": 0.836
+        },
+        "_max_recall_gap": 0.255,
+        "_gap_ci95": [
+          0.144,
+          0.356
+        ]
+      }
+    },
+    "Debtor": {
+      "train_oof": {
+        "0": {
+          "n": 3142,
+          "pos": 885,
+          "flag_rate": 0.276,
+          "recall": 0.688,
+          "precision": 0.702
+        },
+        "1": {
+          "n": 397,
+          "pos": 252,
+          "flag_rate": 0.491,
+          "recall": 0.671,
+          "precision": 0.867
+        },
+        "_max_recall_gap": 0.017,
+        "_gap_ci95": [
+          0.002,
+          0.082
+        ]
+      },
+      "test": {
+        "0": {
+          "n": 779,
+          "pos": 224,
+          "flag_rate": 0.268,
+          "recall": 0.67,
+          "precision": 0.718
+        },
+        "1": {
+          "n": 106,
+          "pos": 60,
+          "flag_rate": 0.481,
+          "recall": 0.667,
+          "precision": 0.784
+        },
+        "_max_recall_gap": 0.003,
+        "_gap_ci95": [
+          0.002,
+          0.137
+        ]
+      }
+    }
+  },
+  "error_profile_test": {
+    "TP": {
+      "n": 190,
+      "Curricular units 1st sem (approved)": 0.0,
+      "Curricular units 1st sem (credited)": 0.0,
+      "Curricular units 1st sem (enrolled)": 6.0
+    },
+    "FN": {
+      "n": 94,
+      "Curricular units 1st sem (approved)": 5.0,
+      "Curricular units 1st sem (credited)": 0.0,
+      "Curricular units 1st sem (enrolled)": 6.0
+    },
+    "FP": {
+      "n": 70,
+      "Curricular units 1st sem (approved)": 2.0,
+      "Curricular units 1st sem (credited)": 0.0,
+      "Curricular units 1st sem (enrolled)": 5.0
+    },
+    "TN": {
+      "n": 531,
+      "Curricular units 1st sem (approved)": 6.0,
+      "Curricular units 1st sem (credited)": 0.0,
+      "Curricular units 1st sem (enrolled)": 6.0
+    }
+  },
+  "sensitivity": {},
+  "success_check": {
+    "auc": {
+      "target": 0.7,
+      "cv": 0.8725,
+      "test": 0.8774,
+      "met": true
+    },
+    "recall_at_capacity": {
+      "target": 0.6,
+      "capacity": 0.3,
+      "cv": 0.6858,
+      "test": 0.669,
+      "met": true
+    },
+    "beats_baseline": {
+      "primary_cv_auc": 0.8725,
+      "baseline_cv_auc": 0.8098,
+      "met": true
+    },
+    "reduction": {
+      "target": 0.3333,
+      "rule_95": 0.8462,
+      "met": true
+    },
+    "fairness_recall_gap": {
+      "target": 0.1,
+      "train_oof_gaps": [
+        0.112,
+        0.22,
+        0.017
+      ],
+      "met": false
+    },
+    "banned_features": {
+      "count": 0,
+      "met": true
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "eval_name": "dropout-first-semester-screening",
+  "prompt": "Phòng công tác sinh viên trường mình muốn có danh sách sinh viên có nguy cơ bỏ học để cố vấn gặp sớm. Thời điểm dùng danh sách là ngay sau khi có kết quả học kỳ 1 năm nhất, và cố vấn chỉ gặp được tối đa khoảng 30% sinh viên. File students_dropout.csv là dữ liệu các khóa trước (cột Target: Dropout / Enrolled / Graduate). Bạn phân tích giúp xem có xây được công cụ sàng lọc đáng tin không, nó bắt được bao nhiêu phần trăm sinh viên bỏ học, có công bằng không, và viết cho mình một báo cáo ngắn (report.md) kèm khuyến nghị.\n\nInput files: students_dropout.csv",
+  "assertions": [
+    "The screening model does not use any 'Curricular units 2nd sem' column as a feature (they are recorded after the end-of-first-semester decision point)",
+    "Sensitive attributes (at least Gender, Age at enrollment, Nacionality, Debtor or Tuition fees up to date) are not used as model features",
+    "report.md compares the model against a simple baseline (e.g. a single-feature rule or prior-only model)",
+    "report.md states the recall (share of dropouts caught) when flagging about 30% of students",
+    "A fairness check reports a metric (recall or flag rate) separately for at least one demographic group",
+    "report.md frames findings as associations/screening (not causal) and requires human (advisor) review before contacting students"
+  ]
+}

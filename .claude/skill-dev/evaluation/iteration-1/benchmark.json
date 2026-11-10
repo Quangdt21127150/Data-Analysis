@@ -1,0 +1,266 @@
+{
+  "metadata": {
+    "skill_name": "education-data-analytics",
+    "skill_path": "<path/to/skill>",
+    "executor_model": "claude-opus-5-5",
+    "analyzer_model": "claude-opus-5-5",
+    "timestamp": "2026-11-10T04:01:05Z",
+    "evals_run": [
+      "at-risk-students-start-of-year",
+      "dropout-first-semester-screening"
+    ],
+    "runs_per_configuration": 1
+  },
+  "runs": [
+    {
+      "eval_id": "at-risk-students-start-of-year",
+      "eval_name": "at-risk-students-start-of-year",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 6,
+        "failed": 0,
+        "total": 6,
+        "time_seconds": 415.5,
+        "tokens": 75380,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "The model does not use G1 or G2 as features (they are period grades recorded after the start of the year)",
+          "passed": true,
+          "evidence": "config.json excludes G1, G2 (and also absences, schoolsup) as leakage"
+        },
+        {
+          "text": "Sensitive attributes (at least sex, age, address or family/parent variables) are not used as model features",
+          "passed": true,
+          "evidence": "sex, age, address, famsize, Pstatus, Medu, Fedu, Mjob, Fjob, guardian, romantic, Dalc, Walc, health in exclude.sensitive"
+        },
+        {
+          "text": "report.md compares the model against a simple baseline (e.g. a single-feature rule or prior-only model)",
+          "passed": true,
+          "evidence": "LR AUC CV 0.80 vs past-failures-only baseline 0.67"
+        },
+        {
+          "text": "report.md states the recall (share of failing students caught) when flagging about 30% of students",
+          "passed": true,
+          "evidence": "catches 69% (CV) / 60% (test) of failing students at 30% flagged"
+        },
+        {
+          "text": "A fairness check reports a metric (recall or flag rate) separately for at least one demographic group",
+          "passed": true,
+          "evidence": "fairness by sex, address, age: age gap 22 points, rural flagged 47% vs 23% urban"
+        },
+        {
+          "text": "report.md frames findings as associations (not causal) and recommends human review of any outreach",
+          "passed": true,
+          "evidence": "report section 3 '(associations, not causes)'; 'A person reviews every flagged student, and outreach is framed as an offer of support'"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": "dropout-first-semester-screening",
+      "eval_name": "dropout-first-semester-screening",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 6,
+        "failed": 0,
+        "total": 6,
+        "time_seconds": 483.5,
+        "tokens": 98038,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "The screening model does not use any 'Curricular units 2nd sem' column as a feature (they are recorded after the end-of-first-semester decision point)",
+          "passed": true,
+          "evidence": "config.json features contain only 1st-sem curricular units; all six 2nd-sem columns are in exclude.leakage"
+        },
+        {
+          "text": "Sensitive attributes (at least Gender, Age at enrollment, Nacionality, Debtor or Tuition fees up to date) are not used as model features",
+          "passed": true,
+          "evidence": "Gender, Age at enrollment, Nacionality, Debtor, Tuition fees up to date, Scholarship holder are in exclude.sensitive (config.json); used only in fairness_audit"
+        },
+        {
+          "text": "report.md compares the model against a simple baseline (e.g. a single-feature rule or prior-only model)",
+          "passed": true,
+          "evidence": "report compares LR (AUC CV 0.873) with single-signal baseline 'Curricular units 1st sem (approved)' (0.81)"
+        },
+        {
+          "text": "report.md states the recall (share of dropouts caught) when flagging about 30% of students",
+          "passed": true,
+          "evidence": "report: catches 68.6% (CV) / 66.9% (test) of dropouts at 30% flag rate"
+        },
+        {
+          "text": "A fairness check reports a metric (recall or flag rate) separately for at least one demographic group",
+          "passed": true,
+          "evidence": "recall reported by Gender, Age at enrollment and Debtor with CI; age gap 22 points flagged as failing the criterion"
+        },
+        {
+          "text": "report.md frames findings as associations/screening (not causal) and requires human (advisor) review before contacting students",
+          "passed": true,
+          "evidence": "report section 4 titled 'liên hệ, không phải nhân quả'; line 86: 'Cố vấn quyết định có liên hệ hay không. Không gửi thông báo tự động.'"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": "at-risk-students-start-of-year",
+      "eval_name": "at-risk-students-start-of-year",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.8333,
+        "passed": 5,
+        "failed": 1,
+        "total": 6,
+        "time_seconds": 456.2,
+        "tokens": 64864,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "The model does not use G1 or G2 as features (they are period grades recorded after the start of the year)",
+          "passed": true,
+          "evidence": "notes.md: G1, G2 and absences excluded as not available at the start of the year"
+        },
+        {
+          "text": "Sensitive attributes (at least sex, age, address or family/parent variables) are not used as model features",
+          "passed": false,
+          "evidence": "recommended 'enrolment-type' model includes age, parents' education, address, guardian; questionnaire items incl. Dalc/Walc/health kept in the full set (sex/age only tested for removal)"
+        },
+        {
+          "text": "report.md compares the model against a simple baseline (e.g. a single-feature rule or prior-only model)",
+          "passed": true,
+          "evidence": "compares with random selection, failures>0 rule and simple two-variable rule"
+        },
+        {
+          "text": "report.md states the recall (share of failing students caught) when flagging about 30% of students",
+          "passed": true,
+          "evidence": "report: catches about 73% (±8) of future fails at 30% flagged"
+        },
+        {
+          "text": "A fairness check reports a metric (recall or flag rate) separately for at least one demographic group",
+          "passed": true,
+          "evidence": "subgroup_flag_check by sex, school and address: GP fails caught 47% vs MS 82%; rural 52% vs urban 21% flagged"
+        },
+        {
+          "text": "report.md frames findings as associations (not causal) and recommends human review of any outreach",
+          "passed": true,
+          "evidence": "report: 'These are associations, not causes'; 'Use the flag as an invitation to support, not a label' - returned as message text because the subagent could not write report.md"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": "dropout-first-semester-screening",
+      "eval_name": "dropout-first-semester-screening",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.8333,
+        "passed": 5,
+        "failed": 1,
+        "total": 6,
+        "time_seconds": 247.6,
+        "tokens": 63865,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "The screening model does not use any 'Curricular units 2nd sem' column as a feature (they are recorded after the end-of-first-semester decision point)",
+          "passed": true,
+          "evidence": "notes.md: 6 'Curricular units 2nd sem' columns excluded as temporal leakage (used only in reference model E)"
+        },
+        {
+          "text": "Sensitive attributes (at least Gender, Age at enrollment, Nacionality, Debtor or Tuition fees up to date) are not used as model features",
+          "passed": false,
+          "evidence": "notes.md keeps Age, Marital status, parents' occupation/qualification, Scholarship holder, Displaced and special needs as model features; only Gender/Nationality/International excluded"
+        },
+        {
+          "text": "report.md compares the model against a simple baseline (e.g. a single-feature rule or prior-only model)",
+          "passed": true,
+          "evidence": "report table compares with 'chỉ dữ liệu tuyển sinh' and simple rule 'tỷ lệ môn đạt HK1' (67%)"
+        },
+        {
+          "text": "report.md states the recall (share of dropouts caught) when flagging about 30% of students",
+          "passed": true,
+          "evidence": "report: catches about 69% of dropouts when meeting top 30% per cohort"
+        },
+        {
+          "text": "A fairness check reports a metric (recall or flag rate) separately for at least one demographic group",
+          "passed": true,
+          "evidence": "fairness table by gender, age band, scholarship, displaced, evening study (recall, precision, flag rate)"
+        },
+        {
+          "text": "report.md frames findings as associations/screening (not causal) and requires human (advisor) review before contacting students",
+          "passed": true,
+          "evidence": "report: 'Mô hình chỉ dự báo, không giải thích nguyên nhân'; recommends not labelling students and showing advisors rank only (human use) - returned as message text because the subagent could not write report.md"
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "run_summary": {
+    "with_skill": {
+      "pass_rate": {
+        "mean": 1.0,
+        "stddev": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "time_seconds": {
+        "mean": 449.5,
+        "stddev": 48.0833,
+        "min": 415.5,
+        "max": 483.5
+      },
+      "tokens": {
+        "mean": 86709.0,
+        "stddev": 16021.6254,
+        "min": 75380,
+        "max": 98038
+      }
+    },
+    "without_skill": {
+      "pass_rate": {
+        "mean": 0.8333,
+        "stddev": 0.0,
+        "min": 0.8333,
+        "max": 0.8333
+      },
+      "time_seconds": {
+        "mean": 351.9,
+        "stddev": 147.5025,
+        "min": 247.6,
+        "max": 456.2
+      },
+      "tokens": {
+        "mean": 64364.5,
+        "stddev": 706.3997,
+        "min": 63865,
+        "max": 64864
+      }
+    },
+    "delta": {
+      "pass_rate": "+0.17",
+      "time_seconds": "+97.6",
+      "tokens": "+22344"
+    }
+  },
+  "notes": [
+    "Chỉ tiêu chí 2 (không dùng thuộc tính nhạy cảm làm đặc trưng) phân biệt được hai cấu hình: bản không có skill trượt ở cả hai case; 5 tiêu chí còn lại đạt ở cả hai, nên chênh lệch pass rate (+17 điểm) đến hoàn toàn từ governance chứ không từ năng lực mô hình.",
+    "Hiệu năng mô hình tương đương: Dropout recall@30% 66.9-68.6% (có skill) so với ~69% (không skill, kiểm định theo khóa); Student Performance 60-69% so với ~73%. Skill không làm mô hình mạnh hơn, mà làm quy trình nhất quán, tái lập và có kiểm định công bằng kèm CI.",
+    "Chi phí: bản có skill dùng nhiều token hơn (TB ~86k so với ~64k) do đọc SKILL.md, chạy profile và các phân tích độ nhạy bổ sung; thời gian dài hơn khoảng 98 giây (TB 450 giây so với 352 giây).",
+    "Vòng đánh giá phát hiện 2 lỗi đã sửa trong skill: (1) cấu hình gợi ý chọn lớp hiếm nhất 'Enrolled' làm lớp dương - nay ưu tiên lớp mang nghĩa kết quả bất lợi; (2) cấu hình test UCI giữ 'absences' (số buổi vắng của chính năm học) - nay loại và SKILL.md cảnh báo biến tích lũy trong kỳ dự báo.",
+    "Ở cả 4 lượt, công cụ Write của tác tử con bị harness chặn khi ghi report.md; hai lượt không skill trả nội dung qua tin nhắn (được chấm từ văn bản trả về), hai lượt có skill tự ghi file bằng script - không ảnh hưởng nội dung nhưng ghi nhận để minh bạch."
+  ]
+}

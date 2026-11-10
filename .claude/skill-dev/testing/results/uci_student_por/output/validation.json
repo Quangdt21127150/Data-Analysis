@@ -1,0 +1,27 @@
+{
+  "created_utc": "2026-11-10T04:25:10+00:00",
+  "raw_sha256": "a7594a11d7771c0efe1a740824e0e833da9c4cad07c39a9766a874575563fb3f",
+  "rows_raw": 649,
+  "rows_labeled": 649,
+  "positives": 100,
+  "base_rate": 0.1541,
+  "train": {
+    "n": 519,
+    "pos": 80
+  },
+  "test": {
+    "n": 130,
+    "pos": 20
+  },
+  "label_status": {
+    "observed": 649
+  },
+  "n_features": 14,
+  "banned_in_features": [],
+  "missing_in_features": {},
+  "key_unique": true,
+  "sensitivity_targets": {
+    "8": "_y_t8",
+    "12": "_y_t12"
+  }
+}

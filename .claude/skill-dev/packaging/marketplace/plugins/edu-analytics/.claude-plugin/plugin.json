@@ -1,0 +1,8 @@
+{
+  "name": "edu-analytics",
+  "version": "1.1.0",
+  "description": "Phân tích dữ liệu giáo dục có trách nhiệm: profiling, kiểm soát rò rỉ, chẩn đoán, mô hình sàng lọc người học so với baseline, công bằng, đánh đổi ngưỡng và báo cáo.",
+  "author": { "name": "Nhóm N02 - Khoa học Phân tích Dữ liệu (FIT-HCMUS)" },
+  "license": "MIT",
+  "keywords": ["education", "learning-analytics", "early-warning", "student-success", "fairness", "data-quality"]
+}

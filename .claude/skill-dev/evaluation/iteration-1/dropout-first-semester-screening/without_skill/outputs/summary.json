@@ -1,0 +1,37 @@
+{
+  "n": 4424,
+  "dropout_rate": 0.3212025316455696,
+  "n_cohorts": 10,
+  "main_model": "B_main_admission+HK1|logit",
+  "main": {
+    "AUC": 0.8763347841461845,
+    "PR_AUC": 0.8162891152446732,
+    "Brier": 0.12240249879761488,
+    "flagged_pct": 0.2990506329113924,
+    "recall_at_30": 0.6924700914848698,
+    "precision_at_30": 0.7437641723356009,
+    "lift": 2.315561364118718
+  },
+  "recall_ci95": [
+    0.6692418189055453,
+    0.7158230772990541
+  ],
+  "auc_ci95": [
+    0.8640219250670856,
+    0.8877721360037936
+  ],
+  "recall_by_cohort_min": 0.6436781609195402,
+  "recall_by_cohort_max": 0.7757009345794392,
+  "flag_rate_by_target": {
+    "Dropout": 0.6924700914848698,
+    "Enrolled": 0.28337531486146095,
+    "Graduate": 0.05160706201901313
+  },
+  "sensitivity": {
+    "AUC_excl_enrolled": 0.9117215765967961
+  },
+  "gender_recall_diff_male_minus_female_ci95": [
+    0.0545105816606531,
+    0.14394284166774052
+  ]
+}

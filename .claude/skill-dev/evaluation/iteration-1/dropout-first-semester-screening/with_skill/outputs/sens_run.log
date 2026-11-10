@@ -1,0 +1,60 @@
+D:\Python\data-analysis\.venv\Lib\site-packages\statsmodels\discrete\discrete_model.py:268: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals
+  mlefit = super().fit(
+{
+ "created_utc": "2026-11-10T03:54:43+00:00",
+ "raw_sha256": "3ef126de5cefff26eb11fbb4237f1a1401cb64b488e2f1d598c23cedeb4c45ae",
+ "rows_raw": 4424,
+ "rows_labeled": 3630,
+ "positives": 1421,
+ "base_rate": 0.3915,
+ "train": {
+  "n": 2904,
+  "pos": 1137
+ },
+ "test": {
+  "n": 726,
+  "pos": 284
+ },
+ "label_status": {
+  "observed": 3630,
+  "suspect": 794
+ },
+ "n_features": 13,
+ "banned_in_features": [],
+ "missing_in_features": {},
+ "key_unique": true,
+ "sensitivity_targets": {}
+}
+{
+ "primary": "LR",
+ "cv_auc": {
+  "mean": 0.9196,
+  "sd": 0.0009
+ },
+ "test_auc": 0.92,
+ "baseline": "Curricular units 1st sem (approved)",
+ "baseline_cv_auc": {
+  "mean": 0.8564,
+  "sd": 0.0018
+ },
+ "recall@cap_test": 0.6972,
+ "reduction_best": [
+  "Curricular units 1st sem (credited)",
+  "Curricular units 1st sem (enrolled)",
+  "Curricular units 1st sem (evaluations)",
+  "Curricular units 1st sem (approved)",
+  "Curricular units 1st sem (grade)",
+  "Application mode",
+  "Course",
+  "Daytime/evening attendance"
+ ],
+ "success_check": {
+  "auc": true,
+  "recall_at_capacity": true,
+  "beats_baseline": true,
+  "reduction": true,
+  "fairness_recall_gap": false,
+  "banned_features": true
+ }
+}
+D:\Python\data-analysis\skill_source\education-data-analytics-workspace\iteration-1\dropout-first-semester-screening\with_skill\outputs\output_sens_no_enrolled\report.md

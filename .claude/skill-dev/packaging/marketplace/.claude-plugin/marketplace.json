@@ -1,0 +1,13 @@
+{
+  "name": "n02-skills",
+  "description": "Marketplace cục bộ của nhóm N02 - học phần Khoa học Phân tích Dữ liệu",
+  "owner": { "name": "Nhóm N02" },
+  "plugins": [
+    {
+      "name": "edu-analytics",
+      "source": "./plugins/edu-analytics",
+      "description": "Skill student-risk-screening: sàng lọc người học cần hỗ trợ có trách nhiệm",
+      "version": "1.1.0"
+    }
+  ]
+}

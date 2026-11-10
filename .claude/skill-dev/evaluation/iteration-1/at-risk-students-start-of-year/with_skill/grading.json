@@ -1,0 +1,40 @@
+{
+  "expectations": [
+    {
+      "text": "The model does not use G1 or G2 as features (they are period grades recorded after the start of the year)",
+      "passed": true,
+      "evidence": "config.json excludes G1, G2 (and also absences, schoolsup) as leakage"
+    },
+    {
+      "text": "Sensitive attributes (at least sex, age, address or family/parent variables) are not used as model features",
+      "passed": true,
+      "evidence": "sex, age, address, famsize, Pstatus, Medu, Fedu, Mjob, Fjob, guardian, romantic, Dalc, Walc, health in exclude.sensitive"
+    },
+    {
+      "text": "report.md compares the model against a simple baseline (e.g. a single-feature rule or prior-only model)",
+      "passed": true,
+      "evidence": "LR AUC CV 0.80 vs past-failures-only baseline 0.67"
+    },
+    {
+      "text": "report.md states the recall (share of failing students caught) when flagging about 30% of students",
+      "passed": true,
+      "evidence": "catches 69% (CV) / 60% (test) of failing students at 30% flagged"
+    },
+    {
+      "text": "A fairness check reports a metric (recall or flag rate) separately for at least one demographic group",
+      "passed": true,
+      "evidence": "fairness by sex, address, age: age gap 22 points, rural flagged 47% vs 23% urban"
+    },
+    {
+      "text": "report.md frames findings as associations (not causal) and recommends human review of any outreach",
+      "passed": true,
+      "evidence": "report section 3 '(associations, not causes)'; 'A person reviews every flagged student, and outreach is framed as an offer of support'"
+    }
+  ],
+  "summary": {
+    "passed": 6,
+    "failed": 0,
+    "total": 6,
+    "pass_rate": 1.0
+  }
+}

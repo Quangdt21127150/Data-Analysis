@@ -1,0 +1,78 @@
+{
+  "project": "uci_student_por",
+  "data_path": "D:\\Python\\data-analysis\\.claude\\skill-dev\\testing\\datasets\\uci_student_por.csv",
+  "sheet": null,
+  "out_dir": "D:\\Python\\data-analysis\\.claude\\skill-dev\\testing\\results\\uci_student_por\\profile\\output",
+  "id_column": null,
+  "target": {
+    "column": "G3",
+    "type": "threshold_below",
+    "threshold": 10.0,
+    "zero_is_missing": true,
+    "sensitivity_thresholds": []
+  },
+  "features": {
+    "numeric": [
+      "traveltime",
+      "studytime",
+      "failures",
+      "famrel",
+      "freetime",
+      "goout",
+      "absences"
+    ],
+    "categorical": [
+      "school",
+      "reason",
+      "schoolsup",
+      "famsup",
+      "paid",
+      "activities",
+      "nursery",
+      "higher",
+      "internet"
+    ]
+  },
+  "exclude": {
+    "leakage": [
+      "G1",
+      "G2"
+    ],
+    "sensitive": [
+      "sex",
+      "age",
+      "address",
+      "famsize",
+      "Pstatus",
+      "Medu",
+      "Fedu",
+      "Mjob",
+      "Fjob",
+      "guardian",
+      "romantic",
+      "Dalc",
+      "Walc",
+      "health"
+    ],
+    "other": []
+  },
+  "fairness_audit": [
+    "sex",
+    "age"
+  ],
+  "range_to_mid": [],
+  "missing_codes": {},
+  "valid_ranges": {},
+  "suspect_label_rules": [],
+  "capacity": 0.3,
+  "alt_capacity": 0.15,
+  "seed": 2026,
+  "test_size": 0.2,
+  "success": {
+    "auc": 0.7,
+    "recall": 0.6,
+    "max_recall_gap": 0.1,
+    "reduction": 0.3333
+  },
+  "_note": "Gợi ý tự động: PHẢI rà soát vai trò từng biến theo domain (thời điểm phát sinh, rò rỉ, nhạy cảm) và chốt ngưỡng nhãn bằng căn cứ nghiệp vụ trước khi chạy prepare."
+}

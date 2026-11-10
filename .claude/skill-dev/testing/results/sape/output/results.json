@@ -1,0 +1,1027 @@
+{
+  "config": {
+    "project": "SAPE - sàng lọc sinh viên CGPA < 2.75 (tái lập Milestone 3-4 của N02)",
+    "target": {
+      "column": "What is your current CGPA?",
+      "type": "threshold_below",
+      "threshold": 2.75,
+      "zero_is_missing": true,
+      "sensitivity_thresholds": [
+        2.5,
+        3.0
+      ]
+    },
+    "capacity": 0.3,
+    "alt_capacity": 0.15,
+    "seed": 2026,
+    "cv_folds": 5,
+    "cv_repeats": 10,
+    "success": {
+      "auc": 0.7,
+      "recall": 0.6,
+      "max_recall_gap": 0.1,
+      "reduction": 0.3333
+    }
+  },
+  "data": {
+    "train_n": 812,
+    "train_pos": 134,
+    "test_n": 203,
+    "test_pos": 33,
+    "features": [
+      "How many hour do you study daily?",
+      "How many times do you seat for study in a day?",
+      "Average attendance on class",
+      "How many hour do you spent daily in social media?",
+      "How many hour do you spent daily on your skill development?",
+      "Current Semester",
+      "What is your preferable learning mode?",
+      "Do you have personal Computer?",
+      "Do you use University transportation?",
+      "Status of your English language proficiency",
+      "Are you engaged with any co-curriculum activities?"
+    ]
+  },
+  "versions": {
+    "python": "3.12.13",
+    "numpy": "2.5.4",
+    "pandas": "3.1.1",
+    "sklearn": "1.9.1"
+  },
+  "diagnostics": [
+    {
+      "var": "Average attendance on class",
+      "type": "numeric",
+      "test": "Mann-Whitney U",
+      "median_pos": 87.5,
+      "median_neg": 95.0,
+      "effect": -0.237,
+      "effect_name": "rank-biserial r (dương: nhóm dương cao hơn)",
+      "p": 1.0594096049303055e-05,
+      "p_holm": 0.00011653505654233361,
+      "significant": true
+    },
+    {
+      "var": "Status of your English language proficiency",
+      "type": "categorical",
+      "test": "Chi-square",
+      "effect": 0.119,
+      "effect_name": "Cramér's V",
+      "p": 0.003217941280686432,
+      "rates_by_level": {
+        "Advance": 0.195,
+        "Basic": 0.228,
+        "Intermediate": 0.127
+      },
+      "n_by_level": {
+        "Advance": 169,
+        "Basic": 193,
+        "Intermediate": 450
+      },
+      "p_holm": 0.03217941280686432,
+      "significant": true
+    },
+    {
+      "var": "How many hour do you study daily?",
+      "type": "numeric",
+      "test": "Mann-Whitney U",
+      "median_pos": 3.0,
+      "median_neg": 3.0,
+      "effect": -0.057,
+      "effect_name": "rank-biserial r (dương: nhóm dương cao hơn)",
+      "p": 0.2831785494247304,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "var": "How many times do you seat for study in a day?",
+      "type": "numeric",
+      "test": "Mann-Whitney U",
+      "median_pos": 2.0,
+      "median_neg": 2.0,
+      "effect": 0.008,
+      "effect_name": "rank-biserial r (dương: nhóm dương cao hơn)",
+      "p": 0.8729342419221325,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "var": "How many hour do you spent daily in social media?",
+      "type": "numeric",
+      "test": "Mann-Whitney U",
+      "median_pos": 3.0,
+      "median_neg": 3.0,
+      "effect": 0.075,
+      "effect_name": "rank-biserial r (dương: nhóm dương cao hơn)",
+      "p": 0.15796605880623094,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "var": "How many hour do you spent daily on your skill development?",
+      "type": "numeric",
+      "test": "Mann-Whitney U",
+      "median_pos": 2.0,
+      "median_neg": 2.0,
+      "effect": -0.028,
+      "effect_name": "rank-biserial r (dương: nhóm dương cao hơn)",
+      "p": 0.5889164571645928,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "var": "Current Semester",
+      "type": "numeric",
+      "test": "Mann-Whitney U",
+      "median_pos": 8.0,
+      "median_neg": 8.0,
+      "effect": 0.061,
+      "effect_name": "rank-biserial r (dương: nhóm dương cao hơn)",
+      "p": 0.257385733381693,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "var": "What is your preferable learning mode?",
+      "type": "categorical",
+      "test": "Chi-square",
+      "effect": 0.029,
+      "effect_name": "Cramér's V",
+      "p": 0.416285973932768,
+      "rates_by_level": {
+        "Offline": 0.158,
+        "Online": 0.182
+      },
+      "n_by_level": {
+        "Offline": 581,
+        "Online": 231
+      },
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "var": "Do you have personal Computer?",
+      "type": "categorical",
+      "test": "Chi-square",
+      "effect": 0.037,
+      "effect_name": "Cramér's V",
+      "p": 0.2927418707394983,
+      "rates_by_level": {
+        "No": 0.213,
+        "Yes": 0.161
+      },
+      "n_by_level": {
+        "No": 61,
+        "Yes": 751
+      },
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "var": "Do you use University transportation?",
+      "type": "categorical",
+      "test": "Chi-square",
+      "effect": 0.054,
+      "effect_name": "Cramér's V",
+      "p": 0.12143753741830764,
+      "rates_by_level": {
+        "No": 0.181,
+        "Yes": 0.14
+      },
+      "n_by_level": {
+        "No": 497,
+        "Yes": 315
+      },
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "var": "Are you engaged with any co-curriculum activities?",
+      "type": "categorical",
+      "test": "Chi-square",
+      "effect": 0.054,
+      "effect_name": "Cramér's V",
+      "p": 0.1229013390079314,
+      "rates_by_level": {
+        "No": 0.148,
+        "Yes": 0.188
+      },
+      "n_by_level": {
+        "No": 467,
+        "Yes": 345
+      },
+      "p_holm": 1.0,
+      "significant": false
+    }
+  ],
+  "adjusted_logit": {
+    "pseudo_r2": 0.0645,
+    "llr_p": 4.837520119693098e-06,
+    "note": "biến số: OR mỗi 1 độ lệch chuẩn; biến phân loại: so với mức phổ biến nhất",
+    "terms": [
+      {
+        "term": "Average attendance on class",
+        "or": 0.661,
+        "ci_low": 0.559,
+        "ci_high": 0.781,
+        "p": 1.1677300044461543e-06
+      },
+      {
+        "term": "Status of your English language proficiency_Basic",
+        "or": 2.327,
+        "ci_low": 1.457,
+        "ci_high": 3.717,
+        "p": 0.00040909827511855364
+      },
+      {
+        "term": "Status of your English language proficiency_Advance",
+        "or": 1.504,
+        "ci_low": 0.92,
+        "ci_high": 2.457,
+        "p": 0.10347815535378377
+      },
+      {
+        "term": "Do you have personal Computer?_No",
+        "or": 1.722,
+        "ci_low": 0.882,
+        "ci_high": 3.362,
+        "p": 0.11137288112705017
+      },
+      {
+        "term": "Are you engaged with any co-curriculum activities?_Yes",
+        "or": 1.355,
+        "ci_low": 0.92,
+        "ci_high": 1.994,
+        "p": 0.12381730568982542
+      },
+      {
+        "term": "Current Semester",
+        "or": 1.172,
+        "ci_low": 0.952,
+        "ci_high": 1.443,
+        "p": 0.13431586221054798
+      },
+      {
+        "term": "Do you use University transportation?_Yes",
+        "or": 0.751,
+        "ci_low": 0.499,
+        "ci_high": 1.128,
+        "p": 0.1676470916153895
+      },
+      {
+        "term": "How many hour do you spent daily in social media?",
+        "or": 1.061,
+        "ci_low": 0.882,
+        "ci_high": 1.276,
+        "p": 0.5308927988857294
+      },
+      {
+        "term": "What is your preferable learning mode?_Online",
+        "or": 1.136,
+        "ci_low": 0.743,
+        "ci_high": 1.738,
+        "p": 0.5567501298126106
+      },
+      {
+        "term": "How many hour do you study daily?",
+        "or": 0.955,
+        "ci_low": 0.77,
+        "ci_high": 1.184,
+        "p": 0.6762614243219545
+      },
+      {
+        "term": "How many times do you seat for study in a day?",
+        "or": 1.014,
+        "ci_low": 0.822,
+        "ci_high": 1.252,
+        "p": 0.8942648442719529
+      },
+      {
+        "term": "How many hour do you spent daily on your skill development?",
+        "or": 1.002,
+        "ci_low": 0.819,
+        "ci_high": 1.226,
+        "p": 0.9823397196297305
+      }
+    ]
+  },
+  "single_feature_cv_auc": {
+    "Average attendance on class": 0.6162,
+    "Status of your English language proficiency": 0.548,
+    "How many hour do you spent daily in social media?": 0.5241,
+    "How many hour do you study daily?": 0.5233,
+    "Current Semester": 0.5223,
+    "Do you use University transportation?": 0.5163,
+    "Are you engaged with any co-curriculum activities?": 0.5121,
+    "What is your preferable learning mode?": 0.4911,
+    "Do you have personal Computer?": 0.4909,
+    "How many hour do you spent daily on your skill development?": 0.4644,
+    "How many times do you seat for study in a day?": 0.4422
+  },
+  "baseline_single_feature": "Average attendance on class",
+  "primary_rule": {
+    "rule": "LR trừ khi RF hơn ≥ 0.02 AUC CV và recall@capacity không kém (đặt trước)",
+    "primary": "LR"
+  },
+  "reduction": {
+    "full_auc_cv": 0.6198,
+    "rule_95_selected": {
+      "n": 1,
+      "removed": "Status of your English language proficiency",
+      "auc": 0.617,
+      "features": [
+        "Average attendance on class"
+      ]
+    },
+    "best_on_path": {
+      "n": 4,
+      "removed": "Current Semester",
+      "auc": 0.6468,
+      "features": [
+        "Average attendance on class",
+        "Do you use University transportation?",
+        "Status of your English language proficiency",
+        "Are you engaged with any co-curriculum activities?"
+      ]
+    },
+    "path": [
+      {
+        "n": 11,
+        "removed": null,
+        "auc": 0.6198,
+        "features": [
+          "How many hour do you study daily?",
+          "How many times do you seat for study in a day?",
+          "Average attendance on class",
+          "How many hour do you spent daily in social media?",
+          "How many hour do you spent daily on your skill development?",
+          "Current Semester",
+          "What is your preferable learning mode?",
+          "Do you have personal Computer?",
+          "Do you use University transportation?",
+          "Status of your English language proficiency",
+          "Are you engaged with any co-curriculum activities?"
+        ]
+      },
+      {
+        "n": 10,
+        "removed": "How many times do you seat for study in a day?",
+        "auc": 0.6249,
+        "features": [
+          "How many hour do you study daily?",
+          "Average attendance on class",
+          "How many hour do you spent daily in social media?",
+          "How many hour do you spent daily on your skill development?",
+          "Current Semester",
+          "What is your preferable learning mode?",
+          "Do you have personal Computer?",
+          "Do you use University transportation?",
+          "Status of your English language proficiency",
+          "Are you engaged with any co-curriculum activities?"
+        ]
+      },
+      {
+        "n": 9,
+        "removed": "How many hour do you spent daily on your skill development?",
+        "auc": 0.6308,
+        "features": [
+          "How many hour do you study daily?",
+          "Average attendance on class",
+          "How many hour do you spent daily in social media?",
+          "Current Semester",
+          "What is your preferable learning mode?",
+          "Do you have personal Computer?",
+          "Do you use University transportation?",
+          "Status of your English language proficiency",
+          "Are you engaged with any co-curriculum activities?"
+        ]
+      },
+      {
+        "n": 8,
+        "removed": "Do you have personal Computer?",
+        "auc": 0.6332,
+        "features": [
+          "How many hour do you study daily?",
+          "Average attendance on class",
+          "How many hour do you spent daily in social media?",
+          "Current Semester",
+          "What is your preferable learning mode?",
+          "Do you use University transportation?",
+          "Status of your English language proficiency",
+          "Are you engaged with any co-curriculum activities?"
+        ]
+      },
+      {
+        "n": 7,
+        "removed": "What is your preferable learning mode?",
+        "auc": 0.6386,
+        "features": [
+          "How many hour do you study daily?",
+          "Average attendance on class",
+          "How many hour do you spent daily in social media?",
+          "Current Semester",
+          "Do you use University transportation?",
+          "Status of your English language proficiency",
+          "Are you engaged with any co-curriculum activities?"
+        ]
+      },
+      {
+        "n": 6,
+        "removed": "How many hour do you spent daily in social media?",
+        "auc": 0.6419,
+        "features": [
+          "How many hour do you study daily?",
+          "Average attendance on class",
+          "Current Semester",
+          "Do you use University transportation?",
+          "Status of your English language proficiency",
+          "Are you engaged with any co-curriculum activities?"
+        ]
+      },
+      {
+        "n": 5,
+        "removed": "How many hour do you study daily?",
+        "auc": 0.6439,
+        "features": [
+          "Average attendance on class",
+          "Current Semester",
+          "Do you use University transportation?",
+          "Status of your English language proficiency",
+          "Are you engaged with any co-curriculum activities?"
+        ]
+      },
+      {
+        "n": 4,
+        "removed": "Current Semester",
+        "auc": 0.6468,
+        "features": [
+          "Average attendance on class",
+          "Do you use University transportation?",
+          "Status of your English language proficiency",
+          "Are you engaged with any co-curriculum activities?"
+        ]
+      },
+      {
+        "n": 3,
+        "removed": "Are you engaged with any co-curriculum activities?",
+        "auc": 0.6461,
+        "features": [
+          "Average attendance on class",
+          "Do you use University transportation?",
+          "Status of your English language proficiency"
+        ]
+      },
+      {
+        "n": 2,
+        "removed": "Do you use University transportation?",
+        "auc": 0.6413,
+        "features": [
+          "Average attendance on class",
+          "Status of your English language proficiency"
+        ]
+      },
+      {
+        "n": 1,
+        "removed": "Status of your English language proficiency",
+        "auc": 0.617,
+        "features": [
+          "Average attendance on class"
+        ]
+      }
+    ],
+    "reduction_rule_95": 0.9091,
+    "reduction_best": 0.6364
+  },
+  "cv_train": {
+    "B0_prior": {
+      "auc": {
+        "mean": 0.4961,
+        "sd": 0.0
+      },
+      "pr_auc": {
+        "mean": 0.1637,
+        "sd": 0.0
+      },
+      "recall@cap": {
+        "mean": 0.2888,
+        "sd": 0.0141
+      },
+      "precision@cap": {
+        "mean": 0.1586,
+        "sd": 0.0077
+      },
+      "recall@alt": {
+        "mean": 0.1261,
+        "sd": 0.0089
+      },
+      "precision@alt": {
+        "mean": 0.1385,
+        "sd": 0.0098
+      }
+    },
+    "B1_best_single": {
+      "auc": {
+        "mean": 0.615,
+        "sd": 0.0047
+      },
+      "pr_auc": {
+        "mean": 0.2693,
+        "sd": 0.0034
+      },
+      "recall@cap": {
+        "mean": 0.4567,
+        "sd": 0.0047
+      },
+      "precision@cap": {
+        "mean": 0.2508,
+        "sd": 0.0026
+      },
+      "recall@alt": {
+        "mean": 0.2336,
+        "sd": 0.0036
+      },
+      "precision@alt": {
+        "mean": 0.2566,
+        "sd": 0.004
+      }
+    },
+    "LR": {
+      "auc": {
+        "mean": 0.6198,
+        "sd": 0.0093
+      },
+      "pr_auc": {
+        "mean": 0.2624,
+        "sd": 0.0089
+      },
+      "recall@cap": {
+        "mean": 0.444,
+        "sd": 0.0187
+      },
+      "precision@cap": {
+        "mean": 0.2439,
+        "sd": 0.0103
+      },
+      "recall@alt": {
+        "mean": 0.2731,
+        "sd": 0.0193
+      },
+      "precision@alt": {
+        "mean": 0.3,
+        "sd": 0.0212
+      }
+    },
+    "RF": {
+      "auc": {
+        "mean": 0.6203,
+        "sd": 0.0101
+      },
+      "pr_auc": {
+        "mean": 0.2337,
+        "sd": 0.0095
+      },
+      "recall@cap": {
+        "mean": 0.4269,
+        "sd": 0.026
+      },
+      "precision@cap": {
+        "mean": 0.2344,
+        "sd": 0.0143
+      },
+      "recall@alt": {
+        "mean": 0.2343,
+        "sd": 0.018
+      },
+      "precision@alt": {
+        "mean": 0.2574,
+        "sd": 0.0198
+      }
+    }
+  },
+  "test_holdout": {
+    "LR": {
+      "auc": 0.6141,
+      "auc_ci95": [
+        0.502,
+        0.7239
+      ],
+      "pr_auc": 0.2493,
+      "at_cap": {
+        "flag_rate": 0.3153,
+        "recall": 0.4848,
+        "precision": 0.25,
+        "tp": 16,
+        "fp": 48,
+        "fn": 17,
+        "tn": 122
+      },
+      "at_alt": {
+        "flag_rate": 0.1379,
+        "recall": 0.2424,
+        "precision": 0.2857,
+        "tp": 8,
+        "fp": 20,
+        "fn": 25,
+        "tn": 150
+      },
+      "recall_at_cap_ci95": [
+        0.3,
+        0.6286
+      ]
+    },
+    "RF": {
+      "auc": 0.6228,
+      "auc_ci95": [
+        0.5163,
+        0.719
+      ],
+      "pr_auc": 0.2436,
+      "at_cap": {
+        "flag_rate": 0.2463,
+        "recall": 0.4242,
+        "precision": 0.28,
+        "tp": 14,
+        "fp": 36,
+        "fn": 19,
+        "tn": 134
+      },
+      "at_alt": {
+        "flag_rate": 0.1379,
+        "recall": 0.2727,
+        "precision": 0.3214,
+        "tp": 9,
+        "fp": 19,
+        "fn": 24,
+        "tn": 151
+      }
+    },
+    "B1_best_single": {
+      "auc": 0.5566,
+      "auc_ci95": [
+        0.4341,
+        0.6728
+      ],
+      "pr_auc": 0.2269,
+      "at_cap": {
+        "flag_rate": 0.2365,
+        "recall": 0.3333,
+        "precision": 0.2292,
+        "tp": 11,
+        "fp": 37,
+        "fn": 22,
+        "tn": 133
+      },
+      "at_alt": {
+        "flag_rate": 0.1626,
+        "recall": 0.2424,
+        "precision": 0.2424,
+        "tp": 8,
+        "fp": 25,
+        "fn": 25,
+        "tn": 145
+      }
+    },
+    "LR_reduced_best": {
+      "auc": 0.6213,
+      "auc_ci95": [
+        0.514,
+        0.7227
+      ],
+      "pr_auc": 0.2426,
+      "at_cap": {
+        "flag_rate": 0.266,
+        "recall": 0.4545,
+        "precision": 0.2778,
+        "tp": 15,
+        "fp": 39,
+        "fn": 18,
+        "tn": 131
+      },
+      "at_alt": {
+        "flag_rate": 0.1379,
+        "recall": 0.2727,
+        "precision": 0.3214,
+        "tp": 9,
+        "fp": 19,
+        "fn": 24,
+        "tn": 151
+      }
+    }
+  },
+  "calibration_oof": {
+    "brier": 0.2331,
+    "brier_constant": 0.1378,
+    "mean_pred": 0.4658,
+    "base_rate": 0.165
+  },
+  "permutation_importance": [
+    {
+      "var": "Average attendance on class",
+      "auc_drop": 0.0773
+    },
+    {
+      "var": "Status of your English language proficiency",
+      "auc_drop": 0.0648
+    },
+    {
+      "var": "Are you engaged with any co-curriculum activities?",
+      "auc_drop": 0.0101
+    },
+    {
+      "var": "Do you use University transportation?",
+      "auc_drop": 0.0089
+    },
+    {
+      "var": "Do you have personal Computer?",
+      "auc_drop": 0.0057
+    },
+    {
+      "var": "How many times do you seat for study in a day?",
+      "auc_drop": 0.0029
+    },
+    {
+      "var": "Current Semester",
+      "auc_drop": 0.0024
+    },
+    {
+      "var": "What is your preferable learning mode?",
+      "auc_drop": 0.0007
+    },
+    {
+      "var": "How many hour do you study daily?",
+      "auc_drop": 0.0005
+    },
+    {
+      "var": "How many hour do you spent daily on your skill development?",
+      "auc_drop": 0.0002
+    },
+    {
+      "var": "How many hour do you spent daily in social media?",
+      "auc_drop": -0.0001
+    }
+  ],
+  "threshold_tradeoff": [
+    {
+      "flag_rate": 0.05,
+      "oof_recall": 0.1269,
+      "oof_precision": 0.4146,
+      "lift": 2.54,
+      "test_flag_rate": 0.0591,
+      "test_recall": 0.0909,
+      "test_precision": 0.25
+    },
+    {
+      "flag_rate": 0.1,
+      "oof_recall": 0.2239,
+      "oof_precision": 0.3659,
+      "lift": 2.24,
+      "test_flag_rate": 0.1084,
+      "test_recall": 0.2121,
+      "test_precision": 0.3182
+    },
+    {
+      "flag_rate": 0.15,
+      "oof_recall": 0.2537,
+      "oof_precision": 0.2787,
+      "lift": 1.69,
+      "test_flag_rate": 0.1379,
+      "test_recall": 0.2424,
+      "test_precision": 0.2857
+    },
+    {
+      "flag_rate": 0.2,
+      "oof_recall": 0.3134,
+      "oof_precision": 0.2577,
+      "lift": 1.57,
+      "test_flag_rate": 0.1921,
+      "test_recall": 0.3333,
+      "test_precision": 0.2821
+    },
+    {
+      "flag_rate": 0.25,
+      "oof_recall": 0.3881,
+      "oof_precision": 0.2562,
+      "lift": 1.55,
+      "test_flag_rate": 0.2562,
+      "test_recall": 0.4242,
+      "test_precision": 0.2692
+    },
+    {
+      "flag_rate": 0.3,
+      "oof_recall": 0.4328,
+      "oof_precision": 0.2377,
+      "lift": 1.44,
+      "test_flag_rate": 0.3153,
+      "test_recall": 0.4848,
+      "test_precision": 0.25
+    },
+    {
+      "flag_rate": 0.35,
+      "oof_recall": 0.4627,
+      "oof_precision": 0.2175,
+      "lift": 1.32,
+      "test_flag_rate": 0.3596,
+      "test_recall": 0.4848,
+      "test_precision": 0.2192
+    },
+    {
+      "flag_rate": 0.4,
+      "oof_recall": 0.5075,
+      "oof_precision": 0.2092,
+      "lift": 1.27,
+      "test_flag_rate": 0.4039,
+      "test_recall": 0.5758,
+      "test_precision": 0.2317
+    },
+    {
+      "flag_rate": 0.5,
+      "oof_recall": 0.6045,
+      "oof_precision": 0.1995,
+      "lift": 1.21,
+      "test_flag_rate": 0.4631,
+      "test_recall": 0.6061,
+      "test_precision": 0.2128
+    }
+  ],
+  "flag_rate_needed_for_target_recall": 0.5,
+  "fairness_at_capacity": {
+    "Gender": {
+      "train_oof": {
+        "Male": {
+          "n": 449,
+          "pos": 76,
+          "flag_rate": 0.301,
+          "recall": 0.421,
+          "precision": 0.237
+        },
+        "Female": {
+          "n": 363,
+          "pos": 58,
+          "flag_rate": 0.3,
+          "recall": 0.448,
+          "precision": 0.239
+        },
+        "_max_recall_gap": 0.027,
+        "_gap_ci95": [
+          0.003,
+          0.204
+        ]
+      },
+      "test": {
+        "Male": {
+          "n": 113,
+          "pos": 20,
+          "flag_rate": 0.319,
+          "recall": 0.55,
+          "precision": 0.306
+        },
+        "Female": {
+          "n": 90,
+          "pos": 13,
+          "flag_rate": 0.311,
+          "recall": 0.385,
+          "precision": 0.179
+        },
+        "_max_recall_gap": 0.165,
+        "_gap_ci95": [
+          0.013,
+          0.524
+        ]
+      }
+    },
+    "With whom you are living with?": {
+      "train_oof": {
+        "Family": {
+          "n": 433,
+          "pos": 61,
+          "flag_rate": 0.286,
+          "recall": 0.443,
+          "precision": 0.218
+        },
+        "Bachelor": {
+          "n": 379,
+          "pos": 73,
+          "flag_rate": 0.317,
+          "recall": 0.425,
+          "precision": 0.258
+        },
+        "_max_recall_gap": 0.018,
+        "_gap_ci95": [
+          0.004,
+          0.219
+        ]
+      },
+      "test": {
+        "Family": {
+          "n": 107,
+          "pos": 10,
+          "flag_rate": 0.252,
+          "recall": 0.4,
+          "precision": 0.148
+        },
+        "Bachelor": {
+          "n": 96,
+          "pos": 23,
+          "flag_rate": 0.385,
+          "recall": 0.522,
+          "precision": 0.324
+        },
+        "_max_recall_gap": 0.122,
+        "_gap_ci95": [
+          0.004,
+          0.48
+        ]
+      }
+    }
+  },
+  "error_profile_test": {
+    "TP": {
+      "n": 16,
+      "Average attendance on class": 82.5
+    },
+    "FN": {
+      "n": 17,
+      "Average attendance on class": 100.0
+    },
+    "FP": {
+      "n": 48,
+      "Average attendance on class": 80.0
+    },
+    "TN": {
+      "n": 122,
+      "Average attendance on class": 95.0
+    }
+  },
+  "sensitivity": {
+    "threshold_2.5": {
+      "pos": 43,
+      "auc": {
+        "mean": 0.6411,
+        "sd": 0.0121
+      },
+      "recall@cap": {
+        "mean": 0.5302,
+        "sd": 0.0255
+      }
+    },
+    "threshold_3.0": {
+      "pos": 251,
+      "auc": {
+        "mean": 0.6577,
+        "sd": 0.0041
+      },
+      "recall@cap": {
+        "mean": 0.4542,
+        "sd": 0.0152
+      }
+    },
+    "include_suspect_labels": {
+      "n": 924,
+      "auc": {
+        "mean": 0.6279,
+        "sd": 0.0059
+      },
+      "recall@cap": {
+        "mean": 0.4597,
+        "sd": 0.0187
+      }
+    }
+  },
+  "success_check": {
+    "auc": {
+      "target": 0.7,
+      "cv": 0.6198,
+      "test": 0.6141,
+      "met": false
+    },
+    "recall_at_capacity": {
+      "target": 0.6,
+      "capacity": 0.3,
+      "cv": 0.444,
+      "test": 0.4848,
+      "met": false
+    },
+    "beats_baseline": {
+      "primary_cv_auc": 0.6198,
+      "baseline_cv_auc": 0.615,
+      "met": false
+    },
+    "reduction": {
+      "target": 0.3333,
+      "rule_95": 0.9091,
+      "met": true
+    },
+    "fairness_recall_gap": {
+      "target": 0.1,
+      "train_oof_gaps": [
+        0.027,
+        0.018
+      ],
+      "met": true
+    },
+    "banned_features": {
+      "count": 0,
+      "met": true
+    }
+  }
+}

@@ -1,0 +1,18 @@
+[
+  {
+    "step": "load",
+    "rows": 649,
+    "sha256": "a7594a11d7771c0efe1a740824e0e833da9c4cad07c39a9766a874575563fb3f"
+  },
+  {
+    "step": "key",
+    "rule": "tạo khóa giả danh _rid theo thứ tự dòng"
+  },
+  {
+    "step": "label",
+    "rule": "{\"column\": \"G3\", \"type\": \"threshold_below\", \"threshold\": 10, \"zero_is_missing\": false, \"sensitivity_thresholds\": [8, 12]}",
+    "observed": 649,
+    "no_target": 0,
+    "suspect": 0
+  }
+]

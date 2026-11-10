@@ -1,0 +1,22 @@
+{
+ "GP": {
+  "n": 423,
+  "positives": 32,
+  "base_rate": 0.076,
+  "LR_cv_auc": 0.763,
+  "LR_cv_auc_sd": 0.015,
+  "LR_recall_at_30pct": 0.719,
+  "failures_only_auc": 0.714,
+  "failures_only_recall_at_30pct": 0.581
+ },
+ "MS": {
+  "n": 226,
+  "positives": 68,
+  "base_rate": 0.301,
+  "LR_cv_auc": 0.661,
+  "LR_cv_auc_sd": 0.024,
+  "LR_recall_at_30pct": 0.493,
+  "failures_only_auc": 0.683,
+  "failures_only_recall_at_30pct": 0.537
+ }
+}

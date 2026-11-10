@@ -1,0 +1,24 @@
+{
+  "project": "Start-of-year screening: risk of failing Portuguese (G3 < 10)",
+  "data_path": "D:/Python/data-analysis/skill_source/N02-skills-marketplace/plugins/edu-analytics/skills/education-data-analytics/evals/at-risk-students-start-of-year/files/student-por.csv",
+  "out_dir": "results_sens_G3zero_excluded",
+  "id_column": null,
+  "target": {"column": "G3", "type": "threshold_below", "threshold": 10, "zero_is_missing": true, "sensitivity_thresholds": [8, 12]},
+  "features": {
+    "numeric": ["traveltime", "studytime", "failures", "famrel", "freetime", "goout"],
+    "categorical": ["school", "reason", "famsup", "paid", "activities", "nursery", "higher", "internet"]
+  },
+  "exclude": {
+    "leakage": ["G1", "G2", "absences", "schoolsup"],
+    "sensitive": ["sex", "age", "address", "famsize", "Pstatus", "Medu", "Fedu", "Mjob", "Fjob", "guardian", "romantic", "Dalc", "Walc", "health"],
+    "other": []
+  },
+  "fairness_audit": ["sex", "address", "age"],
+  "capacity": 0.3,
+  "alt_capacity": 0.15,
+  "seed": 2026,
+  "test_size": 0.2,
+  "cv_folds": 5,
+  "cv_repeats": 10,
+  "success": {"auc": 0.7, "recall": 0.6, "max_recall_gap": 0.1, "reduction": 0.3333}
+}

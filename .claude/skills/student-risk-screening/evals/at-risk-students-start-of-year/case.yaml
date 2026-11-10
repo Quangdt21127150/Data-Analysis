@@ -1,0 +1,8 @@
+schema_version: "1.1"
+name: at-risk-students-start-of-year
+expected_outcome: |
+  A report.md assessing start-of-year screening for G3 < 10: G1 and G2 are excluded because they are recorded after the start of the year,
+  sensitive attributes are not used as model features, results are compared with a simple baseline, recall at a 30% flag rate is reported,
+  fairness across groups is checked, and findings are framed as associations with human review of any outreach.
+context:
+  scaffold_script: place-files.sh

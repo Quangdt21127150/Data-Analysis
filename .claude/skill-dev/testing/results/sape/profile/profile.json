@@ -1,0 +1,617 @@
+{
+  "file": "D:\\Python\\data-analysis\\.claude\\skill-dev\\testing\\datasets\\sape_students_performance.xlsx",
+  "sha256": "04ebaf9f3a047afe96d9bff22dbe65b2a320e6395f230032735495e7e58277cf",
+  "rows": 1194,
+  "columns": 31,
+  "full_duplicate_rows": 0,
+  "missing_cells": 1,
+  "columns_detail": [
+    {
+      "column": "University Admission year",
+      "dtype": "int64",
+      "n_unique": 11,
+      "missing": 0,
+      "examples": [
+        "2018",
+        "2021",
+        "2020",
+        "2022",
+        "2019"
+      ],
+      "min": 2013.0,
+      "max": 2023.0,
+      "median": 2021.0,
+      "skew": -1.09,
+      "zeros": 0,
+      "single_feature_auc_screen": 0.5,
+      "flags": []
+    },
+    {
+      "column": "Gender",
+      "dtype": "str",
+      "n_unique": 2,
+      "missing": 0,
+      "examples": [
+        "Male",
+        "Female"
+      ],
+      "single_feature_auc_screen": 0.512,
+      "flags": [
+        "thuộc tính nhạy cảm (gender)"
+      ]
+    },
+    {
+      "column": "Age",
+      "dtype": "int64",
+      "n_unique": 10,
+      "missing": 0,
+      "examples": [
+        "24",
+        "22",
+        "21",
+        "20",
+        "19"
+      ],
+      "min": 18.0,
+      "max": 27.0,
+      "median": 21.0,
+      "skew": 0.8,
+      "zeros": 0,
+      "single_feature_auc_screen": 0.524,
+      "flags": [
+        "thuộc tính nhạy cảm (age)"
+      ]
+    },
+    {
+      "column": "H.S.C passing year",
+      "dtype": "int64",
+      "n_unique": 12,
+      "missing": 0,
+      "examples": [
+        "2016",
+        "2020",
+        "2019",
+        "2018",
+        "2021"
+      ],
+      "min": 2012.0,
+      "max": 2028.0,
+      "median": 2020.0,
+      "skew": -1.11,
+      "zeros": 0,
+      "single_feature_auc_screen": 0.54,
+      "flags": []
+    },
+    {
+      "column": "Program",
+      "dtype": "str",
+      "n_unique": 1,
+      "missing": 0,
+      "examples": [
+        "BCSE"
+      ],
+      "single_feature_auc_screen": 0.5,
+      "flags": [
+        "hằng số"
+      ]
+    },
+    {
+      "column": "Current Semester",
+      "dtype": "int64",
+      "n_unique": 22,
+      "missing": 0,
+      "examples": [
+        "12",
+        "4",
+        "5",
+        "2",
+        "11"
+      ],
+      "min": 1.0,
+      "max": 24.0,
+      "median": 7.0,
+      "skew": 0.37,
+      "zeros": 0,
+      "single_feature_auc_screen": 0.543,
+      "flags": []
+    },
+    {
+      "column": "Do you have meritorious scholarship ?",
+      "dtype": "str",
+      "n_unique": 2,
+      "missing": 0,
+      "examples": [
+        "Yes",
+        "No"
+      ],
+      "single_feature_auc_screen": 0.607,
+      "flags": [
+        "tên gợi ý biến kết quả/hệ quả (scholarship) - kiểm tra thời điểm phát sinh"
+      ]
+    },
+    {
+      "column": "Do you use University transportation?",
+      "dtype": "str",
+      "n_unique": 2,
+      "missing": 0,
+      "examples": [
+        "No",
+        "Yes"
+      ],
+      "single_feature_auc_screen": 0.533,
+      "flags": []
+    },
+    {
+      "column": "How many hour do you study daily?",
+      "dtype": "int64",
+      "n_unique": 12,
+      "missing": 0,
+      "examples": [
+        "3",
+        "1",
+        "2",
+        "5",
+        "6"
+      ],
+      "min": 0.0,
+      "max": 13.0,
+      "median": 3.0,
+      "skew": 1.0,
+      "zeros": 9,
+      "single_feature_auc_screen": 0.521,
+      "flags": []
+    },
+    {
+      "column": "How many times do you seat for study in a day?",
+      "dtype": "int64",
+      "n_unique": 8,
+      "missing": 0,
+      "examples": [
+        "2",
+        "3",
+        "1",
+        "4",
+        "5"
+      ],
+      "min": 0.0,
+      "max": 7.0,
+      "median": 2.0,
+      "skew": 1.02,
+      "zeros": 6,
+      "single_feature_auc_screen": 0.504,
+      "flags": []
+    },
+    {
+      "column": "What is your preferable learning mode?",
+      "dtype": "str",
+      "n_unique": 2,
+      "missing": 0,
+      "examples": [
+        "Offline",
+        "Online"
+      ],
+      "single_feature_auc_screen": 0.523,
+      "flags": []
+    },
+    {
+      "column": "Do you use smart phone?",
+      "dtype": "str",
+      "n_unique": 2,
+      "missing": 0,
+      "examples": [
+        "Yes",
+        "No"
+      ],
+      "single_feature_auc_screen": 0.503,
+      "flags": []
+    },
+    {
+      "column": "Do you have personal Computer?",
+      "dtype": "str",
+      "n_unique": 2,
+      "missing": 0,
+      "examples": [
+        "Yes",
+        "No"
+      ],
+      "single_feature_auc_screen": 0.512,
+      "flags": []
+    },
+    {
+      "column": "How many hour do you spent daily in social media?",
+      "dtype": "int64",
+      "n_unique": 16,
+      "missing": 0,
+      "examples": [
+        "5",
+        "3",
+        "2",
+        "1",
+        "4"
+      ],
+      "min": 0.0,
+      "max": 20.0,
+      "median": 3.0,
+      "skew": 1.99,
+      "zeros": 2,
+      "single_feature_auc_screen": 0.555,
+      "flags": []
+    },
+    {
+      "column": "Status of your English language proficiency",
+      "dtype": "str",
+      "n_unique": 3,
+      "missing": 0,
+      "examples": [
+        "Intermediate",
+        "Basic",
+        "Advance"
+      ],
+      "single_feature_auc_screen": 0.584,
+      "flags": []
+    },
+    {
+      "column": "Average attendance on class",
+      "dtype": "object",
+      "n_unique": 66,
+      "missing": 0,
+      "examples": [
+        "90",
+        "96",
+        "80",
+        "88",
+        "95"
+      ],
+      "min": 0.0,
+      "max": 100.0,
+      "median": 93.0,
+      "skew": -2.11,
+      "zeros": 1,
+      "single_feature_auc_screen": 0.605,
+      "flags": [
+        "cột số bị lẫn chuỗi: ['94-98']",
+        "1 giá trị 0 ở cột điểm/chuyên cần - có thể là khuyết được mã hóa 0"
+      ]
+    },
+    {
+      "column": "Did you ever fall in probation?",
+      "dtype": "str",
+      "n_unique": 2,
+      "missing": 0,
+      "examples": [
+        "No",
+        "Yes"
+      ],
+      "single_feature_auc_screen": 0.704,
+      "flags": [
+        "tên gợi ý biến kết quả/hệ quả (probation) - kiểm tra thời điểm phát sinh"
+      ]
+    },
+    {
+      "column": "Did you ever got suspension?",
+      "dtype": "str",
+      "n_unique": 2,
+      "missing": 0,
+      "examples": [
+        "No",
+        "Yes"
+      ],
+      "single_feature_auc_screen": 0.531,
+      "flags": [
+        "tên gợi ý biến kết quả/hệ quả (suspension) - kiểm tra thời điểm phát sinh"
+      ]
+    },
+    {
+      "column": "Do you attend in teacher consultancy for any kind of academical problems?",
+      "dtype": "str",
+      "n_unique": 2,
+      "missing": 0,
+      "examples": [
+        "Yes",
+        "No"
+      ],
+      "single_feature_auc_screen": 0.514,
+      "flags": [
+        "tên gợi ý biến kết quả/hệ quả (consult) - kiểm tra thời điểm phát sinh"
+      ]
+    },
+    {
+      "column": "What are the skills do you have ?",
+      "dtype": "str",
+      "n_unique": 55,
+      "missing": 1,
+      "examples": [
+        "Software Development",
+        "Web development",
+        "Programming",
+        "Networking",
+        "Content creation"
+      ],
+      "single_feature_auc_screen": 0.614,
+      "flags": [
+        "văn bản tự do / phân loại lực lượng cao (55 mức) - gom nhóm hoặc loại"
+      ]
+    },
+    {
+      "column": "How many hour do you spent daily on your skill development?",
+      "dtype": "int64",
+      "n_unique": 12,
+      "missing": 0,
+      "examples": [
+        "2",
+        "1",
+        "6",
+        "3",
+        "4"
+      ],
+      "min": 0.0,
+      "max": 12.0,
+      "median": 2.0,
+      "skew": 1.56,
+      "zeros": 33,
+      "single_feature_auc_screen": 0.515,
+      "flags": []
+    },
+    {
+      "column": "What is you interested area?",
+      "dtype": "str",
+      "n_unique": 25,
+      "missing": 0,
+      "examples": [
+        "Data Schince",
+        "Event management",
+        "Software",
+        "Artificial Intelligence",
+        "NETWORKING"
+      ],
+      "single_feature_auc_screen": 0.589,
+      "flags": [
+        "văn bản tự do / phân loại lực lượng cao (25 mức) - gom nhóm hoặc loại"
+      ]
+    },
+    {
+      "column": "What is your relationship status?",
+      "dtype": "str",
+      "n_unique": 5,
+      "missing": 0,
+      "examples": [
+        "Single",
+        "Relationship",
+        "Married",
+        "Engaged",
+        "In a relationship"
+      ],
+      "single_feature_auc_screen": 0.563,
+      "flags": [
+        "thuộc tính nhạy cảm (relationship)"
+      ]
+    },
+    {
+      "column": "Are you engaged with any co-curriculum activities?",
+      "dtype": "str",
+      "n_unique": 2,
+      "missing": 0,
+      "examples": [
+        "Yes",
+        "No"
+      ],
+      "single_feature_auc_screen": 0.537,
+      "flags": []
+    },
+    {
+      "column": "With whom you are living with?",
+      "dtype": "str",
+      "n_unique": 2,
+      "missing": 0,
+      "examples": [
+        "Bachelor",
+        "Family"
+      ],
+      "single_feature_auc_screen": 0.563,
+      "flags": [
+        "thuộc tính nhạy cảm (living with)"
+      ]
+    },
+    {
+      "column": "Do you have any health issues?",
+      "dtype": "str",
+      "n_unique": 4,
+      "missing": 0,
+      "examples": [
+        "No",
+        "Yes",
+        "no",
+        "N"
+      ],
+      "single_feature_auc_screen": 0.502,
+      "flags": [
+        "thuộc tính nhạy cảm (health)"
+      ]
+    },
+    {
+      "column": "What was your previous SGPA?",
+      "dtype": "float64",
+      "n_unique": 249,
+      "missing": 0,
+      "examples": [
+        "2.68",
+        "3.8",
+        "3.4",
+        "3.93",
+        "3.1"
+      ],
+      "min": 0.0,
+      "max": 4.0,
+      "median": 2.68,
+      "skew": -0.86,
+      "zeros": 39,
+      "single_feature_auc_screen": 0.88,
+      "flags": [
+        "dồn đống: giá trị 2.68 chiếm 144/1194 (gấp 3.7 lần giá trị kế tiếp) - kiểm tra điền khuyết",
+        "liên hệ rất mạnh với nhãn (AUC đơn biến 0.88) - nghi rò rỉ"
+      ]
+    },
+    {
+      "column": "Do you have any physical disabilities?",
+      "dtype": "str",
+      "n_unique": 2,
+      "missing": 0,
+      "examples": [
+        "No",
+        "Yes"
+      ],
+      "single_feature_auc_screen": 0.511,
+      "flags": [
+        "thuộc tính nhạy cảm (disab)"
+      ]
+    },
+    {
+      "column": "What is your current CGPA?",
+      "dtype": "float64",
+      "n_unique": 188,
+      "missing": 0,
+      "examples": [
+        "3.15",
+        "3.64",
+        "3.53",
+        "3.89",
+        "3.5"
+      ],
+      "min": 0.0,
+      "max": 4.0,
+      "median": 3.21,
+      "skew": -2.5,
+      "zeros": 39,
+      "role": "target",
+      "flags": [
+        "dồn đống: giá trị 3.15 chiếm 158/1194 (gấp 4.1 lần giá trị kế tiếp) - kiểm tra điền khuyết"
+      ]
+    },
+    {
+      "column": "How many Credit did you have completed?",
+      "dtype": "int64",
+      "n_unique": 130,
+      "missing": 0,
+      "examples": [
+        "75",
+        "36",
+        "50",
+        "35",
+        "34"
+      ],
+      "min": 0.0,
+      "max": 145.0,
+      "median": 78.0,
+      "skew": -0.02,
+      "zeros": 37,
+      "single_feature_auc_screen": 0.531,
+      "flags": [
+        "dồn đống: giá trị 11 chiếm 161/1194 (gấp 3.4 lần giá trị kế tiếp) - kiểm tra điền khuyết"
+      ]
+    },
+    {
+      "column": "What is your monthly family income?",
+      "dtype": "int64",
+      "n_unique": 137,
+      "missing": 0,
+      "examples": [
+        "25000",
+        "100000",
+        "50000",
+        "62488",
+        "30000"
+      ],
+      "min": 4000.0,
+      "max": 2000000.0,
+      "median": 50000.0,
+      "skew": 15.08,
+      "zeros": 0,
+      "single_feature_auc_screen": 0.567,
+      "flags": [
+        "thuộc tính nhạy cảm (income, family)"
+      ]
+    }
+  ],
+  "target": {
+    "type": "numeric",
+    "describe": {
+      "count": 1194.0,
+      "mean": 3.166,
+      "std": 0.75,
+      "min": 0.0,
+      "25%": 2.9,
+      "50%": 3.21,
+      "75%": 3.67,
+      "max": 4.0
+    },
+    "zeros": 39,
+    "quantiles_of_positive": {
+      "q5": 2.51,
+      "q10": 2.65,
+      "q15": 2.77,
+      "q20": 2.87,
+      "q25": 2.955
+    }
+  },
+  "suggested_roles": {
+    "features": {
+      "numeric": [
+        "University Admission year",
+        "H.S.C passing year",
+        "Current Semester",
+        "How many hour do you study daily?",
+        "How many times do you seat for study in a day?",
+        "How many hour do you spent daily in social media?",
+        "Average attendance on class",
+        "How many hour do you spent daily on your skill development?",
+        "How many Credit did you have completed?"
+      ],
+      "categorical": [
+        "Do you use University transportation?",
+        "What is your preferable learning mode?",
+        "Do you use smart phone?",
+        "Do you have personal Computer?",
+        "Status of your English language proficiency",
+        "Are you engaged with any co-curriculum activities?"
+      ]
+    },
+    "exclude": {
+      "leakage_candidates": [
+        "Do you have meritorious scholarship ?",
+        "Did you ever fall in probation?",
+        "Did you ever got suspension?",
+        "Do you attend in teacher consultancy for any kind of academical problems?",
+        "What was your previous SGPA?"
+      ],
+      "sensitive": [
+        "Gender",
+        "Age",
+        "What is your relationship status?",
+        "With whom you are living with?",
+        "Do you have any health issues?",
+        "Do you have any physical disabilities?",
+        "What is your monthly family income?"
+      ],
+      "constant_or_id": [
+        "Program"
+      ],
+      "free_text": [
+        "What are the skills do you have ?",
+        "What is you interested area?"
+      ]
+    },
+    "fixes": {
+      "range_to_mid": [
+        "Average attendance on class"
+      ],
+      "missing_codes": {}
+    },
+    "suspect_label_rules": [
+      {
+        "What is your current CGPA?": 3.15,
+        "What was your previous SGPA?": 2.68,
+        "_evidence": "140/158 dòng có What is your current CGPA? = 3.15 đồng thời What was your previous SGPA? = 2.68"
+      }
+    ]
+  }
+}

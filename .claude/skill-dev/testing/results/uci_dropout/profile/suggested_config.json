@@ -1,0 +1,83 @@
+{
+  "project": "uci_dropout",
+  "data_path": "D:\\Python\\data-analysis\\.claude\\skill-dev\\testing\\datasets\\uci_dropout.csv",
+  "sheet": null,
+  "out_dir": "D:\\Python\\data-analysis\\.claude\\skill-dev\\testing\\results\\uci_dropout\\profile\\output",
+  "id_column": null,
+  "target": {
+    "column": "Target",
+    "type": "classes",
+    "positive_classes": [
+      "Dropout"
+    ],
+    "_positive_class_note": "tên lớp mang nghĩa kết quả bất lợi"
+  },
+  "features": {
+    "numeric": [
+      "Application mode",
+      "Application order",
+      "Course",
+      "Previous qualification",
+      "Curricular units 1st sem (enrolled)",
+      "Unemployment rate",
+      "Inflation rate",
+      "GDP"
+    ],
+    "categorical": [
+      "Daytime/evening attendance"
+    ]
+  },
+  "exclude": {
+    "leakage": [
+      "Previous qualification (grade)",
+      "Admission grade",
+      "Scholarship holder",
+      "Curricular units 1st sem (credited)",
+      "Curricular units 1st sem (evaluations)",
+      "Curricular units 1st sem (approved)",
+      "Curricular units 1st sem (grade)",
+      "Curricular units 1st sem (without evaluations)",
+      "Curricular units 2nd sem (credited)",
+      "Curricular units 2nd sem (enrolled)",
+      "Curricular units 2nd sem (evaluations)",
+      "Curricular units 2nd sem (approved)",
+      "Curricular units 2nd sem (grade)",
+      "Curricular units 2nd sem (without evaluations)"
+    ],
+    "sensitive": [
+      "Marital status",
+      "Nacionality",
+      "Mother's qualification",
+      "Father's qualification",
+      "Mother's occupation",
+      "Father's occupation",
+      "Displaced",
+      "Educational special needs",
+      "Debtor",
+      "Tuition fees up to date",
+      "Gender",
+      "Age at enrollment",
+      "International"
+    ],
+    "other": []
+  },
+  "fairness_audit": [
+    "Marital status",
+    "Nacionality"
+  ],
+  "range_to_mid": [],
+  "missing_codes": {},
+  "valid_ranges": {},
+  "suspect_label_rules": [],
+  "capacity": 0.3,
+  "alt_capacity": 0.15,
+  "seed": 2026,
+  "test_size": 0.2,
+  "success": {
+    "auc": 0.7,
+    "recall": 0.6,
+    "max_recall_gap": 0.1,
+    "reduction": 0.3333
+  },
+  "_note": "Gợi ý tự động: PHẢI rà soát vai trò từng biến theo domain (thời điểm phát sinh, rò rỉ, nhạy cảm) và chốt ngưỡng nhãn bằng căn cứ nghiệp vụ trước khi chạy prepare."
+}

@@ -1,0 +1,77 @@
+{
+  "project": "UCI Student Performance (tiếng Bồ Đào Nha) - sàng lọc đầu năm học sinh có nguy cơ trượt môn (G3 < 10)",
+  "data_path": "../datasets/uci_student_por.csv",
+  "out_dir": "../results/uci_student_por/output",
+  "target": {
+    "column": "G3",
+    "type": "threshold_below",
+    "threshold": 10,
+    "zero_is_missing": false,
+    "sensitivity_thresholds": [
+      8,
+      12
+    ]
+  },
+  "features": {
+    "numeric": [
+      "traveltime",
+      "studytime",
+      "failures",
+      "famrel",
+      "freetime",
+      "goout"
+    ],
+    "categorical": [
+      "school",
+      "reason",
+      "famsup",
+      "paid",
+      "activities",
+      "nursery",
+      "higher",
+      "internet"
+    ]
+  },
+  "exclude": {
+    "leakage": [
+      "G1",
+      "G2",
+      "absences",
+      "schoolsup"
+    ],
+    "sensitive": [
+      "sex",
+      "age",
+      "address",
+      "famsize",
+      "Pstatus",
+      "Medu",
+      "Fedu",
+      "Mjob",
+      "Fjob",
+      "guardian",
+      "romantic",
+      "Dalc",
+      "Walc",
+      "health"
+    ],
+    "other": []
+  },
+  "fairness_audit": [
+    "sex",
+    "address"
+  ],
+  "capacity": 0.3,
+  "alt_capacity": 0.15,
+  "seed": 2026,
+  "test_size": 0.2,
+  "cv_folds": 5,
+  "cv_repeats": 10,
+  "success": {
+    "auc": 0.7,
+    "recall": 0.6,
+    "max_recall_gap": 0.1,
+    "reduction": 0.3333
+  },
+  "_ghi_chu": "absences = số buổi vắng của chính năm học được dự báo; schoolsup = hỗ trợ học tập thường phát sinh sau điểm đầu kỳ: không có tại đầu năm -> loại (phát hiện trong vòng đánh giá skill-creator iteration-1)."
+}

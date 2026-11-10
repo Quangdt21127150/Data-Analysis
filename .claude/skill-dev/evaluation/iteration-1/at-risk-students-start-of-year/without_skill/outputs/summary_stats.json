@@ -1,0 +1,37 @@
+{
+  "n_rows": 649,
+  "n_missing_any": 0,
+  "n_exact_duplicates": 0,
+  "fail_rate": 0.15408320493066255,
+  "n_fail": 100,
+  "n_G3_zero": 15,
+  "fail_rate_by_school": {
+    "mean": {
+      "GP": 0.076,
+      "MS": 0.301
+    },
+    "size": {
+      "GP": 423,
+      "MS": 226
+    }
+  },
+  "rule: failures>0": {
+    "share_flagged": 0.15408320493066255,
+    "recall": 0.49,
+    "precision": 0.49
+  },
+  "rule: failures>0 OR higher=no": {
+    "share_flagged": 0.20955315870570107,
+    "recall": 0.63,
+    "precision": 0.4632352941176471
+  },
+  "rule: failures>0 OR higher=no OR school=MS": {
+    "share_flagged": 0.4453004622496148,
+    "recall": 0.89,
+    "precision": 0.3079584775086505
+  },
+  "logit_pseudo_r2": 0.3019324871262661,
+  "oof_recall_at_30_logistic_all_start": 0.71,
+  "oof_precision_at_30_logistic_all_start": 0.3641025641025641,
+  "fail_G3zero_caught": 0.8
+}

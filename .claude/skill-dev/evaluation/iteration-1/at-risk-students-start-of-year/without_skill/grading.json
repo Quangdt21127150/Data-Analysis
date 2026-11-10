@@ -1,0 +1,40 @@
+{
+  "expectations": [
+    {
+      "text": "The model does not use G1 or G2 as features (they are period grades recorded after the start of the year)",
+      "passed": true,
+      "evidence": "notes.md: G1, G2 and absences excluded as not available at the start of the year"
+    },
+    {
+      "text": "Sensitive attributes (at least sex, age, address or family/parent variables) are not used as model features",
+      "passed": false,
+      "evidence": "recommended 'enrolment-type' model includes age, parents' education, address, guardian; questionnaire items incl. Dalc/Walc/health kept in the full set (sex/age only tested for removal)"
+    },
+    {
+      "text": "report.md compares the model against a simple baseline (e.g. a single-feature rule or prior-only model)",
+      "passed": true,
+      "evidence": "compares with random selection, failures>0 rule and simple two-variable rule"
+    },
+    {
+      "text": "report.md states the recall (share of failing students caught) when flagging about 30% of students",
+      "passed": true,
+      "evidence": "report: catches about 73% (±8) of future fails at 30% flagged"
+    },
+    {
+      "text": "A fairness check reports a metric (recall or flag rate) separately for at least one demographic group",
+      "passed": true,
+      "evidence": "subgroup_flag_check by sex, school and address: GP fails caught 47% vs MS 82%; rural 52% vs urban 21% flagged"
+    },
+    {
+      "text": "report.md frames findings as associations (not causal) and recommends human review of any outreach",
+      "passed": true,
+      "evidence": "report: 'These are associations, not causes'; 'Use the flag as an invitation to support, not a label' - returned as message text because the subagent could not write report.md"
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 1,
+    "total": 6,
+    "pass_rate": 0.8333
+  }
+}

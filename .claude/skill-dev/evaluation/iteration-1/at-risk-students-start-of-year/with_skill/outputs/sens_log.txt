@@ -1,0 +1,61 @@
+{
+ "created_utc": "2026-11-10T03:53:50+00:00",
+ "raw_sha256": "a7594a11d7771c0efe1a740824e0e833da9c4cad07c39a9766a874575563fb3f",
+ "rows_raw": 649,
+ "rows_labeled": 634,
+ "positives": 85,
+ "base_rate": 0.1341,
+ "train": {
+  "n": 507,
+  "pos": 68
+ },
+ "test": {
+  "n": 127,
+  "pos": 17
+ },
+ "label_status": {
+  "observed": 634,
+  "no_target": 15
+ },
+ "n_features": 14,
+ "banned_in_features": [],
+ "missing_in_features": {},
+ "key_unique": true,
+ "sensitivity_targets": {
+  "8": "_y_t8",
+  "12": "_y_t12"
+ }
+}
+{
+ "primary": "LR",
+ "cv_auc": {
+  "mean": 0.7986,
+  "sd": 0.0092
+ },
+ "test_auc": 0.7588,
+ "baseline": "failures",
+ "baseline_cv_auc": {
+  "mean": 0.668,
+  "sd": 0.0091
+ },
+ "recall@cap_test": 0.7059,
+ "reduction_best": [
+  "studytime",
+  "failures",
+  "freetime",
+  "school",
+  "reason",
+  "paid",
+  "activities",
+  "higher"
+ ],
+ "success_check": {
+  "auc": true,
+  "recall_at_capacity": true,
+  "beats_baseline": true,
+  "reduction": true,
+  "fairness_recall_gap": false,
+  "banned_features": true
+ }
+}
+D:\Python\data-analysis\skill_source\education-data-analytics-workspace\iteration-1\at-risk-students-start-of-year\with_skill\outputs\results_sens_G3zero_excluded\report.md

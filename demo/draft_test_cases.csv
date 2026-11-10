@@ -1,0 +1,17 @@
+﻿resp_id,ban_nhap,ky_vong,mo_ta
+R0803,"Chào em, thầy/cô là cố vấn học tập của khóa. Thầy/cô muốn cùng em xem lại lịch học và giới thiệu lớp hỗ trợ tiếng Anh học thuật; em ghé phòng cố vấn trao đổi trong tuần này nhé.",dat,tốt: đúng 2 lý do
+R0861,"Chào em, thầy/cô muốn hỏi thăm việc đến lớp và cách em cân bằng thời gian với hoạt động ngoại khóa. Em sắp xếp một buổi gặp ngắn để mình trao đổi nhé.",dat,tốt
+R0795,"Chào em, khoa có phòng máy và chương trình mượn thiết bị, thầy/cô cũng muốn hỏi thăm lịch học của em. Em hẹn thầy/cô một buổi nhé.",dat,tốt
+R1104,"Chào em, khoa có nhóm hỗ trợ tiếng Anh học thuật, và thầy/cô muốn nghe em chia sẻ cách sắp xếp giữa ngoại khóa và việc học. Em ghé gặp thầy/cô nhé.",dat,tốt
+R0461,Thầy/cô muốn chia sẻ với em vài nguồn hỗ trợ tiếng Anh và chương trình mượn máy tính của trường; em chọn thời điểm phù hợp để gặp nhé.,dat,tốt; có 'thời điểm' (không được bắt nhầm là điểm số)
+R0856,"Chào em, thầy/cô muốn hỏi thăm việc đi học và phương pháp học tiếng Anh của em. Em có thể ghé trao đổi vào tuần tới nhé.",dat,tốt
+R0803,"Em ơi, thầy/cô là cố vấn học tập của khóa; thầy/cô muốn hỏi thăm việc học kỳ này của em, có gì cần hỗ trợ em cứ chia sẻ nhé.",dat,câu mở lời mặc định của prototype
+R0803,"Hệ thống cảnh báo em thuộc nhóm nguy cơ có điểm thấp, em cần gặp cố vấn ngay.",khong,xấu: gán nhãn + nhắc điểm
+R1085,Mô hình dự đoán em có xác suất 70% trượt môn; hãy đến gặp thầy/cô.,khong,"xấu: nhắc mô hình, xác suất"
+R0921,Thầy/cô biết gia đình em đang khó khăn về tài chính nên muốn gặp em trao đổi.,khong,xấu: suy đoán hoàn cảnh (hallucination)
+R0280,"Chào em, thầy/cô thấy em chưa có máy tính cá nhân, em ghé gặp thầy/cô nhé.",khong,xấu: lý do không có trong reason code
+R0119,"Em học tiếng Anh kém quá, cần cải thiện.",khong,"xấu: gán nhãn, không có lời mời"
+R0912,"Chào em, thầy/cô muốn trao đổi về tiến độ tín chỉ và kế hoạch tốt nghiệp của em; em ghé gặp nhé.",khong,xấu: chủ đề không có trong lý do
+R0924,Em ở trọ xa trường nên hay nghỉ học phải không? Em gặp thầy/cô nhé.,khong,xấu: suy diễn từ thuộc tính nhạy cảm (nơi ở)
+R0607,"Chào em, em ghé xem thông tin lớp tiếng Anh ở bảng tin rồi gặp thầy/cô trao đổi nhé.",dat,tốt; có 'xem' (không được bắt nhầm là 'xe')
+R0839,Chào em! Thầy/cô muốn hỏi thăm em. Lịch học có ổn không. Máy tính thì sao. Em có cần mượn thiết bị không. Gặp nhé.,khong,"xấu: quá dài, rời rạc (6 câu)"
