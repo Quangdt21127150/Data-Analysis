@@ -101,7 +101,7 @@ def main():
     lines = ["# Kết quả test skill student-risk-screening", "", f"**{n_pass}/{len(checks)} kiểm tra đạt.**", "",
              "| Bộ dữ liệu | Dòng (nhãn) | Ca dương | Primary | AUC CV (baseline) | AUC test [CI] | Recall test @30% |", "|---|---|---|---|---|---|---|"]
     for k, s in summary.items():
-        lines.append(f"| {k} | {s['rows']} ({s['labeled']}) | {s['positives']} ({s['base_rate']:.1%}) | {s['primary']} | {s['cv_auc_primary']['mean']:.3f} "
+        lines.append(f"| {k} | {s['rows']} ({s['labeled']}) | {s['positives']} ({s['positives'] / s['labeled']:.1%}) | {s['primary']} | {s['cv_auc_primary']['mean']:.3f} "
                      f"({s['cv_auc_baseline']['mean']:.3f}, {s['baseline']}) | {s['test_auc_primary']:.3f} {s['test_auc_ci95']} | {s['test_recall_at_capacity']:.1%} |")
     lines += ["", "| Bộ dữ liệu | Kiểm tra | Kết quả | Chi tiết |", "|---|---|---|---|"]
     lines += [f"| {c['case']} | {c['check']} | {'PASS' if c['passed'] else 'FAIL'} | {c['detail']} |" for c in checks]

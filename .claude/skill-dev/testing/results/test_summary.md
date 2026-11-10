@@ -4,7 +4,7 @@
 
 | Bộ dữ liệu | Dòng (nhãn) | Ca dương | Primary | AUC CV (baseline) | AUC test [CI] | Recall test @30% |
 |---|---|---|---|---|---|---|
-| sape | 1194 (1015) | 167 (16.4%) | LR | 0.620 (0.615, Average attendance on class) | 0.614 [0.502, 0.7239] | 48.5% |
+| sape | 1194 (1015) | 167 (16.5%) | LR | 0.620 (0.615, Average attendance on class) | 0.614 [0.502, 0.7239] | 48.5% |
 | uci_student_por | 649 (649) | 100 (15.4%) | LR | 0.799 (0.665, failures) | 0.833 [0.7399, 0.9137] | 60.0% |
 | uci_dropout | 4424 (4424) | 1421 (32.1%) | LR | 0.873 (0.810, Curricular units 1st sem (approved)) | 0.876 [0.8488, 0.8986] | 67.6% |
 

@@ -42,7 +42,7 @@ MODEL_ID = f"LR-E2 (prepared {C.PREPARED_VERSION}, seed {C.SEED})"
 
 # Câu chữ hỗ trợ cho từng tín hiệu (mô tả hành vi/nhu cầu, không đánh giá năng lực hay hoàn cảnh)
 PHRASES = {
-    "attendance_pct": ("Chuyên cần tự báo cáo {v:.0f}% thấp hơn mức chung của khóa ({ref:.0f}%)",
+    "attendance_pct": ("Chuyên cần tự báo cáo {v:.0f}%, thấp hơn mức chung của khóa ({ref:.0f}%)",
                        "Hỏi thăm lịch học, việc đi lại và khó khăn khi đến lớp"),
     "english_ord_1": ("Tự đánh giá tiếng Anh ở mức cơ bản", "Giới thiệu lớp/nhóm hỗ trợ tiếng Anh học thuật"),
     "english_ord_3": ("Thuộc nhóm tự đánh giá tiếng Anh nâng cao, nhóm có tỷ lệ cần hỗ trợ cao hơn mức chung trong dữ liệu",
@@ -153,6 +153,13 @@ def propose():
     print(queue.head(5)[["thu_tu_uu_tien", "resp_id", "ly_do_1", "ly_do_2"]].to_string(index=False))
 
 
+def log(entry):
+    """Ghi nối một sự kiện vào nhật ký kiểm toán (không sửa, không xóa dòng cũ)."""
+    entry = {"thoi_diem_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"), **entry}
+    with open(OUT / "audit_log.jsonl", "a", encoding="utf-8") as f:
+        f.write(json.dumps(entry, ensure_ascii=False) + "\n")
+
+
 def simulate_review():
     """Chỉ để demo: giả lập cố vấn duyệt (duyệt 2/3 đầu danh sách, từ chối phần còn lại với ghi chú)."""
     q = pd.read_csv(OUT / "advisor_queue.csv", encoding="utf-8-sig", dtype=str).fillna("")
@@ -161,6 +168,8 @@ def simulate_review():
     q.loc[k:, "co_van_duyet"] = "Khong"
     q.loc[k:, "ghi_chu"] = "GIẢ LẬP DEMO: đã gặp trong tháng / sinh viên đã chủ động liên hệ"
     q.to_csv(OUT / "advisor_queue.csv", index=False, encoding="utf-8-sig")
+    log({"buoc": "simulate-review", "duyet": k, "tu_choi": int(len(q) - k), "gia_lap": True,
+         "ghi_chu": "Chỉ để demo: giả lập quyết định của cố vấn; trong thực tế cố vấn tự điền cột co_van_duyet."})
     print(f"GIẢ LẬP: duyệt {k}/{len(q)} trường hợp (trong thực tế cố vấn tự điền cột co_van_duyet).")
 
 
@@ -168,6 +177,8 @@ def act():
     q = pd.read_csv(OUT / "advisor_queue.csv", encoding="utf-8-sig", dtype=str).fillna("")
     pending = q[~q.co_van_duyet.isin(["Co", "Khong"])]
     if len(pending):
+        log({"buoc": "act", "ket_qua": "tu_choi", "chua_duyet": int(len(pending)), "tu_dong_lien_he": False,
+             "ghi_chu": "Cổng phê duyệt con người: còn dòng chưa duyệt nên không xuất danh sách liên hệ."})
         sys.exit(f"Còn {len(pending)} trường hợp chưa được cố vấn duyệt - không xuất danh sách liên hệ (cổng phê duyệt con người).")
     ok = q[q.co_van_duyet == "Co"][["thu_tu_uu_tien", "resp_id", "goi_y_trao_doi", "cau_mo_loi", "ghi_chu"]]
     ok.to_csv(OUT / "contact_list_approved.csv", index=False, encoding="utf-8-sig")

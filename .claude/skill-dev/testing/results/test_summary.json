@@ -219,8 +219,8 @@
           "test": 0.122
         }
       },
-      "seconds_profile": 2.9,
-      "seconds_run": 76.2
+      "seconds_profile": 3.9,
+      "seconds_run": 105.6
     },
     "uci_student_por": {
       "rows": 649,
@@ -272,8 +272,8 @@
           "test": 0.167
         }
       },
-      "seconds_profile": 2.5,
-      "seconds_run": 85.7
+      "seconds_profile": 3.3,
+      "seconds_run": 110.1
     },
     "uci_dropout": {
       "rows": 4424,
@@ -326,8 +326,8 @@
           "test": 0.237
         }
       },
-      "seconds_profile": 3.0,
-      "seconds_run": 110.3
+      "seconds_profile": 3.2,
+      "seconds_run": 142.3
     }
   }
 }
