@@ -1,0 +1,148 @@
+[
+  {
+    "n": 1,
+    "kicker": "Mở đầu",
+    "title": "Sàng lọc nhóm cần chú ý: kết quả 2/5 tiêu chí",
+    "points": [
+      "Sàng lọc sinh viên cần hỗ trợ học tập",
+      "1.194 dòng thô, mẫu chính 1.015",
+      "Nhãn: What is your current CGPA? < 2,75"
+    ],
+    "figure": null,
+    "script": "Kính chào quý thầy cô. Nhóm xin trình bày kết quả phân tích dữ liệu của dự án Sàng lọc sinh viên cần hỗ trợ học tập. Mục tiêu là xem các đặc trưng sẵn có phân biệt được nhóm cần chú ý đến mức nào. Nhãn được định nghĩa là What is your current CGPA? < 2,75. Kết luận ngắn gọn: trong năm tiêu chí đã đăng ký trước, có 2 tiêu chí đạt."
+  },
+  {
+    "n": 2,
+    "kicker": "Bối cảnh",
+    "title": "Bối cảnh và câu hỏi",
+    "points": [
+      "Cố vấn học tập: Chọn danh sách sinh viên ưu tiên liên hệ trong kỳ",
+      "Quản lý khoa: Phân bổ ngân sách hỗ trợ theo tỷ lệ gắn cờ"
+    ],
+    "figure": null,
+    "script": "Phần này nêu những ai cần kết quả và họ cần ra quyết định gì. Các nhu cầu này là giả định của nhóm, chưa qua phỏng vấn người dùng thật."
+  },
+  {
+    "n": 3,
+    "kicker": "Dữ liệu",
+    "title": "Chất lượng dữ liệu quyết định kết quả",
+    "points": [
+      "Q01: 39 dòng có What is your current CGPA? = 0.0 được coi là thiếu dữ liệu (chưa có giá trị th…",
+      "Q02: 39 dòng thiếu nhãn.",
+      "Q03: Cụm giá trị nhãn lặp bất thường: 140 dòng có nhãn = 3.15, đồng thời cùng giá trị 2.68 ở c…",
+      "Q04: Cột Program hằng số hoặc có quá nhiều mức (1)."
+    ],
+    "figure": "D:\\Python\\data-analysis\\.claude\\skill-dev\\testing\\capstone\\sape\\outputs\\figures\\f01_phan_bo_nhan.png",
+    "script": "Trước khi mô hình hóa, nhóm kiểm toán dữ liệu và phát hiện 8 vấn đề. Quan trọng nhất là các vấn đề mức cao được xử lý và ghi nhật ký, đồng thời giữ mẫu độ nhạy B để kiểm tra mức nhạy của kết luận."
+  },
+  {
+    "n": 4,
+    "kicker": "Phương pháp",
+    "title": "Đăng ký trước: tiêu chí cố định từ đầu",
+    "points": [
+      "S1: Năng lực sàng lọc tuyệt đối",
+      "S2: Giá trị tăng thêm so với baseline",
+      "S3: Rút gọn đặc trưng mà không mất năng lực",
+      "S4: Hiệu chuẩn xác suất",
+      "S5: Công bằng giữa các nhóm",
+      "SHA-256 kế hoạch: 5ffefb0cfa8b..."
+    ],
+    "figure": null,
+    "script": "Nhóm cố định năm tiêu chí và băm kế hoạch trước khi huấn luyện. Điều này giúp tránh chỉnh tiêu chí sau khi đã thấy kết quả, và giai đoạn kiểm chứng đối chiếu lại mã băm."
+  },
+  {
+    "n": 5,
+    "kicker": "Chẩn đoán",
+    "title": "Những đặc trưng thật sự phân biệt hai nhóm",
+    "points": [
+      "2 trên 12 đặc trưng có p Holm dưới 0,05",
+      "Average attendance on class",
+      "Status of your English language proficiency"
+    ],
+    "figure": "D:\\Python\\data-analysis\\.claude\\skill-dev\\testing\\capstone\\sape\\outputs\\figures\\f05_ty_le_theo_phan_vi.png",
+    "script": "Sau hiệu chỉnh Holm, có 2 trên 12 đặc trưng phân biệt được hai nhóm. Đây là liên hệ thống kê, không phải nhân quả."
+  },
+  {
+    "n": 6,
+    "kicker": "Mô hình",
+    "title": "Mô hình phức tạp có hơn baseline đơn giản không",
+    "points": [
+      "Logistic L2 (chính): AUC 0,619 [0,572; 0,666]",
+      "Baseline: AUC 0,603",
+      "Δ AUC 0,016 [-0,021; 0,054]"
+    ],
+    "figure": "D:\\Python\\data-analysis\\.claude\\skill-dev\\testing\\capstone\\sape\\outputs\\figures\\f06_auc_cac_phuong_an.png",
+    "script": "Mô hình được giữ là Logistic L2 (chính) với AUC 0,619. Baseline một đặc trưng đạt 0,603. Chênh lệch ghép cặp là 0,016 với khoảng tin cậy từ -0,021 đến 0,054."
+  },
+  {
+    "n": 7,
+    "kicker": "Mô hình",
+    "title": "Năng lực gắn cờ theo ngân sách hỗ trợ",
+    "points": [
+      "Recall tại 30%: 45,2%",
+      "Muốn đạt độ phủ mục tiêu cần gắn cờ khoảng 50%"
+    ],
+    "figure": "D:\\Python\\data-analysis\\.claude\\skill-dev\\testing\\capstone\\sape\\outputs\\figures\\f07_nang_luc_gan_co.png",
+    "script": "Cố vấn bị giới hạn bởi số ca có thể hỗ trợ, nên nhóm đo độ phủ theo tỷ lệ gắn cờ thay vì chỉ nhìn AUC."
+  },
+  {
+    "n": 8,
+    "kicker": "Mô hình",
+    "title": "Hiệu chuẩn và nhóm đặc trưng quan trọng",
+    "points": [
+      "Độ dốc hiệu chuẩn 1,06",
+      "Brier 0,134 so với 0,137"
+    ],
+    "figure": "D:\\Python\\data-analysis\\.claude\\skill-dev\\testing\\capstone\\sape\\outputs\\figures\\f08_ablation.png",
+    "script": "Độ dốc hiệu chuẩn gần 1 cho thấy xác suất dự báo không bị thổi phồng. Ablation cho biết nhóm đặc trưng nào đóng góp nhiều nhất."
+  },
+  {
+    "n": 9,
+    "kicker": "Công bằng",
+    "title": "Công bằng giữa các nhóm",
+    "points": [
+      "0 so sánh đủ chắc chắn để kết luận",
+      "Kết quả S5: Chưa kết luận"
+    ],
+    "figure": "D:\\Python\\data-analysis\\.claude\\skill-dev\\testing\\capstone\\sape\\outputs\\figures\\f09_cong_bang.png",
+    "script": "Nhóm so sánh recall giữa các nhóm. Khi khoảng tin cậy quá rộng, nhóm ghi chưa kết luận thay vì kết luận quá mức."
+  },
+  {
+    "n": 10,
+    "kicker": "Kết luận",
+    "title": "Bảng điểm năm tiêu chí",
+    "points": [
+      "S1: Không đạt",
+      "S2: Không đạt",
+      "S3: Đạt",
+      "S4: Đạt",
+      "S5: Chưa kết luận"
+    ],
+    "figure": null,
+    "script": "Đây là bảng điểm theo đúng tiêu chí đã đăng ký trước. S1 không đạt. S2 không đạt. S3 đạt. S4 đạt. S5 chưa kết luận."
+  },
+  {
+    "n": 11,
+    "kicker": "Kết luận",
+    "title": "Hàm ý và hạn chế",
+    "points": [
+      "Năng lực sàng lọc chưa đạt ngưỡng đã đăng ký, vì vậy kết quả không đủ để dùng làm công cụ quyết định độc lập; chỉ nên dùng để minh họa tín hiệu và để định hướng thu thập thêm dữ liệu.",
+      "Mô hình nhiều biến chưa chứng minh được giá trị tăng thêm so với baseline đơn giản; về thực hành, một quy tắc đơn giản dựa trên đặc trưng baseline cho hiệu quả tương đương với chi phí triển khai thấp hơn.",
+      "Điểm tích lũy tự khai, chưa đối chiếu với hệ thống đào tạo."
+    ],
+    "figure": null,
+    "script": "Hàm ý thực hành: Năng lực sàng lọc chưa đạt ngưỡng đã đăng ký, vì vậy kết quả không đủ để dùng làm công cụ quyết định độc lập; chỉ nên dùng để minh họa tín hiệu và để định hướng thu thập thêm dữ liệu. Mô hình nhiều biến chưa chứng minh được giá trị tăng thêm so với baseline đơn giản; về thực hành, một quy tắc đơn giản dựa trên đặc trưng baseline cho hiệu quả tương đương với chi phí triển khai thấp hơn. Về hạn chế, dữ liệu cắt ngang nên không kết luận nhân quả."
+  },
+  {
+    "n": 12,
+    "kicker": "Kết thúc",
+    "title": "Bước tiếp theo",
+    "points": [
+      "Xác nhận ngưỡng nhãn với chuyên gia nghiệp vụ",
+      "Thu thập dữ liệu dọc và kiểm định ngoài",
+      "Thử nghiệm thí điểm có nhóm đối chứng"
+    ],
+    "figure": null,
+    "script": "Bước tiếp theo là xác nhận ngưỡng nhãn, bổ sung dữ liệu dọc và kiểm định ngoài, rồi thí điểm có đối chứng. Xin cảm ơn quý thầy cô đã lắng nghe."
+  }
+]

@@ -1,0 +1,70 @@
+{
+  "checks": [
+    {
+      "check": "Có đủ các tệp đầu ra chính",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "SHA-256 dữ liệu gốc khớp lúc kiểm tra",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "SHA-256 mẫu chính khớp bản đã đăng ký trước",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Kế hoạch đăng ký trước không bị chỉnh sửa",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Kế hoạch được lập trước kết quả mô hình",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Số dòng mẫu chính khớp nhật ký",
+      "passed": true,
+      "detail": "1015 / 1015 / 1015"
+    },
+    {
+      "check": "Số ca dương khớp",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Không có biến rò rỉ hoặc nhãn trong đặc trưng",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "AUC mọi mô hình nằm trong [0,1] và khoảng tin cậy chứa ước lượng",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "AUC trong results.json khớp bảng",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Có hình xuất ra",
+      "passed": true,
+      "detail": "9 hình"
+    },
+    {
+      "check": "Không có giá trị thiếu trong bảng kết quả chính",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Chế độ chạy đầy đủ (không phải --fast)",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "all_passed": true
+}

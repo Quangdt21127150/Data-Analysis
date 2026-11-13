@@ -1,0 +1,7 @@
+﻿step,n_before,n_after,detail
+load,1194,1194,"Đọc ../../datasets/sape_students_performance.xlsx, SHA-256 04ebaf9f3a047afe..."
+target_missing_code,1194,1194,39 dòng có What is your current CGPA? = 0.0 được coi là thiếu dữ liệu (chưa có giá trị thật).
+drop_missing_label,1194,1155,Loại dòng thiếu nhãn.
+primary_excludes_repeat_cluster,1155,1015,Mẫu chính loại cụm giá trị nhãn lặp bất thường; mẫu độ nhạy B giữ lại.
+primary_sample,1155,1015,"Mẫu chính 1015 dòng, 167 ca dương (16.5%)."
+sensitivity_B,1155,1155,"Mẫu độ nhạy B 1155 dòng, 167 ca dương."

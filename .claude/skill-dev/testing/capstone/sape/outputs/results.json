@@ -1,0 +1,281 @@
+{
+  "n": 1015,
+  "positives": 167,
+  "prevalence": 0.16453201970443349,
+  "n_features": 12,
+  "features": [
+    "How many hour do you study daily?",
+    "How many times do you seat for study in a day?",
+    "Average attendance on class",
+    "How many hour do you spent daily in social media?",
+    "How many hour do you spent daily on your skill development?",
+    "What is your preferable learning mode?",
+    "Do you have personal Computer?",
+    "Do you use University transportation?",
+    "Status of your English language proficiency",
+    "Current Semester",
+    "How many Credit did you have completed?",
+    "Are you engaged with any co-curriculum activities?"
+  ],
+  "numeric": [
+    "How many hour do you study daily?",
+    "How many times do you seat for study in a day?",
+    "Average attendance on class",
+    "How many hour do you spent daily in social media?",
+    "How many hour do you spent daily on your skill development?",
+    "Current Semester",
+    "How many Credit did you have completed?"
+  ],
+  "categorical": [
+    "What is your preferable learning mode?",
+    "Do you have personal Computer?",
+    "Do you use University transportation?",
+    "Status of your English language proficiency",
+    "Are you engaged with any co-curriculum activities?"
+  ],
+  "baseline_feature": "Average attendance on class",
+  "baseline_note": "do người dùng chỉ định",
+  "C_median": 0.02682695795279726,
+  "cv": {
+    "splits": 5,
+    "repeats": 10,
+    "seed": 42,
+    "n_boot": 2000,
+    "n_jobs": -1
+  },
+  "flag_rates": [
+    0.15,
+    0.3
+  ],
+  "grid": [
+    0.05,
+    0.1,
+    0.15,
+    0.2,
+    0.25,
+    0.3,
+    0.35,
+    0.4,
+    0.45,
+    0.5
+  ],
+  "main": [
+    {
+      "model": "B0",
+      "label": "Ngẫu nhiên",
+      "auc": 0.4874385662636991,
+      "auc_lo": 0.4711738020106065,
+      "auc_hi": 0.5021771509817343,
+      "recall_0.15": 0.1437125748502994,
+      "recall_0.15_lo": 0.1276588745800672,
+      "recall_0.15_hi": 0.15898920022332333,
+      "precision_0.15": 0.15789473684210525,
+      "recall_0.3": 0.2934131736526946,
+      "recall_0.3_lo": 0.2733717948717949,
+      "recall_0.3_hi": 0.3135901397515528,
+      "precision_0.3": 0.1611842105263158,
+      "prauc": 0.16638401391009244
+    },
+    {
+      "model": "B1",
+      "label": "Baseline: Average attendance on class",
+      "auc": 0.6030360270025986,
+      "auc_lo": 0.5535672477861359,
+      "auc_hi": 0.6498889798621644,
+      "recall_0.15": 0.2269461077844311,
+      "recall_0.15_lo": 0.18047271164589598,
+      "recall_0.15_hi": 0.296279754425017,
+      "precision_0.15": 0.24934210526315786,
+      "recall_0.3": 0.44011976047904183,
+      "recall_0.3_lo": 0.37681762749445674,
+      "recall_0.3_hi": 0.5104401993355482,
+      "precision_0.3": 0.24177631578947367,
+      "prauc": 0.24556564395202787
+    },
+    {
+      "model": "M1",
+      "label": "Logistic L2 (chính)",
+      "auc": 0.6186571432606486,
+      "auc_lo": 0.572099619836771,
+      "auc_hi": 0.6657087961854513,
+      "recall_0.15": 0.2640718562874252,
+      "recall_0.15_lo": 0.2154139433551198,
+      "recall_0.15_hi": 0.31264425287356323,
+      "precision_0.15": 0.2901315789473684,
+      "recall_0.3": 0.4520958083832335,
+      "recall_0.3_lo": 0.39440452815067123,
+      "recall_0.3_hi": 0.5132203009766794,
+      "precision_0.3": 0.24835526315789475,
+      "prauc": 0.25159340135337804
+    },
+    {
+      "model": "M2",
+      "label": "Random Forest",
+      "auc": 0.6348947152864084,
+      "auc_lo": 0.5901630239216769,
+      "auc_hi": 0.6777356672361663,
+      "recall_0.15": 0.24191616766467067,
+      "recall_0.15_lo": 0.19375,
+      "recall_0.15_hi": 0.28805335767904244,
+      "precision_0.15": 0.2657894736842105,
+      "recall_0.3": 0.4562874251497006,
+      "recall_0.3_lo": 0.39480425098157657,
+      "recall_0.3_hi": 0.517468241699153,
+      "precision_0.3": 0.2506578947368421,
+      "prauc": 0.23238414093875176
+    },
+    {
+      "model": "M3",
+      "label": "Gradient Boosting",
+      "auc": 0.6298423200768275,
+      "auc_lo": 0.5906124213262636,
+      "auc_hi": 0.6702186907063352,
+      "recall_0.15": 0.2269461077844311,
+      "recall_0.15_lo": 0.1852076092921163,
+      "recall_0.15_hi": 0.27343076332949745,
+      "precision_0.15": 0.24934210526315792,
+      "recall_0.3": 0.41916167664670656,
+      "recall_0.3_lo": 0.36666666666666664,
+      "recall_0.3_hi": 0.4752820616883116,
+      "precision_0.3": 0.23026315789473686,
+      "prauc": 0.23456765328686674
+    },
+    {
+      "model": "L1",
+      "label": "Logistic L1",
+      "auc": 0.6193583352163599,
+      "auc_lo": 0.5730280448365851,
+      "auc_hi": 0.6645273754545323,
+      "recall_0.15": 0.26586826347305387,
+      "recall_0.15_lo": 0.21426307847082493,
+      "recall_0.15_hi": 0.31600055248618786,
+      "precision_0.15": 0.29210526315789476,
+      "recall_0.3": 0.45329341317365274,
+      "recall_0.3_lo": 0.3939637841306053,
+      "recall_0.3_hi": 0.5103971657273544,
+      "precision_0.3": 0.24901315789473683,
+      "prauc": 0.25035773350054724
+    }
+  ],
+  "paired": [
+    {
+      "comparison": "M1 so với baseline",
+      "delta_auc": 0.01562111625804996,
+      "lo": -0.021400124187138037,
+      "hi": 0.05398972866206689
+    },
+    {
+      "comparison": "Random Forest so với M1",
+      "delta_auc": 0.016237572025759817,
+      "lo": -0.014579201547207174,
+      "hi": 0.046423497054468424
+    },
+    {
+      "comparison": "Gradient Boosting so với M1",
+      "delta_auc": 0.011185176816178921,
+      "lo": -0.02887995630532609,
+      "hi": 0.05183393912693101
+    },
+    {
+      "comparison": "Logistic L1 so với M1",
+      "delta_auc": 0.0007011919557112778,
+      "lo": -0.008626688065759142,
+      "hi": 0.0100445561946743
+    }
+  ],
+  "calibration": {
+    "slope": 1.0619611443050727,
+    "intercept": 0.09656357513270256,
+    "brier": 0.13362390524565448,
+    "brier_base": 0.1374612341964134
+  },
+  "flag_rate_for_target_recall": 0.5,
+  "items_mean": 7.74,
+  "max_items": 8,
+  "l1_delta": 0.0007011919557112778,
+  "criteria": {
+    "S1": "Không đạt",
+    "S2": "Không đạt",
+    "S3": "Đạt",
+    "S4": "Đạt",
+    "S5": "Chưa kết luận"
+  },
+  "recommended_model": "M1",
+  "switch_note": "Giữ hồi quy logistic theo quy tắc đã đăng ký.",
+  "auto_excluded_leakage": [
+    "What was your previous SGPA?"
+  ],
+  "strong_features_unconfirmed": [],
+  "groups": {
+    "Thói quen học tập": [
+      "How many hour do you study daily?",
+      "How many times do you seat for study in a day?",
+      "Average attendance on class",
+      "How many hour do you spent daily in social media?",
+      "How many hour do you spent daily on your skill development?"
+    ],
+    "Trình độ tiếng Anh": [
+      "Status of your English language proficiency"
+    ],
+    "Tiến độ học vụ": [
+      "Current Semester",
+      "How many Credit did you have completed?"
+    ],
+    "Bối cảnh học tập": [
+      "What is your preferable learning mode?",
+      "Do you have personal Computer?",
+      "Do you use University transportation?",
+      "Are you engaged with any co-curriculum activities?"
+    ]
+  },
+  "prereg_sha256": "5ffefb0cfa8b9f7e2e5f3a37387a6567d03b3b121df595c532b0f3b11104b11b",
+  "primary_sha256": "6c7b653dcb33c89f6b24fde371f251632f8c223d868d376403b5c163148a1f93",
+  "ablation": [
+    {
+      "setting": "Đầy đủ (C cố định)",
+      "auc": 0.6262149050954694,
+      "delta_auc": 0.0,
+      "lo": 0.0,
+      "hi": 0.0,
+      "recall_0.3": 0.45568862275449096
+    },
+    {
+      "setting": "Bỏ: Thói quen học tập",
+      "auc": 0.5945348689413625,
+      "delta_auc": -0.03168003615410686,
+      "lo": -0.07252801639722996,
+      "hi": 0.007235878234769437,
+      "recall_0.3": 0.3970059880239521
+    },
+    {
+      "setting": "Bỏ: Trình độ tiếng Anh",
+      "auc": 0.588069497796859,
+      "delta_auc": -0.03814540729861038,
+      "lo": -0.06588304671909781,
+      "hi": -0.008951182075259356,
+      "recall_0.3": 0.4209580838323353
+    },
+    {
+      "setting": "Bỏ: Tiến độ học vụ",
+      "auc": 0.6240753163484353,
+      "delta_auc": -0.002139588747034127,
+      "lo": -0.015009577594616533,
+      "hi": 0.010097145180127089,
+      "recall_0.3": 0.45089820359281435
+    },
+    {
+      "setting": "Bỏ: Bối cảnh học tập",
+      "auc": 0.6251733561179528,
+      "delta_auc": -0.0010415489775166265,
+      "lo": -0.013043832545189937,
+      "hi": 0.011643746886188421,
+      "recall_0.3": 0.4425149700598802
+    }
+  ],
+  "fast_mode": false,
+  "sensitivity_B": {
+    "n": 1155,
+    "positives": 167,
+    "auc": 0.6104905573468447
+  }
+}

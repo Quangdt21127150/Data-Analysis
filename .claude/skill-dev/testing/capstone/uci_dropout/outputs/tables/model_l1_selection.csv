@@ -1,0 +1,17 @@
+﻿feature,selection_freq
+Curricular units 1st sem (credited),1.0
+Curricular units 1st sem (enrolled),1.0
+Curricular units 1st sem (approved),1.0
+Curricular units 1st sem (without evaluations),1.0
+Unemployment rate,1.0
+Application mode,1.0
+Course,1.0
+Previous qualification,1.0
+Curricular units 1st sem (grade),0.98
+Application order,0.96
+Admission grade,0.94
+Daytime/evening attendance,0.94
+Previous qualification (grade),0.84
+GDP,0.84
+Inflation rate,0.78
+Curricular units 1st sem (evaluations),0.7

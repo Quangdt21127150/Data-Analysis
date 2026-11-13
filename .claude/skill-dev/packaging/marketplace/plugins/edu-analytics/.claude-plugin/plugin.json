@@ -1,8 +1,20 @@
 {
   "name": "edu-analytics",
-  "version": "1.1.0",
-  "description": "Phân tích dữ liệu giáo dục có trách nhiệm: profiling, kiểm soát rò rỉ, chẩn đoán, mô hình sàng lọc người học so với baseline, công bằng, đánh đổi ngưỡng và báo cáo.",
-  "author": { "name": "Nhóm N02 - Khoa học Phân tích Dữ liệu (FIT-HCMUS)" },
+  "version": "1.2.0",
+  "description": "Bộ skill phân tích dữ liệu giáo dục của nhóm N02: student-risk-screening (sàng lọc người học cần hỗ trợ có trách nhiệm) và analytics-capstone-pipeline (quy trình đồ án trọn gói từ dữ liệu đến báo cáo Word, slide).",
+  "author": {
+    "name": "Nhóm N02 - Khoa học Phân tích Dữ liệu (FIT-HCMUS)"
+  },
   "license": "MIT",
-  "keywords": ["education", "learning-analytics", "early-warning", "student-success", "fairness", "data-quality"]
+  "keywords": [
+    "analytics-pipeline",
+    "capstone",
+    "data-quality",
+    "early-warning",
+    "education",
+    "fairness",
+    "learning-analytics",
+    "report-generation",
+    "student-success"
+  ]
 }

@@ -1,0 +1,32 @@
+﻿column,dtype,n_missing,pct_missing,n_unique,role
+University Admission year,int64,0,0.0,11,numeric
+Gender,str,0,0.0,2,categorical
+Age,int64,0,0.0,10,numeric
+H.S.C passing year,int64,0,0.0,12,numeric
+Program,str,0,0.0,1,dropped
+Current Semester,int64,0,0.0,22,numeric
+Do you have meritorious scholarship ?,str,0,0.0,2,categorical
+Do you use University transportation?,str,0,0.0,2,categorical
+How many hour do you study daily?,int64,0,0.0,12,numeric
+How many times do you seat for study in a day?,int64,0,0.0,8,numeric
+What is your preferable learning mode?,str,0,0.0,2,categorical
+Do you use smart phone?,str,0,0.0,2,categorical
+Do you have personal Computer?,str,0,0.0,2,categorical
+How many hour do you spent daily in social media?,int64,0,0.0,16,numeric
+Status of your English language proficiency,str,0,0.0,3,categorical
+Average attendance on class,float64,1,0.0008375209380234506,65,numeric
+Did you ever fall in probation?,str,0,0.0,2,categorical
+Did you ever got suspension?,str,0,0.0,2,categorical
+Do you attend in teacher consultancy for any kind of academical problems?,str,0,0.0,2,categorical
+What are the skills do you have ?,str,1,0.0008375209380234506,55,dropped
+How many hour do you spent daily on your skill development?,int64,0,0.0,12,numeric
+What is you interested area?,str,0,0.0,25,categorical
+What is your relationship status?,str,0,0.0,5,categorical
+Are you engaged with any co-curriculum activities?,str,0,0.0,2,categorical
+With whom you are living with?,str,0,0.0,2,categorical
+Do you have any health issues?,str,0,0.0,4,categorical
+What was your previous SGPA?,float64,0,0.0,249,numeric
+Do you have any physical disabilities?,str,0,0.0,2,categorical
+What is your current CGPA?,float64,0,0.0,188,target
+How many Credit did you have completed?,int64,0,0.0,130,numeric
+What is your monthly family income?,int64,0,0.0,137,numeric

@@ -1,0 +1,283 @@
+{
+  "n": 649,
+  "positives": 100,
+  "prevalence": 0.15408320493066255,
+  "n_features": 14,
+  "features": [
+    "traveltime",
+    "studytime",
+    "failures",
+    "famrel",
+    "freetime",
+    "goout",
+    "school",
+    "reason",
+    "famsup",
+    "paid",
+    "activities",
+    "nursery",
+    "higher",
+    "internet"
+  ],
+  "numeric": [
+    "traveltime",
+    "studytime",
+    "failures",
+    "famrel",
+    "freetime",
+    "goout"
+  ],
+  "categorical": [
+    "school",
+    "reason",
+    "famsup",
+    "paid",
+    "activities",
+    "nursery",
+    "higher",
+    "internet"
+  ],
+  "baseline_feature": "failures",
+  "baseline_note": "do người dùng chỉ định",
+  "C_median": 0.02682695795279726,
+  "cv": {
+    "splits": 5,
+    "repeats": 10,
+    "seed": 42,
+    "n_boot": 2000,
+    "n_jobs": -1
+  },
+  "flag_rates": [
+    0.15,
+    0.3
+  ],
+  "grid": [
+    0.05,
+    0.1,
+    0.15,
+    0.2,
+    0.25,
+    0.3,
+    0.35,
+    0.4,
+    0.45,
+    0.5
+  ],
+  "main": [
+    {
+      "model": "B0",
+      "label": "Ngẫu nhiên",
+      "auc": 0.5057540983606558,
+      "auc_lo": 0.48438020104541407,
+      "auc_hi": 0.5265707181373879,
+      "recall_0.15": 0.15599999999999997,
+      "recall_0.15_lo": 0.1354531375703942,
+      "recall_0.15_hi": 0.1775566893424036,
+      "precision_0.15": 0.16082474226804125,
+      "recall_0.3": 0.309,
+      "recall_0.3_lo": 0.2817202102803738,
+      "recall_0.3_hi": 0.3348224524901704,
+      "precision_0.3": 0.1584615384615385,
+      "prauc": 0.16774317885522422
+    },
+    {
+      "model": "B1",
+      "label": "Baseline: failures",
+      "auc": 0.682707650273224,
+      "auc_lo": 0.6280904349777535,
+      "auc_hi": 0.7390406843418286,
+      "recall_0.15": 0.46699999999999997,
+      "recall_0.15_lo": 0.3899957627118644,
+      "recall_0.15_hi": 0.5451710914454274,
+      "precision_0.15": 0.4814432989690721,
+      "recall_0.3": 0.55,
+      "recall_0.3_lo": 0.48631475748194014,
+      "recall_0.3_hi": 0.6448979591836734,
+      "precision_0.3": 0.28205128205128205,
+      "prauc": 0.35528750707039025
+    },
+    {
+      "model": "M1",
+      "label": "Logistic L2 (chính)",
+      "auc": 0.8039462659380693,
+      "auc_lo": 0.7581972738463384,
+      "auc_hi": 0.8500199259110272,
+      "recall_0.15": 0.473,
+      "recall_0.15_lo": 0.4011083333333333,
+      "recall_0.15_hi": 0.5494388063307962,
+      "precision_0.15": 0.4876288659793815,
+      "recall_0.3": 0.682,
+      "recall_0.3_lo": 0.6058303571428572,
+      "recall_0.3_hi": 0.7604166666666666,
+      "precision_0.3": 0.34974358974358977,
+      "prauc": 0.4620656282122
+    },
+    {
+      "model": "M2",
+      "label": "Random Forest",
+      "auc": 0.836132058287796,
+      "auc_lo": 0.7940088116975765,
+      "auc_hi": 0.8779969935542119,
+      "recall_0.15": 0.5159999999999999,
+      "recall_0.15_lo": 0.44298731642189587,
+      "recall_0.15_hi": 0.5961942508710801,
+      "precision_0.15": 0.5319587628865978,
+      "recall_0.3": 0.719,
+      "recall_0.3_lo": 0.6457326427771556,
+      "recall_0.3_hi": 0.7935075408462506,
+      "precision_0.3": 0.3687179487179487,
+      "prauc": 0.49891838175318404
+    },
+    {
+      "model": "M3",
+      "label": "Gradient Boosting",
+      "auc": 0.8030054644808743,
+      "auc_lo": 0.7575767071365442,
+      "auc_hi": 0.8484668333886836,
+      "recall_0.15": 0.461,
+      "recall_0.15_lo": 0.3929793233082707,
+      "recall_0.15_hi": 0.5284213106295149,
+      "precision_0.15": 0.47525773195876286,
+      "recall_0.3": 0.7150000000000001,
+      "recall_0.3_lo": 0.6438775510204081,
+      "recall_0.3_hi": 0.7849218220817339,
+      "precision_0.3": 0.3666666666666667,
+      "prauc": 0.45805817953517847
+    },
+    {
+      "model": "L1",
+      "label": "Logistic L1",
+      "auc": 0.8154408014571949,
+      "auc_lo": 0.7693386670531419,
+      "auc_hi": 0.8582114037493539,
+      "recall_0.15": 0.48699999999999993,
+      "recall_0.15_lo": 0.4192605941459153,
+      "recall_0.15_hi": 0.5636363636363637,
+      "precision_0.15": 0.5020618556701031,
+      "recall_0.3": 0.702,
+      "recall_0.3_lo": 0.6281717171717172,
+      "recall_0.3_hi": 0.7750059523809524,
+      "precision_0.3": 0.36,
+      "prauc": 0.47193427738904054
+    }
+  ],
+  "paired": [
+    {
+      "comparison": "M1 so với baseline",
+      "delta_auc": 0.12123861566484528,
+      "lo": 0.08094063679053211,
+      "hi": 0.1659460136523205
+    },
+    {
+      "comparison": "Random Forest so với M1",
+      "delta_auc": 0.03218579234972674,
+      "lo": 0.014227684215817415,
+      "hi": 0.05084224650182095
+    },
+    {
+      "comparison": "Gradient Boosting so với M1",
+      "delta_auc": -0.0009408014571949952,
+      "lo": -0.029837030016596197,
+      "hi": 0.025989859074649537
+    },
+    {
+      "comparison": "Logistic L1 so với M1",
+      "delta_auc": 0.011494535519125604,
+      "lo": -0.003138707559005768,
+      "hi": 0.026569046478051334
+    }
+  ],
+  "calibration": {
+    "slope": 1.463614395189026,
+    "intercept": 0.7181521926189556,
+    "brier": 0.10801660874554637,
+    "brier_base": 0.13034157088895804
+  },
+  "flag_rate_for_target_recall": 0.25,
+  "items_mean": 5.42,
+  "max_items": 10,
+  "l1_delta": 0.011494535519125604,
+  "criteria": {
+    "S1": "Đạt (độ tin cậy cao)",
+    "S2": "Đạt",
+    "S3": "Đạt",
+    "S4": "Không đạt",
+    "S5": "Chưa kết luận"
+  },
+  "recommended_model": "M2",
+  "switch_note": "Random Forest hơn M1 0.032 AUC với cận dưới > 0: chuyển theo quy tắc đã đăng ký.",
+  "auto_excluded_leakage": [],
+  "strong_features_unconfirmed": [
+    "G1",
+    "G2"
+  ],
+  "groups": {
+    "Thói quen và thời gian": [
+      "traveltime",
+      "studytime",
+      "freetime",
+      "goout"
+    ],
+    "Tiền sử học tập": [
+      "failures",
+      "higher",
+      "nursery"
+    ],
+    "Hỗ trợ và hoạt động": [
+      "famsup",
+      "paid",
+      "activities",
+      "internet",
+      "famrel"
+    ],
+    "Trường và lý do chọn": [
+      "school",
+      "reason"
+    ]
+  },
+  "prereg_sha256": "27549efa2a831a5505a88798555a2b74e4af6d4004f695f85647eb3b52cb46fe",
+  "primary_sha256": "f2ee8d4e5b6b27683a55eb4adbee41df7394806d7695874a1109848cfe199678",
+  "ablation": [
+    {
+      "setting": "Đầy đủ (C cố định)",
+      "auc": 0.813988160291439,
+      "delta_auc": 0.0,
+      "lo": 0.0,
+      "hi": 0.0,
+      "recall_0.3": 0.683
+    },
+    {
+      "setting": "Bỏ: Thói quen và thời gian",
+      "auc": 0.8106839708561019,
+      "delta_auc": -0.003304189435337057,
+      "lo": -0.024436024842696573,
+      "hi": 0.01806093252761779,
+      "recall_0.3": 0.6719999999999999
+    },
+    {
+      "setting": "Bỏ: Tiền sử học tập",
+      "auc": 0.7381074681238615,
+      "delta_auc": -0.07588069216757742,
+      "lo": -0.11013725267522984,
+      "hi": -0.04128044018153696,
+      "recall_0.3": 0.591
+    },
+    {
+      "setting": "Bỏ: Hỗ trợ và hoạt động",
+      "auc": 0.8202777777777778,
+      "delta_auc": 0.006289617486338828,
+      "lo": -0.0003088771806362355,
+      "hi": 0.012838542539638148,
+      "recall_0.3": 0.691
+    },
+    {
+      "setting": "Bỏ: Trường và lý do chọn",
+      "auc": 0.7551302367941711,
+      "delta_auc": -0.05885792349726782,
+      "lo": -0.09096568708504701,
+      "hi": -0.03005211714996352,
+      "recall_0.3": 0.649
+    }
+  ],
+  "fast_mode": false
+}

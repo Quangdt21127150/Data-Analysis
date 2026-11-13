@@ -1,0 +1,167 @@
+{
+  "project_name": "Sàng lọc nguy cơ bỏ học sau học kỳ 1 (UCI Predict Students' Dropout)",
+  "language": "vi",
+  "team": {
+    "name": "Nhóm N02",
+    "members": [
+      "Ngô Triệu Gia Gia - 25C11037",
+      "Trần Duy Khương - 25C12004",
+      "Nguyễn Hoàng Nhật Quang - 25C12033"
+    ],
+    "advisor": "TS. Nguyễn Trần Minh Thư",
+    "course": "Khoa học Phân tích Dữ liệu (FIT-HCMUS)"
+  },
+  "data_path": "../../datasets/uci_dropout.csv",
+  "sheet": null,
+  "id_col": null,
+  "features": [
+    "Application order",
+    "Previous qualification (grade)",
+    "Admission grade",
+    "Curricular units 1st sem (credited)",
+    "Curricular units 1st sem (enrolled)",
+    "Curricular units 1st sem (evaluations)",
+    "Curricular units 1st sem (approved)",
+    "Curricular units 1st sem (grade)",
+    "Curricular units 1st sem (without evaluations)",
+    "Unemployment rate",
+    "Inflation rate",
+    "GDP",
+    "Application mode",
+    "Course",
+    "Daytime/evening attendance",
+    "Previous qualification"
+  ],
+  "target": {
+    "column": "Target",
+    "type": "binary",
+    "positive_if": null,
+    "threshold": null,
+    "positive_values": [
+      "Dropout"
+    ],
+    "missing_codes": [],
+    "positive_name": "nhóm có nguy cơ bỏ học"
+  },
+  "exclude": {
+    "leakage": [
+      "Curricular units 2nd sem (credited)",
+      "Curricular units 2nd sem (enrolled)",
+      "Curricular units 2nd sem (evaluations)",
+      "Curricular units 2nd sem (approved)",
+      "Curricular units 2nd sem (grade)",
+      "Curricular units 2nd sem (without evaluations)"
+    ],
+    "sensitive_for_model": [
+      "Marital status",
+      "Nacionality",
+      "Mother's qualification",
+      "Father's qualification",
+      "Mother's occupation",
+      "Father's occupation",
+      "Displaced",
+      "Educational special needs",
+      "Debtor",
+      "Tuition fees up to date",
+      "Gender",
+      "Age at enrollment",
+      "International",
+      "Scholarship holder"
+    ],
+    "other": []
+  },
+  "auto_exclude_leakage_auc": 0.85,
+  "groups": {
+    "Kết quả học kỳ 1": [
+      "Curricular units 1st sem (credited)",
+      "Curricular units 1st sem (enrolled)",
+      "Curricular units 1st sem (evaluations)",
+      "Curricular units 1st sem (approved)",
+      "Curricular units 1st sem (grade)",
+      "Curricular units 1st sem (without evaluations)"
+    ],
+    "Đầu vào tuyển sinh": [
+      "Application order",
+      "Previous qualification (grade)",
+      "Admission grade",
+      "Application mode",
+      "Previous qualification"
+    ],
+    "Chương trình học": [
+      "Course",
+      "Daytime/evening attendance"
+    ],
+    "Kinh tế vĩ mô": [
+      "Unemployment rate",
+      "Inflation rate",
+      "GDP"
+    ]
+  },
+  "fairness_cols": [
+    "Gender",
+    "Age at enrollment"
+  ],
+  "baseline_feature": "Curricular units 1st sem (approved)",
+  "flag_rates": [
+    0.15,
+    0.3
+  ],
+  "exclude_repeat_clusters": true,
+  "criteria": {
+    "auc": 0.7,
+    "recall": 0.6,
+    "recall_rate": 0.3,
+    "delta_auc": 0.03,
+    "max_items": null,
+    "ablation_tolerance": 0.02,
+    "calib_slope": [
+      0.8,
+      1.2
+    ],
+    "fair_gap": 0.1,
+    "fair_ci_width": 0.2,
+    "switch_delta": 0.02
+  },
+  "cv": {
+    "splits": 5,
+    "repeats": 10,
+    "seed": 42,
+    "n_boot": 2000,
+    "n_jobs": -1
+  },
+  "stakeholders": [
+    {
+      "role": "Phòng công tác sinh viên",
+      "pain": "Sinh viên bỏ học khi chưa được hỗ trợ",
+      "decision": "Chọn sinh viên ưu tiên tư vấn sau học kỳ 1"
+    }
+  ],
+  "analysis_questions": [
+    {
+      "id": "AQ1",
+      "level": "Descriptive",
+      "question": "Tỷ lệ bỏ học là bao nhiêu?"
+    },
+    {
+      "id": "AQ2",
+      "level": "Diagnostic",
+      "question": "Nhóm bỏ học khác phần còn lại ở đặc trưng nào?"
+    },
+    {
+      "id": "AQ3",
+      "level": "Predictive",
+      "question": "Có sàng lọc được nguy cơ bỏ học sau học kỳ 1 không?"
+    }
+  ],
+  "out_dir": "outputs",
+  "context": {
+    "data_source": "UCI Machine Learning Repository: Predict Students' Dropout and Academic Success (Realinho và cộng sự, 2022), CC BY 4.0",
+    "self_reported": false,
+    "cross_sectional": true,
+    "single_site": true,
+    "notes": [
+      "Một trường đại học tại Bồ Đào Nha; đặc trưng lấy đến hết học kỳ 1."
+    ]
+  },
+  "stakeholders_source": "assumed"
+}

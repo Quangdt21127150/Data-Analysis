@@ -1,0 +1,15 @@
+﻿feature,selection_freq
+studytime,1.0
+failures,1.0
+school,1.0
+higher,1.0
+freetime,0.46
+traveltime,0.2
+reason,0.2
+goout,0.16
+activities,0.1
+famrel,0.08
+famsup,0.06
+nursery,0.06
+internet,0.06
+paid,0.04

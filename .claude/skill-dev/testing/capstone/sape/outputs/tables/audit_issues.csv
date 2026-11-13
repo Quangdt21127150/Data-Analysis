@@ -1,0 +1,9 @@
+﻿id,severity,code,description,n_rows,proposed_action
+Q01,Cao,target_missing_code,39 dòng có What is your current CGPA? = 0.0 được coi là thiếu dữ liệu (chưa có giá trị thật).,39,Chuyển thành thiếu dữ liệu và loại khỏi mẫu có nhãn.
+Q02,Cao,target_missing,39 dòng thiếu nhãn.,39,Loại khỏi mẫu có nhãn; không điền khuyết nhãn.
+Q03,Cao,repeat_cluster,"Cụm giá trị nhãn lặp bất thường: 140 dòng có nhãn = 3.15, đồng thời cùng giá trị 2.68 ở cột What was your previous SGPA? (trung vị tần suất một giá trị nhãn là 5); nghi giá trị thay thế.",140,"Tách khỏi mẫu chính, giữ ở mẫu độ nhạy B và so sánh kết quả hai mẫu."
+Q04,Thấp,const_or_highcard,Cột Program hằng số hoặc có quá nhiều mức (1).,0,Không đưa vào mô hình.
+Q05,Thấp,const_or_highcard,Cột What are the skills do you have ? hằng số hoặc có quá nhiều mức (55).,0,Không đưa vào mô hình.
+Q06,Cao,leakage_suspect,"Đặc trưng What was your previous SGPA? đứng một mình đạt AUC 0,880 (từ ngưỡng 0,85): nghi là một phần hoặc hệ quả của nhãn.",0,Loại khỏi mô hình và nói rõ lý do; chỉ giữ nếu xác nhận có sẵn tại thời điểm ra quyết định.
+Q07,Trung bình,collinear,"Current Semester và How many Credit did you have completed? tương quan tuyệt đối 0,90.",0,Phân tích theo nhóm đặc trưng (ablation theo nhóm) thay vì từng biến.
+Q08,Trung bình,imbalance,"Tỷ lệ lớp dương 14,5%; dùng PR-AUC, recall và precision tại tỷ lệ gắn cờ.",0,Không dùng accuracy; dùng class_weight và đo hiệu chuẩn.

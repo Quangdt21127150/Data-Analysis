@@ -1,0 +1,157 @@
+{
+  "n_raw": 1194,
+  "n_valid_label": 1155,
+  "n_positive": 167,
+  "prevalence": 0.1445887445887446,
+  "events_per_feature": 13.916666666666666,
+  "n_features": 28,
+  "numeric": [
+    "University Admission year",
+    "Age",
+    "H.S.C passing year",
+    "Current Semester",
+    "How many hour do you study daily?",
+    "How many times do you seat for study in a day?",
+    "How many hour do you spent daily in social media?",
+    "Average attendance on class",
+    "How many hour do you spent daily on your skill development?",
+    "What was your previous SGPA?",
+    "How many Credit did you have completed?",
+    "What is your monthly family income?"
+  ],
+  "categorical": [
+    "Gender",
+    "Do you have meritorious scholarship ?",
+    "Do you use University transportation?",
+    "What is your preferable learning mode?",
+    "Do you use smart phone?",
+    "Do you have personal Computer?",
+    "Status of your English language proficiency",
+    "Did you ever fall in probation?",
+    "Did you ever got suspension?",
+    "Do you attend in teacher consultancy for any kind of academical problems?",
+    "What is you interested area?",
+    "What is your relationship status?",
+    "Are you engaged with any co-curriculum activities?",
+    "With whom you are living with?",
+    "Do you have any health issues?",
+    "Do you have any physical disabilities?"
+  ],
+  "dropped": [
+    "Program",
+    "What are the skills do you have ?"
+  ],
+  "univariate_auc": {
+    "University Admission year": 0.5024667264660962,
+    "Age": 0.5258097165991904,
+    "H.S.C passing year": 0.5415222187204539,
+    "Current Semester": 0.5353069165313098,
+    "How many hour do you study daily?": 0.5233308686271183,
+    "How many times do you seat for study in a day?": 0.4753842517394361,
+    "How many hour do you spent daily in social media?": 0.5327007927464908,
+    "Average attendance on class": 0.6078298867851342,
+    "How many hour do you spent daily on your skill development?": 0.4692416785861475,
+    "What was your previous SGPA?": 0.8795364736114815,
+    "How many Credit did you have completed?": 0.5174125433343838,
+    "What is your monthly family income?": 0.5374615142185265,
+    "Gender": 0.47327207932313514,
+    "Do you have meritorious scholarship ?": 0.5919688962156658,
+    "Do you use University transportation?": 0.5343341656767436,
+    "What is your preferable learning mode?": 0.5087668791970714,
+    "Do you use smart phone?": 0.49944544110160244,
+    "Do you have personal Computer?": 0.4684780237096656,
+    "Status of your English language proficiency": 0.5724259982060171,
+    "Did you ever fall in probation?": 0.6827407937162113,
+    "Did you ever got suspension?": 0.5245036243302869,
+    "Do you attend in teacher consultancy for any kind of academical problems?": 0.48776637009382046,
+    "What is you interested area?": 0.561510582074717,
+    "What is your relationship status?": 0.5368099832723218,
+    "Are you engaged with any co-curriculum activities?": 0.5281158331111058,
+    "With whom you are living with?": 0.5561771194453199,
+    "Do you have any health issues?": 0.46486278455235286,
+    "Do you have any physical disabilities?": 0.5071971441731921
+  },
+  "leakage_suspects": [
+    "What was your previous SGPA?"
+  ],
+  "strong_features": [],
+  "repeat_clusters": {
+    "values": [
+      3.15
+    ],
+    "counts": [
+      140
+    ],
+    "n_rows": 140,
+    "median_count": 5.0,
+    "col": "What was your previous SGPA?",
+    "col_value": 2.68
+  },
+  "raw_sha256": "04ebaf9f3a047afe96d9bff22dbe65b2a320e6395f230032735495e7e58277cf",
+  "issues": [
+    {
+      "id": "Q01",
+      "severity": "Cao",
+      "code": "target_missing_code",
+      "description": "39 dòng có What is your current CGPA? = 0.0 được coi là thiếu dữ liệu (chưa có giá trị thật).",
+      "n_rows": 39,
+      "proposed_action": "Chuyển thành thiếu dữ liệu và loại khỏi mẫu có nhãn."
+    },
+    {
+      "id": "Q02",
+      "severity": "Cao",
+      "code": "target_missing",
+      "description": "39 dòng thiếu nhãn.",
+      "n_rows": 39,
+      "proposed_action": "Loại khỏi mẫu có nhãn; không điền khuyết nhãn."
+    },
+    {
+      "id": "Q03",
+      "severity": "Cao",
+      "code": "repeat_cluster",
+      "description": "Cụm giá trị nhãn lặp bất thường: 140 dòng có nhãn = 3.15, đồng thời cùng giá trị 2.68 ở cột What was your previous SGPA? (trung vị tần suất một giá trị nhãn là 5); nghi giá trị thay thế.",
+      "n_rows": 140,
+      "proposed_action": "Tách khỏi mẫu chính, giữ ở mẫu độ nhạy B và so sánh kết quả hai mẫu."
+    },
+    {
+      "id": "Q04",
+      "severity": "Thấp",
+      "code": "const_or_highcard",
+      "description": "Cột Program hằng số hoặc có quá nhiều mức (1).",
+      "n_rows": 0,
+      "proposed_action": "Không đưa vào mô hình."
+    },
+    {
+      "id": "Q05",
+      "severity": "Thấp",
+      "code": "const_or_highcard",
+      "description": "Cột What are the skills do you have ? hằng số hoặc có quá nhiều mức (55).",
+      "n_rows": 0,
+      "proposed_action": "Không đưa vào mô hình."
+    },
+    {
+      "id": "Q06",
+      "severity": "Cao",
+      "code": "leakage_suspect",
+      "description": "Đặc trưng What was your previous SGPA? đứng một mình đạt AUC 0,880 (từ ngưỡng 0,85): nghi là một phần hoặc hệ quả của nhãn.",
+      "n_rows": 0,
+      "proposed_action": "Loại khỏi mô hình và nói rõ lý do; chỉ giữ nếu xác nhận có sẵn tại thời điểm ra quyết định."
+    },
+    {
+      "id": "Q07",
+      "severity": "Trung bình",
+      "code": "collinear",
+      "description": "Current Semester và How many Credit did you have completed? tương quan tuyệt đối 0,90.",
+      "n_rows": 0,
+      "proposed_action": "Phân tích theo nhóm đặc trưng (ablation theo nhóm) thay vì từng biến."
+    },
+    {
+      "id": "Q08",
+      "severity": "Trung bình",
+      "code": "imbalance",
+      "description": "Tỷ lệ lớp dương 14,5%; dùng PR-AUC, recall và precision tại tỷ lệ gắn cờ.",
+      "n_rows": 0,
+      "proposed_action": "Không dùng accuracy; dùng class_weight và đo hiệu chuẩn."
+    }
+  ]
+}

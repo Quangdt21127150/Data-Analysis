@@ -1,0 +1,268 @@
+{
+  "n": 649,
+  "n_pos": 100,
+  "univariate": [
+    {
+      "feature": "failures",
+      "type": "numeric",
+      "effect": 0.2990619307832423,
+      "effect_lo": 0.24843101092896172,
+      "effect_hi": 0.34925318761384333,
+      "p": 2.010206107946716e-24,
+      "median_pos": 0.0,
+      "median_neg": 0.0,
+      "p_holm": 2.814288551125402e-23
+    },
+    {
+      "feature": "higher",
+      "type": "categorical",
+      "effect": 0.3027848829801888,
+      "effect_lo": NaN,
+      "effect_hi": NaN,
+      "p": 1.223272620905045e-14,
+      "median_pos": NaN,
+      "median_neg": NaN,
+      "p_holm": 1.5902544071765584e-13
+    },
+    {
+      "feature": "school",
+      "type": "categorical",
+      "effect": 0.29273786438170696,
+      "effect_lo": NaN,
+      "effect_hi": NaN,
+      "p": 8.808785742085955e-14,
+      "median_pos": NaN,
+      "median_neg": NaN,
+      "p_holm": 1.0570542890503145e-12
+    },
+    {
+      "feature": "studytime",
+      "type": "numeric",
+      "effect": 0.6272131147540984,
+      "effect_lo": 0.570551912568306,
+      "effect_hi": 0.6816377504553734,
+      "p": 1.229265744442665e-05,
+      "median_pos": 1.5,
+      "median_neg": 2.0,
+      "p_holm": 0.00013521923188869315
+    },
+    {
+      "feature": "reason",
+      "type": "categorical",
+      "effect": 0.1664837019484624,
+      "effect_lo": NaN,
+      "effect_hi": NaN,
+      "p": 0.00044231750221818974,
+      "median_pos": NaN,
+      "median_neg": NaN,
+      "p_holm": 0.0044231750221818975
+    },
+    {
+      "feature": "freetime",
+      "type": "numeric",
+      "effect": 0.42714025500910746,
+      "effect_lo": 0.3666762295081967,
+      "effect_hi": 0.48649544626593805,
+      "p": 0.015355815727689182,
+      "median_pos": 3.0,
+      "median_neg": 3.0,
+      "p_holm": 0.13820234154920263
+    },
+    {
+      "feature": "internet",
+      "type": "categorical",
+      "effect": 0.08316421576074084,
+      "effect_lo": NaN,
+      "effect_hi": NaN,
+      "p": 0.03412021051500768,
+      "median_pos": NaN,
+      "median_neg": NaN,
+      "p_holm": 0.27296168412006144
+    },
+    {
+      "feature": "goout",
+      "type": "numeric",
+      "effect": 0.4447540983606557,
+      "effect_lo": 0.3734943078324226,
+      "effect_hi": 0.5151732695810565,
+      "p": 0.06997992846229424,
+      "median_pos": 3.0,
+      "median_neg": 3.0,
+      "p_holm": 0.4898594992360597
+    },
+    {
+      "feature": "traveltime",
+      "type": "numeric",
+      "effect": 0.4609653916211294,
+      "effect_lo": 0.4075138888888889,
+      "effect_hi": 0.5152928051001822,
+      "p": 0.16075429198917568,
+      "median_pos": 1.0,
+      "median_neg": 1.0,
+      "p_holm": 0.9645257519350541
+    },
+    {
+      "feature": "paid",
+      "type": "categorical",
+      "effect": 0.044729322046195265,
+      "effect_lo": NaN,
+      "effect_hi": NaN,
+      "p": 0.25449430233497217,
+      "median_pos": NaN,
+      "median_neg": NaN,
+      "p_holm": 1.0
+    },
+    {
+      "feature": "activities",
+      "type": "categorical",
+      "effect": 0.04300647098458334,
+      "effect_lo": NaN,
+      "effect_hi": NaN,
+      "p": 0.27324929846186113,
+      "median_pos": NaN,
+      "median_neg": NaN,
+      "p_holm": 1.0
+    },
+    {
+      "feature": "famsup",
+      "type": "categorical",
+      "effect": 0.033521596036839754,
+      "effect_lo": NaN,
+      "effect_hi": NaN,
+      "p": 0.393116793596736,
+      "median_pos": NaN,
+      "median_neg": NaN,
+      "p_holm": 1.0
+    }
+  ],
+  "adjusted": [
+    {
+      "term": "traveltime (mỗi 1 độ lệch chuẩn)",
+      "or": 0.8684631809630189,
+      "or_lo": 0.6657960042041372,
+      "or_hi": 1.1328219032945024,
+      "p": 0.29825698605257567,
+      "p_holm": 1.0
+    },
+    {
+      "term": "studytime (mỗi 1 độ lệch chuẩn)",
+      "or": 0.7703101677438184,
+      "or_lo": 0.5792828676662825,
+      "or_hi": 1.0243316135345248,
+      "p": 0.07270605847579636,
+      "p_holm": 0.9451787601853527
+    },
+    {
+      "term": "failures (mỗi 1 độ lệch chuẩn)",
+      "or": 1.863451384576215,
+      "or_lo": 1.5121806367220392,
+      "or_hi": 2.296320279703,
+      "p": 5.202375419344207e-09,
+      "p_holm": 8.323800670950732e-08
+    },
+    {
+      "term": "famrel (mỗi 1 độ lệch chuẩn)",
+      "or": 0.9376723357205864,
+      "or_lo": 0.7419230229285381,
+      "or_hi": 1.185068237544621,
+      "p": 0.5901059533446855,
+      "p_holm": 1.0
+    },
+    {
+      "term": "freetime (mỗi 1 độ lệch chuẩn)",
+      "or": 1.113961183745229,
+      "or_lo": 0.8560817442903761,
+      "or_hi": 1.4495222298189383,
+      "p": 0.4217807155158333,
+      "p_holm": 1.0
+    },
+    {
+      "term": "goout (mỗi 1 độ lệch chuẩn)",
+      "or": 1.102738140245816,
+      "or_lo": 0.8423369134146226,
+      "or_hi": 1.443640171274597,
+      "p": 0.4767217326989388,
+      "p_holm": 1.0
+    },
+    {
+      "term": "school_MS",
+      "or": 4.978840439019479,
+      "or_lo": 2.843908995418357,
+      "or_hi": 8.716471644188136,
+      "p": 1.9316492849696942e-08,
+      "p_holm": 2.8974739274545414e-07
+    },
+    {
+      "term": "reason_home",
+      "or": 0.9692521434161646,
+      "or_lo": 0.4885200905861361,
+      "or_hi": 1.9230523690226515,
+      "p": 0.9288105685268804,
+      "p_holm": 1.0
+    },
+    {
+      "term": "reason_other",
+      "or": 1.2551512807504412,
+      "or_lo": 0.6029150636346342,
+      "or_hi": 2.612979559794457,
+      "p": 0.5435357238416776,
+      "p_holm": 1.0
+    },
+    {
+      "term": "reason_reputation",
+      "or": 0.7240583586226511,
+      "or_lo": 0.3232870401111769,
+      "or_hi": 1.6216564280183854,
+      "p": 0.4325400373589454,
+      "p_holm": 1.0
+    },
+    {
+      "term": "famsup_yes",
+      "or": 0.9212115233070782,
+      "or_lo": 0.5494374131173763,
+      "or_hi": 1.5445447477972427,
+      "p": 0.7556161697576327,
+      "p_holm": 1.0
+    },
+    {
+      "term": "paid_yes",
+      "or": 1.8112390296064313,
+      "or_lo": 0.7312576176348962,
+      "or_hi": 4.486225843335536,
+      "p": 0.1992681044995548,
+      "p_holm": 1.0
+    },
+    {
+      "term": "activities_yes",
+      "or": 0.781768244997121,
+      "or_lo": 0.4611701931843224,
+      "or_hi": 1.3252408718479494,
+      "p": 0.3605726301195049,
+      "p_holm": 1.0
+    },
+    {
+      "term": "nursery_yes",
+      "or": 1.3587439292307057,
+      "or_lo": 0.7062453312466564,
+      "or_hi": 2.61408462971703,
+      "p": 0.3584887661839309,
+      "p_holm": 1.0
+    },
+    {
+      "term": "higher_yes",
+      "or": 0.3056930215216939,
+      "or_lo": 0.16097523914816733,
+      "or_hi": 0.5805130273547832,
+      "p": 0.00029226276162530596,
+      "p_holm": 0.004091678662754283
+    },
+    {
+      "term": "internet_yes",
+      "or": 1.0483219443288008,
+      "or_lo": 0.5851172629693187,
+      "or_hi": 1.8782199201990453,
+      "p": 0.8739720920626057,
+      "p_holm": 1.0
+    }
+  ]
+}

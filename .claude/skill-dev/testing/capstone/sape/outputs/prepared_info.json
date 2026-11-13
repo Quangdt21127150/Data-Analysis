@@ -1,0 +1,46 @@
+{
+  "n_master": 1155,
+  "n_primary": 1015,
+  "n_pos_primary": 167,
+  "n_sensitivity_B": 1155,
+  "primary_sha256": "6c7b653dcb33c89f6b24fde371f251632f8c223d868d376403b5c163148a1f93",
+  "raw_sha256": "04ebaf9f3a047afe96d9bff22dbe65b2a320e6395f230032735495e7e58277cf",
+  "log": [
+    {
+      "step": "load",
+      "n_before": 1194,
+      "n_after": 1194,
+      "detail": "Đọc ../../datasets/sape_students_performance.xlsx, SHA-256 04ebaf9f3a047afe..."
+    },
+    {
+      "step": "target_missing_code",
+      "n_before": 1194,
+      "n_after": 1194,
+      "detail": "39 dòng có What is your current CGPA? = 0.0 được coi là thiếu dữ liệu (chưa có giá trị thật)."
+    },
+    {
+      "step": "drop_missing_label",
+      "n_before": 1194,
+      "n_after": 1155,
+      "detail": "Loại dòng thiếu nhãn."
+    },
+    {
+      "step": "primary_excludes_repeat_cluster",
+      "n_before": 1155,
+      "n_after": 1015,
+      "detail": "Mẫu chính loại cụm giá trị nhãn lặp bất thường; mẫu độ nhạy B giữ lại."
+    },
+    {
+      "step": "primary_sample",
+      "n_before": 1155,
+      "n_after": 1015,
+      "detail": "Mẫu chính 1015 dòng, 167 ca dương (16.5%)."
+    },
+    {
+      "step": "sensitivity_B",
+      "n_before": 1155,
+      "n_after": 1155,
+      "detail": "Mẫu độ nhạy B 1155 dòng, 167 ca dương."
+    }
+  ]
+}

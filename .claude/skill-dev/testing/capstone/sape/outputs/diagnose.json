@@ -1,0 +1,244 @@
+{
+  "n": 1015,
+  "n_pos": 167,
+  "univariate": [
+    {
+      "feature": "Average attendance on class",
+      "type": "numeric",
+      "effect": 0.6051686473569979,
+      "effect_lo": 0.5550041887888921,
+      "effect_hi": 0.6535435033121478,
+      "p": 1.2169196544166062e-05,
+      "median_pos": 89.0,
+      "median_neg": 95.0,
+      "p_holm": 0.00014603035852999276
+    },
+    {
+      "feature": "Status of your English language proficiency",
+      "type": "categorical",
+      "effect": 0.12579695890071693,
+      "effect_lo": NaN,
+      "effect_hi": NaN,
+      "p": 0.00032518249965120125,
+      "median_pos": NaN,
+      "median_neg": NaN,
+      "p_holm": 0.003577007496163214
+    },
+    {
+      "feature": "Are you engaged with any co-curriculum activities?",
+      "type": "categorical",
+      "effect": 0.04347024033531133,
+      "effect_lo": NaN,
+      "effect_hi": NaN,
+      "p": 0.16607656473128607,
+      "median_pos": NaN,
+      "median_neg": NaN,
+      "p_holm": 1.0
+    },
+    {
+      "feature": "How many hour do you spent daily in social media?",
+      "type": "numeric",
+      "effect": 0.4671047056829737,
+      "effect_lo": 0.4275273450740029,
+      "effect_hi": 0.5071858052762399,
+      "p": 0.16872722686721242,
+      "median_pos": 3.0,
+      "median_neg": 3.0,
+      "p_holm": 1.0
+    },
+    {
+      "feature": "Do you use University transportation?",
+      "type": "categorical",
+      "effect": 0.04152086297090124,
+      "effect_lo": NaN,
+      "effect_hi": NaN,
+      "p": 0.18589662245242583,
+      "median_pos": NaN,
+      "median_neg": NaN,
+      "p_holm": 1.0
+    },
+    {
+      "feature": "How many hour do you study daily?",
+      "type": "numeric",
+      "effect": 0.5303920460964863,
+      "effect_lo": 0.4886761559428313,
+      "effect_hi": 0.5729315543441419,
+      "p": 0.20396621602101628,
+      "median_pos": 3.0,
+      "median_neg": 3.0,
+      "p_holm": 1.0
+    },
+    {
+      "feature": "Current Semester",
+      "type": "numeric",
+      "effect": 0.47381651790758106,
+      "effect_lo": 0.43083320387526836,
+      "effect_hi": 0.5181492557338153,
+      "p": 0.28129311281850355,
+      "median_pos": 7.0,
+      "median_neg": 7.0,
+      "p_holm": 1.0
+    },
+    {
+      "feature": "What is your preferable learning mode?",
+      "type": "categorical",
+      "effect": 0.032156490222814464,
+      "effect_lo": NaN,
+      "effect_hi": NaN,
+      "p": 0.30561064234513813,
+      "median_pos": NaN,
+      "median_neg": NaN,
+      "p_holm": 1.0
+    },
+    {
+      "feature": "How many hour do you spent daily on your skill development?",
+      "type": "numeric",
+      "effect": 0.5199659642978194,
+      "effect_lo": 0.4729629773471924,
+      "effect_hi": 0.5671361286860241,
+      "p": 0.393408319997389,
+      "median_pos": 2.0,
+      "median_neg": 2.0,
+      "p_holm": 1.0
+    },
+    {
+      "feature": "Do you have personal Computer?",
+      "type": "categorical",
+      "effect": 0.024124518382300512,
+      "effect_lo": NaN,
+      "effect_hi": NaN,
+      "p": 0.44213995607803,
+      "median_pos": NaN,
+      "median_neg": NaN,
+      "p_holm": 1.0
+    },
+    {
+      "feature": "How many Credit did you have completed?",
+      "type": "numeric",
+      "effect": 0.4887548017173201,
+      "effect_lo": 0.4351917332787256,
+      "effect_hi": 0.5365678136651225,
+      "p": 0.6454243345920188,
+      "median_pos": 86.0,
+      "median_neg": 86.0,
+      "p_holm": 1.0
+    },
+    {
+      "feature": "How many times do you seat for study in a day?",
+      "type": "numeric",
+      "effect": 0.4978321658569653,
+      "effect_lo": 0.45531428299062254,
+      "effect_hi": 0.5379626066263699,
+      "p": 0.9238651031126355,
+      "median_pos": 2.0,
+      "median_neg": 2.0,
+      "p_holm": 1.0
+    }
+  ],
+  "adjusted": [
+    {
+      "term": "How many hour do you study daily? (mỗi 1 độ lệch chuẩn)",
+      "or": 0.938123469691474,
+      "or_lo": 0.7739928895793342,
+      "or_hi": 1.1370590818531834,
+      "p": 0.5150704066501803,
+      "p_holm": 1.0
+    },
+    {
+      "term": "How many times do you seat for study in a day? (mỗi 1 độ lệch chuẩn)",
+      "or": 1.0225989182619255,
+      "or_lo": 0.8467831419483485,
+      "or_hi": 1.2349189489346797,
+      "p": 0.8164056836264717,
+      "p_holm": 1.0
+    },
+    {
+      "term": "Average attendance on class (mỗi 1 độ lệch chuẩn)",
+      "or": 0.6907125969149248,
+      "or_lo": 0.5941675287357541,
+      "or_hi": 0.8029450760328143,
+      "p": 1.4572244537713885e-06,
+      "p_holm": 1.894391789902805e-05
+    },
+    {
+      "term": "How many hour do you spent daily in social media? (mỗi 1 độ lệch chuẩn)",
+      "or": 1.0367539748128587,
+      "or_lo": 0.8784908365892403,
+      "or_hi": 1.2235287603720764,
+      "p": 0.6693118805695357,
+      "p_holm": 1.0
+    },
+    {
+      "term": "How many hour do you spent daily on your skill development? (mỗi 1 độ lệch chuẩn)",
+      "or": 0.9706984989976176,
+      "or_lo": 0.8107628128254463,
+      "or_hi": 1.1621840087516342,
+      "p": 0.7461227453794561,
+      "p_holm": 1.0
+    },
+    {
+      "term": "Current Semester (mỗi 1 độ lệch chuẩn)",
+      "or": 1.6454090542860673,
+      "or_lo": 1.1700929703430365,
+      "or_hi": 2.313808410568307,
+      "p": 0.0041947522680232385,
+      "p_holm": 0.05033702721627886
+    },
+    {
+      "term": "How many Credit did you have completed? (mỗi 1 độ lệch chuẩn)",
+      "or": 0.6653569400606008,
+      "or_lo": 0.46057504424983814,
+      "or_hi": 0.961189415739738,
+      "p": 0.029937681700729746,
+      "p_holm": 0.29937681700729746
+    },
+    {
+      "term": "What is your preferable learning mode?_Online",
+      "or": 1.1512365726279037,
+      "or_lo": 0.7891822290726215,
+      "or_hi": 1.679391143555619,
+      "p": 0.4647498381820747,
+      "p_holm": 1.0
+    },
+    {
+      "term": "Do you have personal Computer?_Yes",
+      "or": 0.749765451152906,
+      "or_lo": 0.41802637760080663,
+      "or_hi": 1.3447673684346853,
+      "p": 0.33394366902338746,
+      "p_holm": 1.0
+    },
+    {
+      "term": "Do you use University transportation?_Yes",
+      "or": 0.7816011321541747,
+      "or_lo": 0.5450723910776324,
+      "or_hi": 1.1207691671502762,
+      "p": 0.18025050774075302,
+      "p_holm": 1.0
+    },
+    {
+      "term": "Status of your English language proficiency_Basic",
+      "or": 1.3325803601923372,
+      "or_lo": 0.7971594755284942,
+      "or_hi": 2.227622540888764,
+      "p": 0.27341493961309915,
+      "p_holm": 1.0
+    },
+    {
+      "term": "Status of your English language proficiency_Intermediate",
+      "or": 0.5996543968163579,
+      "or_lo": 0.3810463773532601,
+      "or_hi": 0.9436788196724569,
+      "p": 0.027065096481305284,
+      "p_holm": 0.2977160612943581
+    },
+    {
+      "term": "Are you engaged with any co-curriculum activities?_Yes",
+      "or": 1.3034007185832748,
+      "or_lo": 0.9221744451919885,
+      "or_hi": 1.8422256678883688,
+      "p": 0.13334657745231127,
+      "p_holm": 1.0
+    }
+  ]
+}

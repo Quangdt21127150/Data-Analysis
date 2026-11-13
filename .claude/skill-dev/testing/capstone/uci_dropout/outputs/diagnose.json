@@ -1,0 +1,268 @@
+{
+  "n": 4424,
+  "n_pos": 1421,
+  "univariate": [
+    {
+      "feature": "Curricular units 1st sem (approved)",
+      "type": "numeric",
+      "effect": 0.8184335017551063,
+      "effect_lo": 0.8046371585252655,
+      "effect_hi": 0.8316024522041411,
+      "p": 5.900209835742179e-265,
+      "median_pos": 2.0,
+      "median_neg": 6.0,
+      "p_holm": 9.440335737187487e-264
+    },
+    {
+      "feature": "Curricular units 1st sem (grade)",
+      "type": "numeric",
+      "effect": 0.7730298085681618,
+      "effect_lo": 0.7584726468699023,
+      "effect_hi": 0.7874101209604376,
+      "p": 1.823115843718864e-190,
+      "median_pos": 10.928571428571429,
+      "median_neg": 12.714285714285714,
+      "p_holm": 2.734673765578296e-189
+    },
+    {
+      "feature": "Application mode",
+      "type": "numeric",
+      "effect": 0.3863331132859634,
+      "effect_lo": 0.3705273057929638,
+      "effect_hi": 0.403409562522863,
+      "p": 6.8540244361349595e-37,
+      "median_pos": 18.0,
+      "median_neg": 17.0,
+      "p_holm": 9.595634210588943e-36
+    },
+    {
+      "feature": "Curricular units 1st sem (enrolled)",
+      "type": "numeric",
+      "effect": 0.6058638757442416,
+      "effect_lo": 0.5918331990552258,
+      "effect_hi": 0.6217332749352454,
+      "p": 4.650238072463861e-33,
+      "median_pos": 6.0,
+      "median_neg": 6.0,
+      "p_holm": 6.045309494203019e-32
+    },
+    {
+      "feature": "Previous qualification",
+      "type": "numeric",
+      "effect": 0.44455521021319755,
+      "effect_lo": 0.43247912947948136,
+      "effect_hi": 0.45659517001881533,
+      "p": 8.551629572223378e-21,
+      "median_pos": 1.0,
+      "median_neg": 1.0,
+      "p_holm": 1.0261955486668054e-19
+    },
+    {
+      "feature": "Admission grade",
+      "type": "numeric",
+      "effect": 0.5609353114631088,
+      "effect_lo": 0.5412768002581514,
+      "effect_hi": 0.5786443119395266,
+      "p": 5.541954729366567e-11,
+      "median_pos": 123.6,
+      "median_neg": 126.7,
+      "p_holm": 6.096150202303224e-10
+    },
+    {
+      "feature": "Application order",
+      "type": "numeric",
+      "effect": 0.5421974225633621,
+      "effect_lo": 0.5274391014802696,
+      "effect_hi": 0.5567296824685987,
+      "p": 3.490345118305815e-08,
+      "median_pos": 1.0,
+      "median_neg": 1.0,
+      "p_holm": 3.4903451183058156e-07
+    },
+    {
+      "feature": "Daytime/evening attendance",
+      "type": "numeric",
+      "effect": 0.5268819850100639,
+      "effect_lo": 0.5186376841549255,
+      "effect_hi": 0.5372450209888634,
+      "p": 8.622187841867969e-08,
+      "median_pos": 1.0,
+      "median_neg": 1.0,
+      "p_holm": 7.759969057681172e-07
+    },
+    {
+      "feature": "Previous qualification (grade)",
+      "type": "numeric",
+      "effect": 0.5492676453267586,
+      "effect_lo": 0.5322911928559361,
+      "effect_hi": 0.5681675672439219,
+      "p": 1.1107369675890318e-07,
+      "median_pos": 133.1,
+      "median_neg": 133.1,
+      "p_holm": 8.885895740712254e-07
+    },
+    {
+      "feature": "Curricular units 1st sem (without evaluations)",
+      "type": "numeric",
+      "effect": 0.48441612340275253,
+      "effect_lo": 0.47587968271465814,
+      "effect_hi": 0.4925589511356577,
+      "p": 0.00010305337238790002,
+      "median_pos": 0.0,
+      "median_neg": 0.0,
+      "p_holm": 0.0007213736067153002
+    },
+    {
+      "feature": "GDP",
+      "type": "numeric",
+      "effect": 0.534803221643475,
+      "effect_lo": 0.5177986188102304,
+      "effect_hi": 0.5527331482732608,
+      "p": 0.0001670291709907271,
+      "median_pos": 0.32,
+      "median_neg": 0.79,
+      "p_holm": 0.0010021750259443627
+    },
+    {
+      "feature": "Curricular units 1st sem (evaluations)",
+      "type": "numeric",
+      "effect": 0.5336511951571768,
+      "effect_lo": 0.5159303662558413,
+      "effect_hi": 0.5526950530117314,
+      "p": 0.00026608986019817995,
+      "median_pos": 8.0,
+      "median_neg": 8.0,
+      "p_holm": 0.0013304493009908998
+    }
+  ],
+  "adjusted": [
+    {
+      "term": "Application order (mỗi 1 độ lệch chuẩn)",
+      "or": 1.0459407098956608,
+      "or_lo": 0.9549381602929253,
+      "or_hi": 1.1456155111462498,
+      "p": 0.33346079765229764,
+      "p_holm": 1.0
+    },
+    {
+      "term": "Previous qualification (grade) (mỗi 1 độ lệch chuẩn)",
+      "or": 0.9722470560485172,
+      "or_lo": 0.8789332313043217,
+      "or_hi": 1.075467742404338,
+      "p": 0.584569380181529,
+      "p_holm": 1.0
+    },
+    {
+      "term": "Admission grade (mỗi 1 độ lệch chuẩn)",
+      "or": 0.9404930960543171,
+      "or_lo": 0.8482403617449324,
+      "or_hi": 1.042779032474069,
+      "p": 0.24412490089229477,
+      "p_holm": 1.0
+    },
+    {
+      "term": "Curricular units 1st sem (credited) (mỗi 1 độ lệch chuẩn)",
+      "or": 2.3946823328006452,
+      "or_lo": 2.0046150763663877,
+      "or_hi": 2.8606506768481634,
+      "p": 0.0,
+      "p_holm": 0.0
+    },
+    {
+      "term": "Curricular units 1st sem (enrolled) (mỗi 1 độ lệch chuẩn)",
+      "or": 2.385311331833649,
+      "or_lo": 1.8738048966108594,
+      "or_hi": 3.0364474765035387,
+      "p": 1.6702195182460855e-12,
+      "p_holm": 2.3383073255445197e-11
+    },
+    {
+      "term": "Curricular units 1st sem (evaluations) (mỗi 1 độ lệch chuẩn)",
+      "or": 0.90297692074937,
+      "or_lo": 0.7865477213644622,
+      "or_hi": 1.0366406223789664,
+      "p": 0.14731924847094624,
+      "p_holm": 1.0
+    },
+    {
+      "term": "Curricular units 1st sem (approved) (mỗi 1 độ lệch chuẩn)",
+      "or": 0.07794269895174605,
+      "or_lo": 0.06202753923657737,
+      "or_hi": 0.09794140465111464,
+      "p": 0.0,
+      "p_holm": 0.0
+    },
+    {
+      "term": "Curricular units 1st sem (grade) (mỗi 1 độ lệch chuẩn)",
+      "or": 0.9502101830044775,
+      "or_lo": 0.799741616505929,
+      "or_hi": 1.128988879971221,
+      "p": 0.5614748319944121,
+      "p_holm": 1.0
+    },
+    {
+      "term": "Curricular units 1st sem (without evaluations) (mỗi 1 độ lệch chuẩn)",
+      "or": 0.8530284752230938,
+      "or_lo": 0.7774120837794504,
+      "or_hi": 0.9359998316515372,
+      "p": 0.000789113386357565,
+      "p_holm": 0.008680247249933215
+    },
+    {
+      "term": "Unemployment rate (mỗi 1 độ lệch chuẩn)",
+      "or": 1.1854267453256593,
+      "or_lo": 1.0825603565009176,
+      "or_hi": 1.2980676413049441,
+      "p": 0.0002398329254191811,
+      "p_holm": 0.0028779951050301733
+    },
+    {
+      "term": "Inflation rate (mỗi 1 độ lệch chuẩn)",
+      "or": 1.003055330447806,
+      "or_lo": 0.9224088288864096,
+      "or_hi": 1.0907527816645133,
+      "p": 0.9431292134118656,
+      "p_holm": 1.0
+    },
+    {
+      "term": "GDP (mỗi 1 độ lệch chuẩn)",
+      "or": 1.012324177653006,
+      "or_lo": 0.9229140779673596,
+      "or_hi": 1.1103961518474952,
+      "p": 0.7951467940605903,
+      "p_holm": 1.0
+    },
+    {
+      "term": "Application mode (mỗi 1 độ lệch chuẩn)",
+      "or": 1.1823557910333338,
+      "or_lo": 1.0680354010824937,
+      "or_hi": 1.3089128086701718,
+      "p": 0.0012436547278924515,
+      "p_holm": 0.012436547278924515
+    },
+    {
+      "term": "Course (mỗi 1 độ lệch chuẩn)",
+      "or": 1.261119651968396,
+      "or_lo": 1.1181345070994566,
+      "or_hi": 1.4223894947188336,
+      "p": 0.0001576613427685114,
+      "p_holm": 0.0020495974559906482
+    },
+    {
+      "term": "Daytime/evening attendance (mỗi 1 độ lệch chuẩn)",
+      "or": 1.009419456827177,
+      "or_lo": 0.9263982366601139,
+      "or_hi": 1.0998808066547596,
+      "p": 0.8304664967692745,
+      "p_holm": 1.0
+    },
+    {
+      "term": "Previous qualification (mỗi 1 độ lệch chuẩn)",
+      "or": 0.9266808346322948,
+      "or_lo": 0.8460307261919013,
+      "or_hi": 1.0150191271895046,
+      "p": 0.10119137858769456,
+      "p_holm": 0.910722407289251
+    }
+  ]
+}

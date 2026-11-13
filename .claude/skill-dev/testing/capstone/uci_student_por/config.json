@@ -1,0 +1,159 @@
+{
+  "project_name": "Sàng lọc đầu năm học sinh có nguy cơ trượt môn (UCI Student Performance)",
+  "language": "vi",
+  "team": {
+    "name": "Nhóm N02",
+    "members": [
+      "Ngô Triệu Gia Gia - 25C11037",
+      "Trần Duy Khương - 25C12004",
+      "Nguyễn Hoàng Nhật Quang - 25C12033"
+    ],
+    "advisor": "TS. Nguyễn Trần Minh Thư",
+    "course": "Khoa học Phân tích Dữ liệu (FIT-HCMUS)"
+  },
+  "data_path": "../../datasets/uci_student_por.csv",
+  "sheet": null,
+  "id_col": null,
+  "features": [
+    "traveltime",
+    "studytime",
+    "failures",
+    "famrel",
+    "freetime",
+    "goout",
+    "school",
+    "reason",
+    "famsup",
+    "paid",
+    "activities",
+    "nursery",
+    "higher",
+    "internet"
+  ],
+  "target": {
+    "column": "G3",
+    "type": "threshold",
+    "positive_if": "<",
+    "threshold": 10,
+    "positive_values": null,
+    "missing_codes": [],
+    "positive_name": "nhóm có nguy cơ trượt môn"
+  },
+  "exclude": {
+    "leakage": [
+      "G1",
+      "G2",
+      "absences",
+      "schoolsup"
+    ],
+    "sensitive_for_model": [
+      "sex",
+      "age",
+      "address",
+      "famsize",
+      "Pstatus",
+      "Medu",
+      "Fedu",
+      "Mjob",
+      "Fjob",
+      "guardian",
+      "romantic",
+      "Dalc",
+      "Walc",
+      "health"
+    ],
+    "other": []
+  },
+  "auto_exclude_leakage_auc": 0.85,
+  "groups": {
+    "Thói quen và thời gian": [
+      "traveltime",
+      "studytime",
+      "freetime",
+      "goout"
+    ],
+    "Tiền sử học tập": [
+      "failures",
+      "higher",
+      "nursery"
+    ],
+    "Hỗ trợ và hoạt động": [
+      "famsup",
+      "paid",
+      "activities",
+      "internet",
+      "famrel"
+    ],
+    "Trường và lý do chọn": [
+      "school",
+      "reason"
+    ]
+  },
+  "fairness_cols": [
+    "sex",
+    "address"
+  ],
+  "baseline_feature": "failures",
+  "flag_rates": [
+    0.15,
+    0.3
+  ],
+  "exclude_repeat_clusters": true,
+  "criteria": {
+    "auc": 0.7,
+    "recall": 0.6,
+    "recall_rate": 0.3,
+    "delta_auc": 0.03,
+    "max_items": null,
+    "ablation_tolerance": 0.02,
+    "calib_slope": [
+      0.8,
+      1.2
+    ],
+    "fair_gap": 0.1,
+    "fair_ci_width": 0.2,
+    "switch_delta": 0.02
+  },
+  "cv": {
+    "splits": 5,
+    "repeats": 10,
+    "seed": 42,
+    "n_boot": 2000,
+    "n_jobs": -1
+  },
+  "stakeholders": [
+    {
+      "role": "Giáo viên chủ nhiệm",
+      "pain": "Phát hiện học sinh có nguy cơ trượt khi đã quá muộn",
+      "decision": "Chọn học sinh ưu tiên phụ đạo đầu năm"
+    }
+  ],
+  "analysis_questions": [
+    {
+      "id": "AQ1",
+      "level": "Descriptive",
+      "question": "Tỷ lệ học sinh có G3 < 10 là bao nhiêu?"
+    },
+    {
+      "id": "AQ2",
+      "level": "Diagnostic",
+      "question": "Nhóm có nguy cơ khác phần còn lại ở đặc trưng nào?"
+    },
+    {
+      "id": "AQ3",
+      "level": "Predictive",
+      "question": "Có sàng lọc được từ thông tin đầu năm không?"
+    }
+  ],
+  "out_dir": "outputs",
+  "context": {
+    "data_source": "UCI Machine Learning Repository: Student Performance (Cortez & Silva, 2008), CC BY 4.0",
+    "self_reported": false,
+    "cross_sectional": true,
+    "single_site": false,
+    "notes": [
+      "Hai trường THPT tại Bồ Đào Nha, môn tiếng Bồ Đào Nha."
+    ]
+  },
+  "stakeholders_source": "assumed"
+}

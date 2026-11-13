@@ -1,0 +1,5 @@
+﻿step,n_before,n_after,detail
+load,649,649,"Đọc ../../datasets/uci_student_por.csv, SHA-256 a7594a11d7771c0e..."
+drop_missing_label,649,649,Loại dòng thiếu nhãn.
+primary_sample,649,649,"Mẫu chính 649 dòng, 100 ca dương (15.4%)."
+sensitivity_B,649,649,"Mẫu độ nhạy B 649 dòng, 100 ca dương."

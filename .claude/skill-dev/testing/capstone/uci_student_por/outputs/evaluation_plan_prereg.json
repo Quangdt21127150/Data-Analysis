@@ -1,0 +1,101 @@
+{
+  "version": "prereg-v1.0",
+  "ghi_chu": "Kế hoạch đánh giá cố định trước khi huấn luyện mô hình; mọi thay đổi về sau phải ghi trong Change Log.",
+  "du_lieu": {
+    "mau_chinh_sha256": "f2ee8d4e5b6b27683a55eb4adbee41df7394806d7695874a1109848cfe199678",
+    "n": 649,
+    "n_duong": 100
+  },
+  "nhan": {
+    "column": "G3",
+    "type": "threshold",
+    "positive_if": "<",
+    "threshold": 10,
+    "positive_values": null,
+    "missing_codes": [],
+    "positive_name": "nhóm có nguy cơ trượt môn"
+  },
+  "kiem_dinh": {
+    "chien_luoc": "RepeatedStratifiedKFold 5 phần x 10 lần lặp, seed 42",
+    "chong_ro_ri": "Mọi bước điền khuyết, chuẩn hóa, mã hóa, chọn siêu tham số nằm trong Pipeline và fit trên phần huấn luyện của từng fold.",
+    "khoang_tin_cay": "Bootstrap 2000 lần lấy mẫu lại quan sát; chênh lệch AUC dùng chỉ số bootstrap ghép cặp."
+  },
+  "mo_hinh": {
+    "B0": "Ngẫu nhiên theo tỷ lệ nền",
+    "B1": "Baseline một đặc trưng",
+    "M1": "Hồi quy logistic L2 (chính)",
+    "M2": "Random Forest",
+    "M3": "Gradient Boosting (HistGradientBoosting)",
+    "S1": "Logistic L1 để rút gọn đặc trưng"
+  },
+  "ty_le_gan_co": [
+    0.15,
+    0.3
+  ],
+  "tieu_chi": {
+    "S1": "AUC >= 0.7 VÀ recall >= 0.6 tại tỷ lệ gắn cờ 0.3",
+    "S2": "AUC của M1 hơn B1 ít nhất 0.03 và cận dưới khoảng tin cậy 95% của chênh lệch > 0",
+    "S3": "Số đặc trưng gốc được giữ <= ceil(2/3 tổng số) và AUC giảm không quá 0.02",
+    "S4": "Độ dốc hiệu chuẩn trong [0.8, 1.2] và Brier thấp hơn baseline tỷ lệ nền",
+    "S5": "Chênh lệch recall giữa nhóm <= 0.1 và khoảng tin cậy rộng <= 0.2; nếu rộng hơn thì ghi 'chưa kết luận'"
+  },
+  "quy_tac_chon_mo_hinh": "Giữ M1 (logistic) trừ khi mô hình cây hơn M1 ít nhất 0.02 AUC và cận dưới khoảng tin cậy ghép cặp > 0.",
+  "cau_hinh_rut_gon": {
+    "exclude": {
+      "leakage": [
+        "G1",
+        "G2",
+        "absences",
+        "schoolsup"
+      ],
+      "sensitive_for_model": [
+        "sex",
+        "age",
+        "address",
+        "famsize",
+        "Pstatus",
+        "Medu",
+        "Fedu",
+        "Mjob",
+        "Fjob",
+        "guardian",
+        "romantic",
+        "Dalc",
+        "Walc",
+        "health"
+      ],
+      "other": []
+    },
+    "groups": {
+      "Thói quen và thời gian": [
+        "traveltime",
+        "studytime",
+        "freetime",
+        "goout"
+      ],
+      "Tiền sử học tập": [
+        "failures",
+        "higher",
+        "nursery"
+      ],
+      "Hỗ trợ và hoạt động": [
+        "famsup",
+        "paid",
+        "activities",
+        "internet",
+        "famrel"
+      ],
+      "Trường và lý do chọn": [
+        "school",
+        "reason"
+      ]
+    },
+    "fairness_cols": [
+      "sex",
+      "address"
+    ],
+    "baseline_feature": "failures"
+  },
+  "sha256_of_plan_without_hash": "27549efa2a831a5505a88798555a2b74e4af6d4004f695f85647eb3b52cb46fe",
+  "created_utc": "2026-11-13T07:39:15+00:00"
+}

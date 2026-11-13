@@ -1,0 +1,287 @@
+{
+  "n": 4424,
+  "positives": 1421,
+  "prevalence": 0.3212025316455696,
+  "n_features": 16,
+  "features": [
+    "Application order",
+    "Previous qualification (grade)",
+    "Admission grade",
+    "Curricular units 1st sem (credited)",
+    "Curricular units 1st sem (enrolled)",
+    "Curricular units 1st sem (evaluations)",
+    "Curricular units 1st sem (approved)",
+    "Curricular units 1st sem (grade)",
+    "Curricular units 1st sem (without evaluations)",
+    "Unemployment rate",
+    "Inflation rate",
+    "GDP",
+    "Application mode",
+    "Course",
+    "Daytime/evening attendance",
+    "Previous qualification"
+  ],
+  "numeric": [
+    "Application order",
+    "Previous qualification (grade)",
+    "Admission grade",
+    "Curricular units 1st sem (credited)",
+    "Curricular units 1st sem (enrolled)",
+    "Curricular units 1st sem (evaluations)",
+    "Curricular units 1st sem (approved)",
+    "Curricular units 1st sem (grade)",
+    "Curricular units 1st sem (without evaluations)",
+    "Unemployment rate",
+    "Inflation rate",
+    "GDP",
+    "Application mode",
+    "Course",
+    "Daytime/evening attendance",
+    "Previous qualification"
+  ],
+  "categorical": [],
+  "baseline_feature": "Curricular units 1st sem (approved)",
+  "baseline_note": "do người dùng chỉ định",
+  "C_median": 0.7196856730011522,
+  "cv": {
+    "splits": 5,
+    "repeats": 10,
+    "seed": 42,
+    "n_boot": 2000,
+    "n_jobs": -1
+  },
+  "flag_rates": [
+    0.15,
+    0.3
+  ],
+  "grid": [
+    0.05,
+    0.1,
+    0.15,
+    0.2,
+    0.25,
+    0.3,
+    0.35,
+    0.4,
+    0.45,
+    0.5
+  ],
+  "main": [
+    {
+      "model": "B0",
+      "label": "Ngẫu nhiên",
+      "auc": 0.5057687093577312,
+      "auc_lo": 0.5001725115938843,
+      "auc_hi": 0.5115099051036266,
+      "recall_0.15": 0.15151301900070374,
+      "recall_0.15_lo": 0.1470626827341069,
+      "recall_0.15_hi": 0.15670035405602417,
+      "precision_0.15": 0.32424698795180723,
+      "recall_0.3": 0.30394088669950736,
+      "recall_0.3_lo": 0.2973671464428583,
+      "recall_0.3_hi": 0.31007233464210204,
+      "precision_0.3": 0.32547098718914846,
+      "prauc": 0.3252120497613459
+    },
+    {
+      "model": "B1",
+      "label": "Baseline: Curricular units 1st sem (approved)",
+      "auc": 0.8167875521147863,
+      "auc_lo": 0.8032357723730186,
+      "auc_hi": 0.8307047992755521,
+      "recall_0.15": 0.36924700914848696,
+      "recall_0.15_lo": 0.3527329347826087,
+      "recall_0.15_hi": 0.38778030303030303,
+      "precision_0.15": 0.790210843373494,
+      "recall_0.3": 0.6556650246305419,
+      "recall_0.3_lo": 0.6367209434715244,
+      "recall_0.3_hi": 0.6751337968502649,
+      "precision_0.3": 0.7021100226073851,
+      "prauc": 0.6820030870730692
+    },
+    {
+      "model": "M1",
+      "label": "Logistic L2 (chính)",
+      "auc": 0.864794647060657,
+      "auc_lo": 0.8530730581838958,
+      "auc_hi": 0.8759107802968288,
+      "recall_0.15": 0.41372273047149893,
+      "recall_0.15_lo": 0.39818222169035716,
+      "recall_0.15_hi": 0.43030353129567345,
+      "precision_0.15": 0.8853915662650603,
+      "recall_0.3": 0.6833919774806474,
+      "recall_0.3_lo": 0.663207207702355,
+      "recall_0.3_hi": 0.7040178990610327,
+      "precision_0.3": 0.7318010550113037,
+      "prauc": 0.7818032141638406
+    },
+    {
+      "model": "M2",
+      "label": "Random Forest",
+      "auc": 0.8677712857163948,
+      "auc_lo": 0.8556132653453036,
+      "auc_hi": 0.878926405002534,
+      "recall_0.15": 0.41857846586910624,
+      "recall_0.15_lo": 0.40313882579498317,
+      "recall_0.15_hi": 0.4357841812851737,
+      "precision_0.15": 0.8957831325301205,
+      "recall_0.3": 0.6850105559465165,
+      "recall_0.3_lo": 0.6663233067470391,
+      "recall_0.3_hi": 0.704767374518398,
+      "precision_0.3": 0.7335342878673701,
+      "prauc": 0.7998951964731444
+    },
+    {
+      "model": "M3",
+      "label": "Gradient Boosting",
+      "auc": 0.8704929248560495,
+      "auc_lo": 0.858417962487668,
+      "auc_hi": 0.881325713357957,
+      "recall_0.15": 0.42343420126671355,
+      "recall_0.15_lo": 0.4076701202697038,
+      "recall_0.15_hi": 0.44066600848684057,
+      "precision_0.15": 0.9061746987951806,
+      "recall_0.3": 0.6929627023223082,
+      "recall_0.3_lo": 0.6743997335114631,
+      "recall_0.3_hi": 0.7137649618271221,
+      "precision_0.3": 0.7420497362471741,
+      "prauc": 0.8053626328136605
+    },
+    {
+      "model": "L1",
+      "label": "Logistic L1",
+      "auc": 0.8647831525734411,
+      "auc_lo": 0.8530392877397487,
+      "auc_hi": 0.8758228231220303,
+      "recall_0.15": 0.4135116115411682,
+      "recall_0.15_lo": 0.3983171892392014,
+      "recall_0.15_hi": 0.4303471775550453,
+      "precision_0.15": 0.8849397590361445,
+      "recall_0.3": 0.6831808585503167,
+      "recall_0.3_lo": 0.6627092173896459,
+      "recall_0.3_hi": 0.7035420085039396,
+      "precision_0.3": 0.7315749811605124,
+      "prauc": 0.7814815878634829
+    }
+  ],
+  "paired": [
+    {
+      "comparison": "M1 so với baseline",
+      "delta_auc": 0.04800709494587074,
+      "lo": 0.03802896211736817,
+      "hi": 0.05837846444007016
+    },
+    {
+      "comparison": "Random Forest so với M1",
+      "delta_auc": 0.002976638655737829,
+      "lo": -0.0025161307937869386,
+      "hi": 0.008464904456749722
+    },
+    {
+      "comparison": "Gradient Boosting so với M1",
+      "delta_auc": 0.005698277795392448,
+      "lo": 0.0007317564149591588,
+      "hi": 0.010702880578460786
+    },
+    {
+      "comparison": "Logistic L1 so với M1",
+      "delta_auc": -1.1494487215935045e-05,
+      "lo": -0.0002261320674452727,
+      "hi": 0.00020150045577318186
+    }
+  ],
+  "calibration": {
+    "slope": 0.9897609929270033,
+    "intercept": -0.006381677225133539,
+    "brier": 0.12910814236064633,
+    "brier_base": 0.2180314653100465
+  },
+  "flag_rate_for_target_recall": 0.25,
+  "items_mean": 14.98,
+  "max_items": 11,
+  "l1_delta": -1.1494487215935045e-05,
+  "criteria": {
+    "S1": "Đạt (độ tin cậy cao)",
+    "S2": "Đạt",
+    "S3": "Không đạt",
+    "S4": "Đạt",
+    "S5": "Không đạt"
+  },
+  "recommended_model": "M1",
+  "switch_note": "Giữ hồi quy logistic theo quy tắc đã đăng ký.",
+  "auto_excluded_leakage": [],
+  "strong_features_unconfirmed": [
+    "Curricular units 2nd sem (approved)"
+  ],
+  "groups": {
+    "Kết quả học kỳ 1": [
+      "Curricular units 1st sem (credited)",
+      "Curricular units 1st sem (enrolled)",
+      "Curricular units 1st sem (evaluations)",
+      "Curricular units 1st sem (approved)",
+      "Curricular units 1st sem (grade)",
+      "Curricular units 1st sem (without evaluations)"
+    ],
+    "Đầu vào tuyển sinh": [
+      "Application order",
+      "Previous qualification (grade)",
+      "Admission grade",
+      "Application mode",
+      "Previous qualification"
+    ],
+    "Chương trình học": [
+      "Course",
+      "Daytime/evening attendance"
+    ],
+    "Kinh tế vĩ mô": [
+      "Unemployment rate",
+      "Inflation rate",
+      "GDP"
+    ]
+  },
+  "prereg_sha256": "c8dc4f283fd406ceff56b2467276a47022ca5ff57bdd769b38d747589ae420cb",
+  "primary_sha256": "c9bec1210ac8613ae167542e5d880b72ae614a5bbaa9af095f57f06fc52b4d79",
+  "ablation": [
+    {
+      "setting": "Đầy đủ (C cố định)",
+      "auc": 0.8648150582703714,
+      "delta_auc": 0.0,
+      "lo": 0.0,
+      "hi": 0.0,
+      "recall_0.3": 0.6831104855735399
+    },
+    {
+      "setting": "Bỏ: Kết quả học kỳ 1",
+      "auc": 0.6394355351427835,
+      "delta_auc": -0.2253795231275879,
+      "lo": -0.24306189298115882,
+      "hi": -0.20833439237499118,
+      "recall_0.3": 0.44074595355383533
+    },
+    {
+      "setting": "Bỏ: Đầu vào tuyển sinh",
+      "auc": 0.8644086619456077,
+      "delta_auc": -0.0004063963247636915,
+      "lo": -0.002317777805458418,
+      "hi": 0.0015358333141294888,
+      "recall_0.3": 0.6788177339901478
+    },
+    {
+      "setting": "Bỏ: Chương trình học",
+      "auc": 0.8625339942722068,
+      "delta_auc": -0.002281063998164634,
+      "lo": -0.003595612822711039,
+      "hi": -0.0010328599939300439,
+      "recall_0.3": 0.6807178043631246
+    },
+    {
+      "setting": "Bỏ: Kinh tế vĩ mô",
+      "auc": 0.8638686202373748,
+      "delta_auc": -0.0009464380329966549,
+      "lo": -0.0026321080874310483,
+      "hi": 0.0005617310150920122,
+      "recall_0.3": 0.6783954961294864
+    }
+  ],
+  "fast_mode": false
+}

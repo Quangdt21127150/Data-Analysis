@@ -1,0 +1,142 @@
+{
+  "project_name": "Sàng lọc sinh viên cần hỗ trợ học tập",
+  "language": "vi",
+  "team": {
+    "name": "Nhóm N02",
+    "members": [
+      "Ngô Triệu Gia Gia - 25C11037",
+      "Trần Duy Khương - 25C12004",
+      "Nguyễn Hoàng Nhật Quang - 25C12033"
+    ],
+    "advisor": "TS. Nguyễn Trần Minh Thư",
+    "course": "Khoa học Phân tích Dữ liệu (FIT-HCMUS)"
+  },
+  "data_path": "../../datasets/sape_students_performance.xlsx",
+  "sheet": null,
+  "id_col": null,
+  "features": [
+    "How many hour do you study daily?",
+    "How many times do you seat for study in a day?",
+    "Average attendance on class",
+    "How many hour do you spent daily in social media?",
+    "How many hour do you spent daily on your skill development?",
+    "What is your preferable learning mode?",
+    "Do you have personal Computer?",
+    "Do you use University transportation?",
+    "Status of your English language proficiency",
+    "Current Semester",
+    "How many Credit did you have completed?",
+    "Are you engaged with any co-curriculum activities?"
+  ],
+  "target": {
+    "column": "What is your current CGPA?",
+    "type": "threshold",
+    "positive_if": "<",
+    "threshold": 2.75,
+    "positive_values": null,
+    "missing_codes": [
+      0.0
+    ],
+    "positive_name": "nhóm cần chú ý"
+  },
+  "exclude": {
+    "leakage": [],
+    "sensitive_for_model": [],
+    "other": []
+  },
+  "auto_exclude_leakage_auc": 0.85,
+  "groups": {
+    "Thói quen học tập": [
+      "How many hour do you study daily?",
+      "How many times do you seat for study in a day?",
+      "Average attendance on class",
+      "How many hour do you spent daily in social media?",
+      "How many hour do you spent daily on your skill development?"
+    ],
+    "Trình độ tiếng Anh": [
+      "Status of your English language proficiency"
+    ],
+    "Tiến độ học vụ": [
+      "Current Semester",
+      "How many Credit did you have completed?"
+    ],
+    "Bối cảnh học tập": [
+      "What is your preferable learning mode?",
+      "Do you have personal Computer?",
+      "Do you use University transportation?",
+      "Are you engaged with any co-curriculum activities?"
+    ]
+  },
+  "fairness_cols": [
+    "Gender",
+    "With whom you are living with?"
+  ],
+  "baseline_feature": "Average attendance on class",
+  "flag_rates": [
+    0.15,
+    0.3
+  ],
+  "exclude_repeat_clusters": true,
+  "criteria": {
+    "auc": 0.7,
+    "recall": 0.6,
+    "recall_rate": 0.3,
+    "delta_auc": 0.03,
+    "max_items": null,
+    "ablation_tolerance": 0.02,
+    "calib_slope": [
+      0.8,
+      1.2
+    ],
+    "fair_gap": 0.1,
+    "fair_ci_width": 0.2,
+    "switch_delta": 0.02
+  },
+  "cv": {
+    "splits": 5,
+    "repeats": 10,
+    "seed": 42,
+    "n_boot": 2000,
+    "n_jobs": -1
+  },
+  "stakeholders": [
+    {
+      "role": "Cố vấn học tập",
+      "pain": "Không biết em nào cần hỗ trợ trước khi quá muộn",
+      "decision": "Chọn danh sách sinh viên ưu tiên liên hệ trong kỳ"
+    },
+    {
+      "role": "Quản lý khoa",
+      "pain": "Nguồn lực hỗ trợ có hạn",
+      "decision": "Phân bổ ngân sách hỗ trợ theo tỷ lệ gắn cờ"
+    }
+  ],
+  "analysis_questions": [
+    {
+      "id": "AQ1",
+      "level": "Descriptive",
+      "question": "Có bao nhiêu sinh viên thuộc nhóm cần hỗ trợ?"
+    },
+    {
+      "id": "AQ2",
+      "level": "Diagnostic",
+      "question": "Nhóm này khác phần còn lại ở những đặc trưng nào?"
+    },
+    {
+      "id": "AQ3",
+      "level": "Predictive",
+      "question": "Có thể sàng lọc sớm bằng đặc trưng sẵn có không?"
+    }
+  ],
+  "out_dir": "outputs",
+  "context": {
+    "data_source": "Khảo sát sinh viên đại học, tự báo cáo",
+    "self_reported": true,
+    "cross_sectional": true,
+    "single_site": true,
+    "notes": [
+      "Điểm tích lũy tự khai, chưa đối chiếu với hệ thống đào tạo."
+    ]
+  },
+  "stakeholders_source": "assumed"
+}

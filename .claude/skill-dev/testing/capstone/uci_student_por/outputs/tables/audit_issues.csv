@@ -1,0 +1,5 @@
+﻿id,severity,code,description,n_rows,proposed_action
+Q01,Cao,strong_feature,"Đặc trưng G1 đứng một mình đạt AUC 0,942: mạnh bất thường nhưng tên không gợi ý hệ quả; cần người dùng xác nhận nó có sẵn tại thời điểm ra quyết định.",0,Giữ trong mô hình nếu xác nhận hợp lệ (khai báo keep_despite_leakage_flag); loại nếu là hệ quả của nhãn.
+Q02,Cao,strong_feature,"Đặc trưng G2 đứng một mình đạt AUC 0,957: mạnh bất thường nhưng tên không gợi ý hệ quả; cần người dùng xác nhận nó có sẵn tại thời điểm ra quyết định.",0,Giữ trong mô hình nếu xác nhận hợp lệ (khai báo keep_despite_leakage_flag); loại nếu là hệ quả của nhãn.
+Q03,Trung bình,imbalance,"Tỷ lệ lớp dương 15,4%; dùng PR-AUC, recall và precision tại tỷ lệ gắn cờ.",0,Không dùng accuracy; dùng class_weight và đo hiệu chuẩn.
+Q04,Cao,small_sample,"Chỉ 100 ca dương cho khoảng 14 đặc trưng (khoảng 7,1 ca mỗi đặc trưng).",100,Ưu tiên mô hình đơn giản có phạt; nêu rõ khoảng tin cậy rộng; không dùng hold-out nhỏ.

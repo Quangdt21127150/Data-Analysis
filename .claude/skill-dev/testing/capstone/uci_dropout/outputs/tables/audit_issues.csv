@@ -1,0 +1,8 @@
+﻿id,severity,code,description,n_rows,proposed_action
+Q01,Trung bình,leakage_name_hint,"Cột Curricular units 1st sem (grade) có tên gợi ý kết quả/hệ quả và AUC đơn lẻ 0,773.",0,Người dùng xác nhận thời điểm thu thập; loại nếu thu sau thời điểm quyết định.
+Q02,Cao,strong_feature,"Đặc trưng Curricular units 2nd sem (approved) đứng một mình đạt AUC 0,854: mạnh bất thường nhưng tên không gợi ý hệ quả; cần người dùng xác nhận nó có sẵn tại thời điểm ra quyết định.",0,Giữ trong mô hình nếu xác nhận hợp lệ (khai báo keep_despite_leakage_flag); loại nếu là hệ quả của nhãn.
+Q03,Trung bình,leakage_name_hint,"Cột Curricular units 2nd sem (grade) có tên gợi ý kết quả/hệ quả và AUC đơn lẻ 0,814.",0,Người dùng xác nhận thời điểm thu thập; loại nếu thu sau thời điểm quyết định.
+Q04,Trung bình,collinear,"Mother's occupation và Father's occupation tương quan tuyệt đối 0,91.",0,Phân tích theo nhóm đặc trưng (ablation theo nhóm) thay vì từng biến.
+Q05,Trung bình,collinear,"Curricular units 1st sem (credited) và Curricular units 2nd sem (credited) tương quan tuyệt đối 0,94.",0,Phân tích theo nhóm đặc trưng (ablation theo nhóm) thay vì từng biến.
+Q06,Trung bình,collinear,"Curricular units 1st sem (enrolled) và Curricular units 2nd sem (enrolled) tương quan tuyệt đối 0,94.",0,Phân tích theo nhóm đặc trưng (ablation theo nhóm) thay vì từng biến.
+Q07,Trung bình,collinear,"Curricular units 1st sem (approved) và Curricular units 2nd sem (approved) tương quan tuyệt đối 0,90.",0,Phân tích theo nhóm đặc trưng (ablation theo nhóm) thay vì từng biến.

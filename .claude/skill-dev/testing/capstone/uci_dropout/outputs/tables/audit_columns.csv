@@ -1,0 +1,38 @@
+﻿column,dtype,n_missing,pct_missing,n_unique,role
+﻿Marital status,int64,0,0.0,6,numeric
+Application mode,int64,0,0.0,18,numeric
+Application order,int64,0,0.0,8,numeric
+Course,int64,0,0.0,17,numeric
+Daytime/evening attendance,int64,0,0.0,2,numeric
+Previous qualification,int64,0,0.0,17,numeric
+Previous qualification (grade),float64,0,0.0,101,numeric
+Nacionality,int64,0,0.0,21,numeric
+Mother's qualification,int64,0,0.0,29,numeric
+Father's qualification,int64,0,0.0,34,numeric
+Mother's occupation,int64,0,0.0,32,numeric
+Father's occupation,int64,0,0.0,46,numeric
+Admission grade,float64,0,0.0,620,numeric
+Displaced,int64,0,0.0,2,numeric
+Educational special needs,int64,0,0.0,2,numeric
+Debtor,int64,0,0.0,2,numeric
+Tuition fees up to date,int64,0,0.0,2,numeric
+Gender,int64,0,0.0,2,numeric
+Scholarship holder,int64,0,0.0,2,numeric
+Age at enrollment,int64,0,0.0,46,numeric
+International,int64,0,0.0,2,numeric
+Curricular units 1st sem (credited),int64,0,0.0,21,numeric
+Curricular units 1st sem (enrolled),int64,0,0.0,23,numeric
+Curricular units 1st sem (evaluations),int64,0,0.0,35,numeric
+Curricular units 1st sem (approved),int64,0,0.0,23,numeric
+Curricular units 1st sem (grade),float64,0,0.0,805,numeric
+Curricular units 1st sem (without evaluations),int64,0,0.0,11,numeric
+Curricular units 2nd sem (credited),int64,0,0.0,19,numeric
+Curricular units 2nd sem (enrolled),int64,0,0.0,22,numeric
+Curricular units 2nd sem (evaluations),int64,0,0.0,30,numeric
+Curricular units 2nd sem (approved),int64,0,0.0,20,numeric
+Curricular units 2nd sem (grade),float64,0,0.0,786,numeric
+Curricular units 2nd sem (without evaluations),int64,0,0.0,10,numeric
+Unemployment rate,float64,0,0.0,10,numeric
+Inflation rate,float64,0,0.0,9,numeric
+GDP,float64,0,0.0,10,numeric
+Target,str,0,0.0,3,target

@@ -1,0 +1,15 @@
+﻿term,coef_std,odds_ratio
+cat__Status of your English language proficiency_Intermediate,-0.4040269940879229,0.6676260990680657
+num__Average attendance on class,-0.37322006913489414,0.6885136955568836
+cat__Status of your English language proficiency_Basic,0.36464919998298984,1.440008764435588
+num__Current Semester,0.35333266282681663,1.4238047115601613
+num__How many Credit did you have completed?,-0.271837231412906,0.7619782771241702
+cat__Are you engaged with any co-curriculum activities?_Yes,0.2457556690253023,1.2785871369329191
+cat__Do you use University transportation?_Yes,-0.2362092752863173,0.7896154096496059
+cat__Do you have personal Computer?_Yes,-0.17964550309818997,0.8355663646029846
+cat__What is your preferable learning mode?_Online,0.1282650414138684,1.1368542762350502
+num__How many hour do you study daily?,-0.07384495689144041,0.9288156891499834
+cat__Status of your English language proficiency_Advance,0.07036498530992505,1.0728997024305413
+num__How many times do you seat for study in a day?,0.052692373743686294,1.054105324762368
+num__How many hour do you spent daily in social media?,0.02685889173911139,1.0272228429073056
+num__How many hour do you spent daily on your skill development?,-0.012026618769764715,0.9880454119585452

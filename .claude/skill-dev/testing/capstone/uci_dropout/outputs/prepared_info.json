@@ -1,0 +1,34 @@
+{
+  "n_master": 4424,
+  "n_primary": 4424,
+  "n_pos_primary": 1421,
+  "n_sensitivity_B": 4424,
+  "primary_sha256": "c9bec1210ac8613ae167542e5d880b72ae614a5bbaa9af095f57f06fc52b4d79",
+  "raw_sha256": "3ef126de5cefff26eb11fbb4237f1a1401cb64b488e2f1d598c23cedeb4c45ae",
+  "log": [
+    {
+      "step": "load",
+      "n_before": 4424,
+      "n_after": 4424,
+      "detail": "Đọc ../../datasets/uci_dropout.csv, SHA-256 3ef126de5cefff26..."
+    },
+    {
+      "step": "drop_missing_label",
+      "n_before": 4424,
+      "n_after": 4424,
+      "detail": "Loại dòng thiếu nhãn."
+    },
+    {
+      "step": "primary_sample",
+      "n_before": 4424,
+      "n_after": 4424,
+      "detail": "Mẫu chính 4424 dòng, 1421 ca dương (32.1%)."
+    },
+    {
+      "step": "sensitivity_B",
+      "n_before": 4424,
+      "n_after": 4424,
+      "detail": "Mẫu độ nhạy B 4424 dòng, 1421 ca dương."
+    }
+  ]
+}
